@@ -16,6 +16,7 @@
  * nodeConfig.addTech(require('enb/techs/html-from-bemjson'));
  * ```
  */
+var path = require('path');
 var dropRequireCache = require('enb/lib/fs/drop-require-cache');
 
 module.exports = require('enb/lib/build-flow').create()
@@ -30,6 +31,8 @@ module.exports = require('enb/lib/build-flow').create()
         var BEMTREE = require(bemtreeFilename).BEMTREE,
             BEMHTML = require(bemhtmlFilename).BEMHTML;
 
-        return BEMHTML.apply(BEMTREE.apply({ block: 'root' }));
+        var page = path.basename(bemtreeFilename, 'bemtree.js');
+
+        return BEMHTML.apply(BEMTREE.apply({ block: 'root', page: page }));
     })
     .createTech();
