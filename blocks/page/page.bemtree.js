@@ -3,6 +3,7 @@ block('page').content()(function() {
         {block: 'header'},
         {block: 'nav-main'},
         {block: 'main'},
+        {block: 'nav-footer'},
         {block: 'footer'},
         {
             block : 'font',
