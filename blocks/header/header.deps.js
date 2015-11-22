@@ -2,6 +2,6 @@
     shouldDeps: [
         'logo',
         'icon',
-        'rub'
+        'cart-preview'
     ]
 })

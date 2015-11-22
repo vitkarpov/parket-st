@@ -1,0 +1,3 @@
+block('link')(
+    js()(false)
+)

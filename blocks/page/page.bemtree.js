@@ -1,6 +1,7 @@
 block('page').content()(function() {
     return [
         {block: 'header'},
+        {block: 'nav-main'},
         {block: 'main'},
         {block: 'footer'},
         {

@@ -8,19 +8,24 @@ block('header').content()(function() {
         },
         {
             elem: 'item',
-            content: [
-                {
-                    block: 'icon',
-                    mods: {type: 'phone'}
-                },
-                '8 495 779–65–31'
-            ]
+            content: {
+                elem: 'phone',
+                content: [
+                    {
+                        block: 'icon',
+                        mix: {block: 'header', elem: 'icon'},
+                        mods: {type: 'phone'}
+                    },
+                    '8 495 779–65–31'
+                ]
+            }
         },
         {
             elem: 'item',
             content: [
                 {
                     block: 'icon',
+                    mix: {block: 'header', elem: 'icon'},
                     mods: {type: 'pin'}
                 },
                 'Адрес магазина'
@@ -28,22 +33,9 @@ block('header').content()(function() {
         },
         {
             elem: 'item',
-            content: [
-                {
-                    elem: 'price',
-                    attrs: {
-                        'data-count': '12'
-                    },
-                    content: {
-                        block: 'icon',
-                        mods: {type: 'cart'}
-                    }
-                },
-                '97 480 ',
-                {
-                    block: 'rub'
-                }
-            ]
+            content: {
+                block: 'cart-preview'
+            }
         }
     ];
 })

@@ -6,7 +6,11 @@ block('header')(
         }
     }),
 
-    elem('price')(
+    elem('icon')(
+        tag()('span')
+    ),
+
+    elem('cart')(
         tag()('span')
     )
 )

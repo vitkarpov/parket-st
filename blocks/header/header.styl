@@ -5,8 +5,11 @@
     display: inline-block
     vertical-align: middle
 
-    .icon
-      margin-right: 6px
+  &__icon
+    margin-right: 6px
+
+  &__phone
+    font-size: 1.2em
 
   &__content
     display: flex
@@ -17,25 +20,3 @@
     width: 960px
     padding: 25px 0
     margin: 0 auto
-
-  &__price
-    position: relative
-    display: inline-block
-    vertical-align: top
-    margin-right: 10px
-    margin-top: -2px
-
-    &:before
-      content: attr(data-count)
-      width: 20px
-      height: 20px
-      background-color: #8a553b
-      color: white
-      font-size: 12px
-      line-height: 20px
-      text-align: center
-      border-radius: 50%
-
-      position: absolute
-      right: 0
-      top: 8px
