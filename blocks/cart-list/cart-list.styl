@@ -1,12 +1,14 @@
 .cart-list
+  border-top: 1px solid #e4e4e4
+  border-bottom: @border-top
 
   &__item
     position: relative
     padding: 16px 10px 16px 80px
-    border-bottom: 1px solid #e4e4e4
+    border-top: 1px solid #e4e4e4
 
     &:first-child
-      border-top: @border-bottom
+      border-top: 0
 
     &:hover
       background: #fafafa

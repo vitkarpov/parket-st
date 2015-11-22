@@ -1,15 +1,27 @@
 modules.define('cart-list', ['i-bem__dom'], function(provide, BEMDOM) {
 
 provide(BEMDOM.decl('cart-list', {
-    _onRemoveClick: function(e) {
-        var close = e.currentTarget.bem('cart-list__remove');
-        var itemCurrent = close.findBlockOutside('item', 'cart-list');
+    onSetMod: {
+        'js': function() {
+            this.checkEmpty();
+        }
+    },
 
-        console.log(itemCurrent);
+    _onRemoveClick: function(e) {
+        var id = $(e.currentTarget).data('id');
+
+        this.findItemById(id).remove();
+        this.checkEmpty();
+    },
+
+    checkEmpty: function() {
+        if (!this.findElem('item').length) {
+            this.emit('empty');
+        }
     },
 
     findItemById: function(id) {
-        this.findElemInside
+        return this.findElem('item').filter('[data-id="' + id + '"]');
     }
 }, {
     live : function() {

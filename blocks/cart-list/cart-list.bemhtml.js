@@ -3,7 +3,11 @@ block('cart-list')(
 )
 
 block('cart-list').elem('item')(
-    js()(true),
+    attrs()(function() {
+        return {'data-id': this.generateId()}
+    }),
+
+    js()(),
 
     content()(function() {
         return [
@@ -14,9 +18,9 @@ block('cart-list').elem('item')(
             {
                 elem: 'remove',
                 attrs: {
-                    title: 'Удалить из Корзины'
+                    title: 'Удалить из Корзины',
+                    'data-id': this.generateId()
                 },
-                js: true,
                 content: {
                     block: 'icon',
                     mods: {type: 'close'}

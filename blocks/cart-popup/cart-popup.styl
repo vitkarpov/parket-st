@@ -1,8 +1,35 @@
 .cart-popup
-  max-width: 400px
+  width: 400px
 
   &__caption
     padding: 12px
     font-size: 11px
     text-align: center
     text-transform: uppercase
+
+  &__footer
+    padding: 16px
+    text-align: center
+
+  &__submit
+    width: 100%
+
+  &__empty
+    display: none
+
+    padding: 16px 10px
+    border-top: 1px solid #e4e4e4
+    border-bottom: @border-top
+
+    text-align: center
+
+
+.cart-popup_empty
+
+  .cart-popup__empty
+    display: block
+
+  .cart-popup__list
+  .cart-popup__caption
+  .cart-popup__footer
+    display: none

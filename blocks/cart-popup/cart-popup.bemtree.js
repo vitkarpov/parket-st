@@ -5,18 +5,28 @@ block('cart-popup').content()(function() {
             content: 'Ваша корзина'
         },
         {
-            block: 'cart-list'
+            elem: 'list',
+            content: {
+                block: 'cart-list'
+            }
         },
         {
-            elem: 'button',
+            elem: 'footer',
             content: {
                 block: 'button',
-                content: 'Оформить заказ',
+                mix: {block: 'cart-popup', elem: 'submit'},
+                text: 'Оформить заказ',
                 mods: {
                     theme: 'islands',
-                    type: 'submit'
+                    type: 'submit',
+                    size: 'm',
+                    view: 'plain'
                 }
             }
+        },
+        {
+            elem: 'empty',
+            content: 'Корзина пуста'
         }
     ];
 })
