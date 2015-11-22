@@ -21,6 +21,7 @@ block('cart-preview').content()(function() {
                 target: 'anchor',
                 theme: 'islands'
             },
+            directions: ['bottom-right'],
             content: {
                 block: 'cart-popup'
             }

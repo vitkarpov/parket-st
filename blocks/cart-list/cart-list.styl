@@ -1,0 +1,58 @@
+.cart-list
+
+  &__item
+    position: relative
+    padding: 16px 10px 16px 80px
+    border-bottom: 1px solid #e4e4e4
+
+    &:first-child
+      border-top: @border-bottom
+
+    &:hover
+      background: #fafafa
+
+    &:after
+      content: ''
+      display: block
+      clear: both
+
+  &__preview
+    float: left
+    width: 80px
+    margin-left: -80px
+
+    img
+      max-width: 60px
+      height: auto
+
+  &__content
+    padding: 0 20px
+
+  &__caption
+    line-height: 18px
+
+  &__price
+    font-weight: bold
+    font-size: 15px
+    margin: 8px 0
+
+  &__props
+    margin: 5px 0
+    font-size: 13px
+
+  &__remove
+    opacity: 0
+    position: absolute
+    right: 0
+    top: 2px
+
+    width: 32px
+    height: 32px
+    line-height: 32px
+    text-align: center
+
+    cursor: pointer
+    transition: opacity 0.2s ease
+
+    .cart-list__item:hover &
+      opacity: 1

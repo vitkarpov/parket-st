@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
+        'cart-list',
         {
             block: 'button',
             mods: {
