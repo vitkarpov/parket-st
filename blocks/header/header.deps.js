@@ -1,5 +1,7 @@
 ({
     shouldDeps: [
-        'logo'
+        'logo',
+        'icon',
+        'rub'
     ]
 })

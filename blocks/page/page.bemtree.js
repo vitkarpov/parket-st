@@ -1,3 +1,13 @@
 block('page').content()(function() {
-    return 'foo ' + this.page;
+    return [
+        {block: 'header'},
+        {block: 'main'},
+        {block: 'footer'},
+        {
+            block : 'font',
+            js: {
+                url: 'https://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic-ext'
+            }
+        }
+    ]
 });
