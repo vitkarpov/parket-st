@@ -1,5 +1,9 @@
 ({
     shouldDeps: [
-        'promo-slider'
+        'promo-slider',
+        {
+            block: 'aside',
+            mods: {type: 'main'}
+        }
     ]
 })

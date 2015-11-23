@@ -2,7 +2,10 @@ block('main').content()(function() {
     return [
         {
             elem: 'aside',
-            content: 'привет'
+            content: {
+                block: 'aside',
+                mods: {type: 'main'}
+            }
         },
         {
             elem: 'content',
