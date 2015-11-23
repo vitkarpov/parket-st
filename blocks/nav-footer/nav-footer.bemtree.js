@@ -1,6 +1,26 @@
 block('nav-footer').content()(function() {
-    return ([
-        {caption: 'Доставка и оплата'},
+    var main = ([
+        'Доставка и оплата',
+        'Вопросы и ответы',
+        'Информация',
+        'О компании',
+        'Контакты'
+    ])
+    .map(function(item) {
+        return {
+            elem: 'item',
+            content: {
+                elem: 'caption',
+                content: {
+                    block: 'link',
+                    url: '#',
+                    content: item
+                }
+            }
+        };
+    });
+
+    var sub = ([
         {caption: 'Скидки и акции'},
         {
             caption: 'Ламинат',
@@ -22,7 +42,6 @@ block('nav-footer').content()(function() {
             caption: 'Увлажнители',
             items: ['Venta']
         },
-        {caption: 'Вопросы и ответы'},
         {
             caption: 'Массивная доска',
             items: [
@@ -39,26 +58,9 @@ block('nav-footer').content()(function() {
             ]
         },
         {
-            caption: 'Стеновые панели',
-            items: [
-                'Granorte',
-                'Coswick'
-            ]
-        },
-        {
-            caption: 'Кварц-виниловые полы',
-            items: [
-                'ECOCLICK',
-                'WINEO (WITEX)',
-                'HARO'
-            ]
-        },
-        {caption: 'Контакты'},
-        {
             caption: 'Блочный паркет',
             items: ['Coswick']
         },
-        {caption: 'Информация'},
         {
             caption: 'Паркетная доска',
             items: [
@@ -81,7 +83,30 @@ block('nav-footer').content()(function() {
                 'Leonardo'
             ]
         },
-        {caption: 'О компании'},
+        {
+            caption: 'Террасная доска',
+            items: [
+                'Ideck',
+                'Ribadao',
+                'Vetedy',
+                'КОРОНА Exotic'
+            ]
+        },
+        {
+            caption: 'Стеновые панели',
+            items: [
+                'Granorte',
+                'Coswick'
+            ]
+        },
+        {
+            caption: 'Кварц-виниловые полы',
+            items: [
+                'ECOCLICK',
+                'WINEO (WITEX)',
+                'HARO'
+            ]
+        },
         {
             caption: 'Инженерная доска',
             items: [
@@ -112,7 +137,11 @@ block('nav-footer').content()(function() {
             content: item.items.map(function(item) {
                 return {
                     elem: 'brand',
-                    content: item
+                    content: {
+                        block: 'link',
+                        url: '#',
+                        content: item
+                    }
                 };
             })
         });
@@ -122,10 +151,32 @@ block('nav-footer').content()(function() {
             content: [
                 {
                     elem: 'caption',
-                    content: item.caption
+                    content: {
+                        block: 'link',
+                        url: '#',
+                        content: item.caption
+                    }
                 },
                 items
             ]
         };
     });
+
+    return [
+        {
+            elem: 'main',
+            content: main
+        },
+        {
+            elem: 'sub',
+            content: sub
+        },
+        {
+            elem: 'arrow',
+            content: {
+                block: 'icon',
+                mods: {type: 'arrow-down'}
+            }
+        }
+    ];
 })

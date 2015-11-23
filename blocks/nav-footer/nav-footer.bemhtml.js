@@ -1,6 +1,10 @@
-block('nav-footer').content()(function() {
-    return {
-        elem: 'content',
-        content: applyNext()
-    }
-})
+block('nav-footer')(
+    js()(true),
+
+    content()(function() {
+        return {
+            elem: 'content',
+            content: applyNext()
+        }
+    })
+)
