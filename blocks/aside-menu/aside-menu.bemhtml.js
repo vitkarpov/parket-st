@@ -26,6 +26,9 @@ block('aside-menu')(
                         block: 'aside-menu',
                         elem: 'popup',
                         content: this.ctx.popupItems.map(function(item) {
+                            if (Math.random() > 0.5) {
+                                return false;
+                            }
                             return {
                                 block: 'link',
                                 url: '#',
@@ -35,7 +38,7 @@ block('aside-menu')(
                                 },
                                 content: item
                             };
-                        })
+                        }).filter(Boolean)
                     }
                 }
             ]
