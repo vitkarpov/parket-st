@@ -31,13 +31,9 @@ block('aside').mod('type', 'main').content()(function() {
 
     var getItem = function(text) {
         return {
-            block: 'link',
-            mix: {
-                block: 'aside-menu',
-                elem: 'item'
-            },
-            url: '#',
-            content: text
+            elem: 'item',
+            content: text,
+            popupItems: brands
         };
     }
 
@@ -59,6 +55,7 @@ block('aside').mod('type', 'main').content()(function() {
             },
             content: {
                 block: 'aside-menu',
+                js: true,
                 content: cats.map(getItem)
             }
         },
@@ -69,6 +66,7 @@ block('aside').mod('type', 'main').content()(function() {
             },
             content: {
                 block: 'aside-menu',
+                js: true,
                 content: brands.map(getItem)
             }
         },
