@@ -2,7 +2,7 @@ block('promo-slider').content()(function() {
     return [
         {
             elem: 'item',
-            bg: '../all/dummy/promo-slider-1.jpg',
+            bg: 'http://lorempixel.com/700/500/?' + Math.random(),
             content: [
                 {
                     elem: 'caption',
@@ -16,7 +16,7 @@ block('promo-slider').content()(function() {
         },
         {
             elem: 'item',
-            bg: '../all/dummy/promo-slider-1.jpg',
+            bg: 'http://lorempixel.com/700/500/?' + Math.random(),
             content: [
                 {
                     elem: 'caption',
@@ -30,7 +30,7 @@ block('promo-slider').content()(function() {
         },
         {
             elem: 'item',
-            bg: '../all/dummy/promo-slider-1.jpg',
+            bg: 'http://lorempixel.com/700/500/?' + Math.random(),
             content: [
                 {
                     elem: 'caption',
