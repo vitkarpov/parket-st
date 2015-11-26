@@ -33,7 +33,7 @@ provide(BEMDOM.decl({ block: this.name }, {
         this.popup.setMod('visible', true);
         this._openTimer = null;
 
-        this.setMod('opened', true);
+        this.setMod('active', true);
     },
 
     _close: function() {
@@ -43,7 +43,7 @@ provide(BEMDOM.decl({ block: this.name }, {
         this.popup.setMod('visible', false);
         this._closeTimer = null;
 
-        this.setMod('opened', false);
+        this.setMod('active', false);
     }
 }))
 
