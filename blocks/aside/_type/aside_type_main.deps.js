@@ -4,6 +4,7 @@
             block: 'radio-group',
             mods : {type : 'button'}
         },
-        'aside-menu'
+        'aside-menu',
+        'aside-teaser'
     ]
 })

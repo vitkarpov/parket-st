@@ -1,0 +1,29 @@
+.aside-teaser
+  position: relative
+  padding: 125px 20px 20px 20px
+  background-color: #f7f5f2
+
+  &:before
+    content: ''
+    width: 110px
+    height: @width
+    background: url('bg.svg') center center no-repeat
+    position: absolute
+    top: 15px
+    left: 50%
+    margin-left: -0.5 * @width
+
+  &__caption
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 23px;
+    margin: 10px 0
+
+  &__items
+    font-size: 0
+
+  &__item
+    display: inline-block
+    width: 50%
+    margin: 5px 0
+    font-size: 14px

@@ -71,6 +71,12 @@ block('aside').mod('type', 'main').content()(function() {
                 block: 'aside-menu',
                 content: brands.map(getItem)
             }
+        },
+        {
+            elem: 'teaser',
+            content: {
+                block: 'aside-teaser'
+            }
         }
     ]
 })
