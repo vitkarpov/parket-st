@@ -1,0 +1,41 @@
+.advantages
+  display: flex
+  justify-content: space-between
+
+  &__item
+    box-sizing: border-box
+    position: relative
+    display: inline-block
+    width: 25%
+    padding: 115px 10px 0 0
+
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 120px
+      height: 100px
+      background-position: left bottom
+      background-repeat: no-repeat
+
+    &_icon_options:before
+      background-image: url('options.svg')
+
+    &_icon_prices:before
+      background-image: url('prices.png')
+
+    &_icon_consult:before
+      background-image: url('consult.svg')
+
+    &_icon_delivery:before
+      background-image: url('delivery.png')
+
+  &__caption
+    font-weight: bold
+    font-size: 16px
+    line-height: 23px
+
+  &__text
+    margin: 5px 0
+    line-height: 18px

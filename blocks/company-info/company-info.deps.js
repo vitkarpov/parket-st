@@ -1,7 +1,7 @@
 ({
     shouldDeps: [
         'image',
-        'addess-pin',
+        'address-pin',
         'advantages'
     ]
 })

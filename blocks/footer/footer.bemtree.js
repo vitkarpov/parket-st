@@ -1,7 +1,12 @@
 block('footer').content()(function() {
     return [
         {
-            elem: 'creator',
+            block: 'link',
+            url: 'http://www.studio-v.ru/',
+            mix: {
+                block: this.block,
+                elem: 'creator'
+            },
             content: 'Создание сайта — Студия «Восхождение»'
         },
         {

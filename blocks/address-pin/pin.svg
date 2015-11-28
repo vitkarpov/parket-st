@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Avocode 2.4.5 - http://avocode.com -->
+<svg height="68" width="48" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 68">
+    <path stroke-linejoin="miter" stroke-linecap="butt" stroke-width="2" stroke="#907144" fill="none" fill-rule="evenodd" d="M 24.01 1 C 11.04 1 1 11.37 1 24.16 C 1 28.57 2.33 32.67 4.47 36.18 L 4.48 36.19 L 4.98 36.93 C 5.04 37.02 5.1 37.11 5.16 37.19 L 24.01 66.16 L 42.52 37.19 C 42.57 37.11 42.3 37.02 42.35 36.93 L 42.9 36.19 L 43 36.18 C 45.14 32.67 46.65 28.57 46.65 24.16 C 46.65 11.37 36.98 1 24.01 1 Z M 32.59 24.5 C 32.59 29.34 28.67 33.26 23.83 33.26 C 18.99 33.26 15.06 29.34 15.06 24.5 C 15.06 19.66 18.99 15.73 23.83 15.73 C 28.67 15.73 32.59 19.66 32.59 24.5 Z M 32.59 24.5" />
+</svg>
