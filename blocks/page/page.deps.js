@@ -5,7 +5,8 @@
         {
             block: 'main',
             mods: {
-                index: true
+                index: true,
+                'catalog-all': true
             }
         },
         'nav-footer',

@@ -8,7 +8,7 @@ provide(BEMDOM.decl('nav-footer', {
     },
 
     _onClickArrow: function() {
-        this.toggleMod('contacted');
+        this.toggleMod('contracted');
     }
 }));
 
