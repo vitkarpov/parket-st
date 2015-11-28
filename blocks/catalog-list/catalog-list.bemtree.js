@@ -53,12 +53,19 @@ block('catalog-list').content()(function() {
         }
     ])
     .map(function(item) {
+        var mods = {};
+
+        if (item.prices.old) {
+            mods['old-price'] = true;
+        }
+
         return {
             block: 'catalog-item',
             mix: {
                 block: 'catalog-list',
                 elem: 'item'
             },
+            mods: mods,
             content: item
         };
     })

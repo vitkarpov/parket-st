@@ -1,6 +1,11 @@
 ({
     shouldDeps: [
         'image',
-        'rub'
+        'rub',
+        'link',
+        {
+            block: 'button',
+            mods: {theme: 'parket', view: 'action', type: 'submit'}
+        }
     ]
 })

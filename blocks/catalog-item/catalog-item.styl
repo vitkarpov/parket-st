@@ -9,10 +9,10 @@
       content: ''
       display: none
       position: absolute
-      left: -10px
-      top: -10px
-      right: -10px
-      bottom: -10px
+      left: -16px
+      top: @left
+      right: @left
+      bottom: @left
       z-index: -1
       box-shadow: 0 4px 12px rgba(0, 0, 0, .2)
 
@@ -38,6 +38,10 @@
     line-height: 18px
 
   &__prices
+    font-size: 15px
+    height: 15px
+
+  &_old-price &__prices
     font-weight: 500
     height: 25px
     padding-top: 20px
@@ -47,6 +51,8 @@
 
   &__current
     display: inline-block
+
+  &_old-price &__current
     font-size: 21px
     line-height: 25px
 
@@ -54,7 +60,7 @@
     display: inline-block
     vertical-align: top
     position: relative
-    top: -10px
+    top: -16px
     margin-left: 4px
     font-size: 15px
     line-height: 20px
@@ -64,9 +70,9 @@
     display: none
     position: absolute
     top: 100%
-    left: -10px
-    right: -10px
-    padding: 0 10px 10px 10px
+    left: -16px
+    right: @left
+    padding: 0 16px 16px 16px
     z-index: 1
     box-shadow: 0 4px 22px rgba(0, 0, 0, .2)
     background: white
@@ -85,4 +91,14 @@
 
   &__extra-i
     position: relative
+    margin-top: -15px
+
+  &_old-price &__extra-i
     margin-top: -45px
+
+  &__button
+    width: 100%
+    margin-top: 12px
+
+  &__link
+    display: block

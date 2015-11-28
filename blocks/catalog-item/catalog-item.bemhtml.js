@@ -6,7 +6,6 @@ block('catalog-item')(
         if (cnt.props) {
             props.push({
                 block: 'props',
-                mods: { catalog: true },
                 content: cnt.props.map(function(item) {
                     return {
                         elem: 'item',
@@ -20,19 +19,32 @@ block('catalog-item')(
             elem: 'content',
             content: [
                 {
-                    elem: 'preview'
-                },
-                {
-                    elem: 'caption',
-                    content: cnt.caption
-                },
-                {
-                    elem: 'prices',
+                    block: 'link',
+                    url: '#',
                     mix: {
-                        block: this.name,
-                        elem: 'main-prices'
+                        block: this.block,
+                        elem: 'link'
                     },
-                    content: cnt.prices
+                    content: [
+                        {
+                            block: this.block,
+                            elem: 'preview'
+                        },
+                        {
+                            block: this.block,
+                            elem: 'caption',
+                            content: cnt.caption
+                        },
+                        {
+                            block: this.block,
+                            elem: 'prices',
+                            mix: {
+                                block: this.block,
+                                elem: 'main-prices'
+                            },
+                            content: cnt.prices
+                        }
+                    ]
                 },
                 {
                     elem: 'extra',
@@ -41,6 +53,19 @@ block('catalog-item')(
                         {
                             elem: 'prices',
                             content: cnt.prices
+                        },
+                        {
+                            block: 'button',
+                            mix: {
+                                block: this.block,
+                                elem: 'button'
+                            },
+                            mods: {
+                                theme: 'parket',
+                                view: 'action',
+                                type: 'submit'
+                            },
+                            text: 'В корзину'
                         }
                     ]
                 }
@@ -48,12 +73,20 @@ block('catalog-item')(
         }
     }),
 
-    elem('extra').content()(function() {
-        return {
-            elem: 'extra-i',
-            content: applyNext()
-        };
-    }),
+    elem('extra')(
+        tag()('form'),
+
+        attrs()({ action: '#' }),
+
+        content()(function() {
+            return {
+                elem: 'extra-i',
+                content: applyNext()
+            };
+        })
+    ),
+
+    elem('extra-i').tag()('fieldset'),
 
     elem('preview').content()(function() {
         var n = Math.floor(Math.random() * 4) + 1;
