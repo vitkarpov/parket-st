@@ -4,6 +4,7 @@
         {
             block: 'aside',
             mods: {type: 'main'}
-        }
+        },
+        'catalog-list'
     ]
 })

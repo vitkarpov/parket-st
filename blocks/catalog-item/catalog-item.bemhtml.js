@@ -1,0 +1,97 @@
+block('catalog-item')(
+    content()(function() {
+        var cnt = applyNext();
+        var props = [];
+
+        if (cnt.props) {
+            props.push({
+                block: 'props',
+                mods: { catalog: true },
+                content: cnt.props.map(function(item) {
+                    return {
+                        elem: 'item',
+                        content: item
+                    };
+                })
+            });
+        }
+
+        return {
+            elem: 'content',
+            content: [
+                {
+                    elem: 'preview'
+                },
+                {
+                    elem: 'caption',
+                    content: cnt.caption
+                },
+                {
+                    elem: 'prices',
+                    mix: {
+                        block: this.name,
+                        elem: 'main-prices'
+                    },
+                    content: cnt.prices
+                },
+                {
+                    elem: 'extra',
+                    content: [
+                        props,
+                        {
+                            elem: 'prices',
+                            content: cnt.prices
+                        }
+                    ]
+                }
+            ]
+        }
+    }),
+
+    elem('extra').content()(function() {
+        return {
+            elem: 'extra-i',
+            content: applyNext()
+        };
+    }),
+
+    elem('preview').content()(function() {
+        var n = Math.floor(Math.random() * 4) + 1;
+
+        return {
+            block: 'image',
+            url: '../all/dummy/catalog-item-' + n + '.jpg'
+        }
+    }),
+
+    elem('prices').content()(function() {
+        var cnt = applyNext();
+        var old = cnt.old;
+        var current = cnt.current;
+
+        var res = [
+            {
+                elem: 'current',
+                content: [
+                    current,
+                    {
+                        block: 'rub'
+                    }
+                ]
+            }
+        ];
+        if (old) {
+            res.push({
+                elem: 'old',
+                content: [
+                    old,
+                    {
+                        block: 'rub'
+                    }
+                ]
+            });
+        }
+
+        return res;
+    })
+)

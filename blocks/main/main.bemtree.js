@@ -12,6 +12,9 @@ block('main').content()(function() {
             content: [
                 {
                     block: 'promo-slider'
+                },
+                {
+                    block: 'catalog-list'
                 }
             ]
         }
