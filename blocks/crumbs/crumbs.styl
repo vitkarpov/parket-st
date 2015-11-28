@@ -1,0 +1,27 @@
+.crumbs
+  position: relative
+  padding-left: 20px
+
+  &__root
+    position: absolute
+    left: 0
+    top: 0
+
+  &__item
+    position: relative
+    display: inline-block
+    margin-left: 21px
+    font-size: 12px
+
+    &:before
+      content: ''
+      position: absolute
+      width: 6px
+      height: 6px
+      left: -14px
+      top: 50%
+      margin-top: -3px
+      background: url('tiny-arrow.svg') no-repeat
+
+    .link
+      color: #9b9b9b

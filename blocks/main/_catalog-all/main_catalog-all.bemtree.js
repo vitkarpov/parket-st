@@ -5,10 +5,7 @@ block('main').mod('catalog-all', true).content()(function() {
         content: [
             {
                 block: 'crumbs',
-                mix: {
-                    block: this.block,
-                    elem: 'crumbs'
-                }
+                items: ['Каталог']
             },
             {
                 elem: 'caption',

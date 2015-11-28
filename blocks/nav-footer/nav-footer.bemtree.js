@@ -34,7 +34,7 @@ block('nav-footer').content()(function() {
                 {
                     block: 'catalog-all',
                     mix: {
-                        block: this.block,
+                        block: 'nav-footer',
                         elem: 'catalog'
                     }
                 },
