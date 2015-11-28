@@ -2,7 +2,12 @@
     shouldDeps: [
         'header',
         'nav-main',
-        'main',
+        {
+            block: 'main',
+            mods: {
+                index: true
+            }
+        },
         'nav-footer',
         'footer',
         'font'

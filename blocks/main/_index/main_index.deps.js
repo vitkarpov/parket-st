@@ -5,6 +5,7 @@
             block: 'aside',
             mods: {type: 'main'}
         },
-        'catalog-list'
+        'catalog-list',
+        'company-info'
     ]
 })
