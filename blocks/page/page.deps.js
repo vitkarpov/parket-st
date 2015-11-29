@@ -6,7 +6,8 @@
             block: 'main',
             mods: {
                 index: true,
-                'catalog-all': true
+                'catalog-all': true,
+                catalog: true
             }
         },
         'nav-footer',

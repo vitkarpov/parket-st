@@ -1,0 +1,7 @@
+({
+    shouldDeps: [
+        'crumbs',
+        'filter',
+        'catalog'
+    ]
+})
