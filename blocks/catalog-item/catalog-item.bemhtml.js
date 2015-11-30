@@ -1,4 +1,12 @@
 block('catalog-item')(
+    attrs()(function() {
+        var cnt = this.ctx.content;
+
+        return {
+            title: cnt.title || cnt.caption
+        };
+    }),
+
     content()(function() {
         var cnt = applyNext();
         var props = [];

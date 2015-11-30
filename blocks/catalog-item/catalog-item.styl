@@ -35,16 +35,24 @@
 
   &__caption
     margin: 8px 0
-    line-height: 18px
+    line-height: 1.4
+    max-height: 2.8em
+    overflow: hidden
+    text-overflow: ellipsis
+
+  &_big &__caption
+    font-size: 18px
 
   &__prices
     font-size: 15px
     height: 15px
     font-weight: 500
+    margin: 12px 0
 
   &_old-price &__prices
     height: 25px
     padding-top: 20px
+    margin-top: 0
 
   &:hover &__main-prices
     visibility: hidden
@@ -98,7 +106,6 @@
 
   &__button
     width: 100%
-    margin-top: 12px
 
   &__link
     display: block

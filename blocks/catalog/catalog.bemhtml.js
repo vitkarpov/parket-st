@@ -1,0 +1,3 @@
+block('catalog')(
+    js()(true)
+)

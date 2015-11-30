@@ -1,0 +1,27 @@
+.catalog
+  position: relative
+  margin: 0 -10px
+
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background: white
+    opacity: 0.5
+    z-index: 100
+
+  &_loaded:before
+    display: none
+
+  &__item
+    display: inline-block
+    vertical-align: top
+    width: 180px
+    height: 255px
+
+    &_big
+      width: 360px
+      height: 510px
