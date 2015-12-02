@@ -15,27 +15,31 @@ module.exports = function (grunt) {
             }
         },
         ftp_push: {
-            project: {
+            deploy: {
                 options: {
                     host: "www.wemakesites.ru",
                     port: 21,
                     username: "parket",
                     password: "parket-root",
-                    dest: "/pages"
+                    dest: "/"
                 },
-                files: [{
-                    expand: true,
-                    cwd: ".",
-                    src: [
-                        "*.html",
-                        "*.min.css",
-                        "*.min.js",
-                        "dummy/**"
-                    ]
-                }]
-            },
-            progress: {
-                files: ['index.html']
+                files: [
+                    {
+                        expand: true,
+                        cwd: "dist",
+                        src: [
+                            "*.html",
+                            "*.min.css",
+                            "*.min.js",
+                            "dummy/**"
+                        ],
+                        dest: 'pages'
+                    },
+                    {
+                        expand: true,
+                        src: "index.html"
+                    }
+                ]
             }
         }
     });
