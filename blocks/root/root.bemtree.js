@@ -1,5 +1,5 @@
 block('root').replace()(function() {
-    this.page = this.ctx.page.replace('.', '');
+    this.page = this.ctx.page;
 
     return {
         block: 'page',

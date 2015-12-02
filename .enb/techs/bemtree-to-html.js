@@ -31,7 +31,7 @@ module.exports = require('enb/lib/build-flow').create()
         var BEMTREE = require(bemtreeFilename).BEMTREE,
             BEMHTML = require(bemhtmlFilename).BEMHTML;
 
-        var page = path.basename(bemtreeFilename, 'bemtree.js');
+        var page = path.basename(bemtreeFilename, '.bemtree.tmp.js')
 
         return BEMHTML.apply(BEMTREE.apply({ block: 'root', page: page }));
     })

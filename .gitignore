@@ -5,15 +5,9 @@ node_modules/
 .project
 .svn
 npm-debug.log
+dist/*
+!dist/dummy
 
 # bem
 .bem/cache/
 .enb/tmp/
-*bundles*/*/*.*
-!*bundles*/*/*.bemdecl.js
-*bundles*/*/*.bemhtml.bemdecl.js
-!*bundles*/.bem/*
-*pages*/*/*.*
-!*pages*/*/*.bemdecl.js
-*pages*/*/*.bemhtml.bemdecl.js
-!*pages*/.bem/*

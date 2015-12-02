@@ -33,85 +33,123 @@ var techs = {
         'blocks'
     ];
 
+var fs = require('fs');
+var path = require('path');
+var pathToDist = path.resolve('dist');
+
+var PAGES = [
+    'index',
+    'catalog-all',
+    'catalog'
+];
+
+fs.existsSync(pathToDist) || fs.mkdirSync(pathToDist);
+
+PAGES.forEach(function(page) {
+    var bemdecl = path.join(pathToDist, page + '.bemdecl.js');
+    var rootDecl = 'exports.blocks = [{name: "root"}];';
+
+    fs.existsSync(bemdecl) || fs.writeFileSync(bemdecl, rootDecl);
+});
+
 module.exports = function(config) {
     var isProd = process.env.YENV === 'production';
 
-    // Предоставляем BEMDECL-файлы из бандлов (2)
-    config.nodes('pages/*', function (nodeConfig) {
-        var node = path.basename(nodeConfig.getPath());
-
-        if (node === 'all') return;
-
+    config.nodes('dist', function (nodeConfig) {
         nodeConfig.addTechs([
             // essential
-            [enbBemTechs.levels, { levels: levels }],
-            [techs.fileProvider, { target: '?.bemdecl.js' }],
-            [enbBemTechs.deps],
-            [enbBemTechs.files],
-
-            // bemtree
-            [techs.bemtree, { sourceSuffixes: ['bemtree', 'bemtree.js'] }],
-
-            // bemhtml
-            [techs.bemhtml, { sourceSuffixes: ['bemhtml', 'bemhtml.js'] }],
-
-            // html
-            [techs.bemtreeToHtml]
+            [enbBemTechs.levels, { levels: levels }]
         ]);
 
-        nodeConfig.addTargets(['?.html']);
-    });
+        PAGES.forEach(function(page) {
+            nodeConfig.addTechs([
+                [techs.fileProvider, { target: page + '.bemdecl.js' }],
+                [enbBemTechs.deps, {
+                    bemdeclFile: page + '.bemdecl.js',
+                    target: page + '.deps.tmp.js'
+                }],
+                [enbBemTechs.files, {
+                    depsFile: page + '.deps.tmp.js',
+                    filesTarget: page + '.tmp.files',
+                    dirsTarget: page + '.tmp.dirs'
+                }],
 
-    config.nodes('pages/all', function(nodeConfig) {
-        var dir = path.dirname(nodeConfig.getPath()),
-            bundles = fs.readdirSync(dir),
-            bemdeclFiles = [];
+                // bemtree
+                [techs.bemtree, {
+                    sourceSuffixes: ['bemtree.js'],
+                    target: page + '.bemtree.tmp.js',
+                    filesTarget: page + '.tmp.files'
+                }],
 
-        // Копируем BEMDECL-файлы в merged-бандл (3)
-        bundles.forEach(function (bundle) {
-            if (bundle === 'all') return;
+                // bemhtml
+                [techs.bemhtml, {
+                    sourceSuffixes: ['bemhtml.js'],
+                    target: page + '.bemhtml.tmp.js',
+                    filesTarget: page + '.tmp.files'
+                }],
 
-            var node = path.join(dir, bundle),
-                target = bundle + '.bemdecl.js';
+                // html
+                [techs.bemtreeToHtml, {
+                    bemhtmlTarget: page + '.bemhtml.tmp.js',
+                    bemtreeTarget: page + '.bemtree.tmp.js',
+                    destTarget: page + '.html'
+                }]
+            ]);
 
-            nodeConfig.addTech([enbBemTechs.provideBemdecl, {
-                node: node,
-                target: target
-            }]);
-
-            bemdeclFiles.push(target);
+            nodeConfig.addTargets([page + '.html']);
         });
-
-        // Объединяем скопированные BEMDECL-файлы (4)
-        nodeConfig.addTech([enbBemTechs.mergeBemdecl, { sources: bemdeclFiles }]);
-
-        nodeConfig.addTechs([
-            // essential
-            [enbBemTechs.levels, { levels: levels }],
-            [enbBemTechs.deps],
-            [enbBemTechs.files],
-
-            // css
-            [techs.stylus, {
-                target: '?.css',
-                sourcemap: !isProd,
-                autoprefixer: {
-                    browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%']
-                }
-            }],
-
-            // js
-            [techs.browserJs, { includeYM: true }],
-            [techs.fileMerge, {
-                target: '?.js',
-                sources: ['?.browser.js']
-            }],
-
-            // borschik
-            [techs.borschik, { source: '?.js', target: '?.min.js', minify: isProd }],
-            [techs.borschik, { source: '?.css', target: '?.min.css', tech: 'cleancss', minify: isProd }]
-        ]);
-
-        nodeConfig.addTargets(['?.min.css', '?.min.js']);
     });
+
+    // config.nodes('pages/all', function(nodeConfig) {
+    //     var dir = path.dirname(nodeConfig.getPath()),
+    //         bundles = fs.readdirSync(dir),
+    //         bemdeclFiles = [];
+
+    //     // Копируем BEMDECL-файлы в merged-бандл (3)
+    //     bundles.forEach(function (bundle) {
+    //         if (bundle === 'all') return;
+
+    //         var node = path.join(dir, bundle),
+    //             target = bundle + '.bemdecl.js';
+
+    //         nodeConfig.addTech([enbBemTechs.provideBemdecl, {
+    //             node: node,
+    //             target: target
+    //         }]);
+
+    //         bemdeclFiles.push(target);
+    //     });
+
+    //     // Объединяем скопированные BEMDECL-файлы (4)
+    //     nodeConfig.addTech([enbBemTechs.mergeBemdecl, { sources: bemdeclFiles }]);
+
+    //     nodeConfig.addTechs([
+    //         // essential
+    //         [enbBemTechs.levels, { levels: levels }],
+    //         [enbBemTechs.deps],
+    //         [enbBemTechs.files],
+
+    //         // css
+    //         [techs.stylus, {
+    //             target: '?.css',
+    //             sourcemap: !isProd,
+    //             autoprefixer: {
+    //                 browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%']
+    //             }
+    //         }],
+
+    //         // js
+    //         [techs.browserJs, { includeYM: true }],
+    //         [techs.fileMerge, {
+    //             target: '?.js',
+    //             sources: ['?.browser.js']
+    //         }],
+
+    //         // borschik
+    //         [techs.borschik, { source: '?.js', target: '?.min.js', minify: isProd }],
+    //         [techs.borschik, { source: '?.css', target: '?.min.css', tech: 'cleancss', minify: isProd }]
+    //     ]);
+
+    //     nodeConfig.addTargets(['?.min.css', '?.min.js']);
+    // });
 };
