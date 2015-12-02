@@ -4,7 +4,7 @@ block('header').content()(function() {
             elem: 'item',
             content: {
                 block: 'logo',
-                main: this.page === 'welcome'
+                main: this.page === 'home'
             }
         },
         {

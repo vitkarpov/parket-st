@@ -5,7 +5,7 @@
         {
             block: 'main-content',
             mods: {
-                welcome: true,
+                home: true,
                 'catalog-all': true,
                 catalog: true
             }
