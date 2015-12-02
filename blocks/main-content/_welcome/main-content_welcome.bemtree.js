@@ -1,4 +1,4 @@
-block('main').mod('index', true).content()(function() {
+block('main-content').mod('welcome', true).content()(function() {
     return [
         {
             block: 'page',

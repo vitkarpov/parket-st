@@ -1,3 +1,3 @@
 block('button')(
-    js()(true)
+    js()(false)
 )

@@ -33,19 +33,8 @@ var techs = {
         'blocks'
     ];
 
-var fs = require('fs');
-var path = require('path');
-var pathToDist = path.resolve('dist');
-
 var PROJECT = 'parket';
 var PAGES = JSON.parse(fs.readFileSync('pages.json', 'utf8'));
-
-PAGES.forEach(function(page) {
-    var bemdecl = path.join(pathToDist, page + '.bemdecl.js');
-    var rootDecl = 'exports.blocks = [{"name": "root"}];';
-
-    fs.existsSync(bemdecl) || fs.writeFileSync(bemdecl, rootDecl);
-});
 
 module.exports = function(config) {
     var isProd = process.env.YENV === 'production';
@@ -96,7 +85,7 @@ module.exports = function(config) {
         nodeConfig.addTechs([
             // css
             [techs.stylus, {
-                filesTarget: 'index.tmp.files',
+                filesTarget: PAGES[0] + '.tmp.files',
                 target: PROJECT + '.css',
                 sourcemap: !isProd,
                 autoprefixer: {
@@ -106,7 +95,7 @@ module.exports = function(config) {
 
             // js
             [techs.browserJs, {
-                filesTarget: 'index.tmp.files',
+                filesTarget: PAGES[0] + '.tmp.files',
                 target: PROJECT + '.js',
                 includeYM: true
             }],

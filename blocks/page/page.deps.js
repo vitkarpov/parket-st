@@ -3,9 +3,9 @@
         'header',
         'nav-main',
         {
-            block: 'main',
+            block: 'main-content',
             mods: {
-                index: true,
+                welcome: true,
                 'catalog-all': true,
                 catalog: true
             }

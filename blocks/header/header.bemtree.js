@@ -3,7 +3,8 @@ block('header').content()(function() {
         {
             elem: 'item',
             content: {
-                block: 'logo'
+                block: 'logo',
+                main: this.page === 'welcome'
             }
         },
         {

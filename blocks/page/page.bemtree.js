@@ -7,7 +7,7 @@ block('page').content()(function() {
         {block: 'header'},
         {block: 'nav-main'},
         {
-            block: 'main',
+            block: 'main-content',
             mods: mods
         },
         {block: 'nav-footer'},

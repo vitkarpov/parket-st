@@ -1,4 +1,4 @@
-block('main').mod('catalog', true).content()(function() {
+block('main-content').mod('catalog', true).content()(function() {
     return {
         block: 'page',
         elem: 'wrapper',
