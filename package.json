@@ -12,13 +12,15 @@
     "enb-bemxjst": "tadatuta/enb-bemxjst#a2c7072ba575652393ea7d9d04fbd3419e0a0af4",
     "enb-borschik": "^2.1.0",
     "enb-js": "^1.1.0",
-    "enb-stylus": "^2.2.0"
+    "enb-stylus": "^2.2.0",
+    "grunt-ftp-push": "^0.4.3",
+    "grunt-prettify": "^0.4.0"
   },
   "scripts": {
-    "start": "enb server",
-    "make": "enb make",
-    "build": "YENV=production enb make",
-    "postinstall": "npm run deps",
+    "start": "node .enb/prepare.js && enb server",
+    "build": "node .enb/prepare.js && YENV=production enb make",
+    "clean": "cd dist && rm -f *.css *.js *.html *.map && cd -",
+    "deploy": "npm run clean && npm run build && grunt deploy",
     "deps": "bower i"
   },
   "private": true
