@@ -1,11 +1,4 @@
 {
-  "author": "Vladimir Grinenko",
-  "name": "bem-bemtree-static-project-stub",
-  "version": "1.4.0",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/tadatuta/bem-bemtree-static-project-stub.git"
-  },
   "engines": {
     "node": ">=0.12"
   },
@@ -24,6 +17,7 @@
   "scripts": {
     "start": "enb server",
     "make": "enb make",
+    "build": "YENV=production enb make",
     "postinstall": "npm run deps",
     "deps": "bower i"
   },

@@ -37,17 +37,12 @@ var fs = require('fs');
 var path = require('path');
 var pathToDist = path.resolve('dist');
 
-var PAGES = [
-    'index',
-    'catalog-all',
-    'catalog'
-];
-
-fs.existsSync(pathToDist) || fs.mkdirSync(pathToDist);
+var PROJECT = 'parket';
+var PAGES = JSON.parse(fs.readFileSync('pages.json', 'utf8'));
 
 PAGES.forEach(function(page) {
     var bemdecl = path.join(pathToDist, page + '.bemdecl.js');
-    var rootDecl = 'exports.blocks = [{name: "root"}];';
+    var rootDecl = 'exports.blocks = [{"name": "root"}];';
 
     fs.existsSync(bemdecl) || fs.writeFileSync(bemdecl, rootDecl);
 });
@@ -57,7 +52,6 @@ module.exports = function(config) {
 
     config.nodes('dist', function (nodeConfig) {
         nodeConfig.addTechs([
-            // essential
             [enbBemTechs.levels, { levels: levels }]
         ]);
 
@@ -76,14 +70,14 @@ module.exports = function(config) {
 
                 // bemtree
                 [techs.bemtree, {
-                    sourceSuffixes: ['bemtree.js'],
+                    sourceSuffixes: ['bemtree', 'bemtree.js'],
                     target: page + '.bemtree.tmp.js',
                     filesTarget: page + '.tmp.files'
                 }],
 
                 // bemhtml
                 [techs.bemhtml, {
-                    sourceSuffixes: ['bemhtml.js'],
+                    sourceSuffixes: ['bemhtml', 'bemhtml.js'],
                     target: page + '.bemhtml.tmp.js',
                     filesTarget: page + '.tmp.files'
                 }],
@@ -98,58 +92,30 @@ module.exports = function(config) {
 
             nodeConfig.addTargets([page + '.html']);
         });
+
+        nodeConfig.addTechs([
+            // css
+            [techs.stylus, {
+                filesTarget: 'index.tmp.files',
+                target: PROJECT + '.css',
+                sourcemap: !isProd,
+                autoprefixer: {
+                    browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%']
+                }
+            }],
+
+            // js
+            [techs.browserJs, {
+                filesTarget: 'index.tmp.files',
+                target: PROJECT + '.js',
+                includeYM: true
+            }],
+
+            // borschik
+            [techs.borschik, { source: PROJECT + '.js', target: PROJECT + '.min.js', minify: isProd }],
+            [techs.borschik, { source: PROJECT + '.css', target: PROJECT + '.min.css', tech: 'cleancss', minify: isProd }]
+        ]);
+
+        nodeConfig.addTargets([PROJECT + '.min.css', PROJECT + '.min.js']);
     });
-
-    // config.nodes('pages/all', function(nodeConfig) {
-    //     var dir = path.dirname(nodeConfig.getPath()),
-    //         bundles = fs.readdirSync(dir),
-    //         bemdeclFiles = [];
-
-    //     // Копируем BEMDECL-файлы в merged-бандл (3)
-    //     bundles.forEach(function (bundle) {
-    //         if (bundle === 'all') return;
-
-    //         var node = path.join(dir, bundle),
-    //             target = bundle + '.bemdecl.js';
-
-    //         nodeConfig.addTech([enbBemTechs.provideBemdecl, {
-    //             node: node,
-    //             target: target
-    //         }]);
-
-    //         bemdeclFiles.push(target);
-    //     });
-
-    //     // Объединяем скопированные BEMDECL-файлы (4)
-    //     nodeConfig.addTech([enbBemTechs.mergeBemdecl, { sources: bemdeclFiles }]);
-
-    //     nodeConfig.addTechs([
-    //         // essential
-    //         [enbBemTechs.levels, { levels: levels }],
-    //         [enbBemTechs.deps],
-    //         [enbBemTechs.files],
-
-    //         // css
-    //         [techs.stylus, {
-    //             target: '?.css',
-    //             sourcemap: !isProd,
-    //             autoprefixer: {
-    //                 browsers: ['ie >= 10', 'last 2 versions', 'opera 12.1', '> 2%']
-    //             }
-    //         }],
-
-    //         // js
-    //         [techs.browserJs, { includeYM: true }],
-    //         [techs.fileMerge, {
-    //             target: '?.js',
-    //             sources: ['?.browser.js']
-    //         }],
-
-    //         // borschik
-    //         [techs.borschik, { source: '?.js', target: '?.min.js', minify: isProd }],
-    //         [techs.borschik, { source: '?.css', target: '?.min.css', tech: 'cleancss', minify: isProd }]
-    //     ]);
-
-    //     nodeConfig.addTargets(['?.min.css', '?.min.js']);
-    // });
 };

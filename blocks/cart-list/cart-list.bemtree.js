@@ -3,7 +3,7 @@ block('cart-list').content()(function() {
         {
             caption: 'Массивная доска Green Line Дуб Милан',
             price: '80 661',
-            src: '../all/dummy/cart-preview-1.jpg',
+            src: 'dummy/cart-preview-1.jpg',
             list: [
                 '15',
                 '34,02',
@@ -13,7 +13,7 @@ block('cart-list').content()(function() {
         {
             caption: 'Массивная доска Coswick Дуб Молочный шоколад с мраморной крошкой',
             price: '54 432',
-            src: '../all/dummy/cart-preview-2.jpg',
+            src: 'dummy/cart-preview-2.jpg',
             list: [
                 '8',
                 '18,14',
@@ -23,7 +23,7 @@ block('cart-list').content()(function() {
         {
             caption: 'Массивная доска Green Line Дуб Венеция',
             price: '68 856',
-            src: '../all/dummy/cart-preview-3.jpg',
+            src: 'dummy/cart-preview-3.jpg',
             list: [
                 '11',
                 '24,95',

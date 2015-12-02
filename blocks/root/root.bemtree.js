@@ -5,11 +5,11 @@ block('root').replace()(function() {
         block: 'page',
         title: 'Паркет СТ',
         head: [
-            { elem: 'css', url: '../all/all.min.css' }
+            { elem: 'css', url: 'parket.min.css' }
         ],
         scripts: [
             { elem: 'js', url: 'https://yastatic.net/jquery/2.1.4/jquery.min.js' },
-            { elem: 'js', url: '../all/all.min.js' }
+            { elem: 'js', url: 'parket.min.js' }
         ]
     };
 });

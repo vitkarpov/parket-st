@@ -101,7 +101,7 @@ block('catalog-item')(
 
         return {
             block: 'image',
-            url: '../all/dummy/catalog-item-' + n + '.jpg'
+            url: 'dummy/catalog-item-' + n + '.jpg'
         }
     }),
 
