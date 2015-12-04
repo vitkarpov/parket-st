@@ -4,11 +4,21 @@
         'nav-main',
         {
             block: 'main-content',
-            mods: {
-                home: true,
-                'catalog-all': true,
-                catalog: true
-            }
+            mods: (function() {
+                var mods = {};
+
+                ([
+                    "home",
+                    "catalog-all",
+                    "catalog",
+                    "about"
+                ])
+                .forEach(function(page) {
+                    mods[page] = true;
+                });
+
+                return mods;
+            }())
         },
         'nav-footer',
         'footer',

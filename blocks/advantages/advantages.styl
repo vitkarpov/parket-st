@@ -1,6 +1,14 @@
 .advantages
-  display: flex
-  justify-content: space-between
+
+  &__caption
+    font-weight: bold
+    font-size: 22px
+    line-height: 26px
+    margin-bottom: 24px
+
+  &__items
+    display: flex
+    justify-content: space-between
 
   &__item
     box-sizing: border-box
@@ -31,7 +39,7 @@
     &_icon_delivery:before
       background-image: url('delivery.png')
 
-  &__caption
+  &__item-caption
     font-weight: bold
     font-size: 16px
     line-height: 23px

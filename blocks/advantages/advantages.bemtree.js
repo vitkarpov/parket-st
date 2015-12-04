@@ -1,5 +1,5 @@
 block('advantages').content()(function() {
-    return ([
+    var items = ([
         {
             icon: 'options',
             caption: 'Большой выбор',
@@ -27,7 +27,7 @@ block('advantages').content()(function() {
             mods: {icon: item.icon},
             content: [
                 {
-                    elem: 'caption',
+                    elem: 'item-caption',
                     content: item.caption
                 },
                 {
@@ -36,5 +36,22 @@ block('advantages').content()(function() {
                 }
             ]
         };
-    })
+    });
+
+    return {
+        block: 'page',
+        elem: 'wrapper',
+        content: [
+            {
+                block: this.block,
+                elem: 'caption',
+                content: 'Наши преимущества'
+            },
+            {
+                block: this.block,
+                elem: 'items',
+                content: items
+            }
+        ]
+    };
 })
