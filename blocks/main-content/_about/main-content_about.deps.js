@@ -4,9 +4,20 @@
         {
             block: 'about',
             mods: {
-                'img-right': true
+                'img': 'left'
             }
         },
-        'advantages'
+        {
+            block: 'about',
+            mods: {
+                'img': 'right'
+            }
+        },
+        {
+            block: 'advantages',
+            mods: {
+                'bright': true
+            }
+        }
     ]
 })
