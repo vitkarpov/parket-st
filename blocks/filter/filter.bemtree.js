@@ -16,6 +16,18 @@ block('filter').content()(function() {
                     block: 'price-slider'
                 }
             ]
+        },
+        {
+            elem: 'item',
+            content: [
+                {
+                    elem: 'caption',
+                    content: 'Оттенок'
+                },
+                {
+                    block: 'colors'
+                }
+            ]
         }
     ];
 })
