@@ -3,11 +3,15 @@
   height: 30px
 
   icons = 'phone' 'pin' 'cart' 'search' \
-    'close' 'arrow-down' 'crumbs'
+    'close' 'arrow-down' 'crumbs' 'refresh'
 
   &_type_crumbs
     width: 14px
-    height: 14px
+    height: @width
+
+  &_type_refresh
+    width: 20px
+    height: @width
 
   for icon in icons
     &_type_{icon}

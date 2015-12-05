@@ -9,8 +9,15 @@ block('filter-colors').content()(function() {
     .map(function(color) {
         return {
             elem: 'item',
-            name: 'filter-colors',
-            value: color
+            content: {
+                block: 'checkbox',
+                mods: {
+                    type: 'color'
+                },
+                name: 'filter-colors',
+                color: color,
+                value: color
+            }
         };
     })
 })

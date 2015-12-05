@@ -1,0 +1,35 @@
+.checkbox
+
+  &_type_round
+    z-index: 0
+    width: 38px
+    height: @width
+
+    input
+      position: absolute
+      left: -9999px
+      visibility: hidden
+
+  &_type_round &__box
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    border: 1px solid #eaeaea
+    z-index: -1
+    border-radius: 100%
+
+  &_type_round &__text
+    display: inline-block
+    width: 100%
+    font-size: 14px
+    line-height: 38px
+    text-align: center
+    white-space: nowrap
+
+  &_type_round&_checked &__box
+    background-color: #423525
+
+  &_type_round&_checked &__text
+    color: white

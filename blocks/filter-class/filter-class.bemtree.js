@@ -5,9 +5,15 @@ block('filter-class').content()(function() {
     .map(function(item) {
         return {
             elem: 'item',
-            name: 'class',
-            value: item,
-            content: item
+            content: {
+                block: 'checkbox',
+                mods: {
+                    type: 'round'
+                },
+                name: 'class',
+                value: item,
+                text: item
+            }
         };
     })
 })

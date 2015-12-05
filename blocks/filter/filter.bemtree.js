@@ -1,32 +1,8 @@
 block('filter').content()(function() {
-    var countries = ([
-        'Россия', 'Финляндия', 'Польша', 'Австрия', 'Швеция'
-    ]).map(function(item) {
-        return {
-            block: 'checkbox',
-            mods: {theme: 'parket'},
-            name: 'countries',
-            value: item,
-            text: item
-        };
-    });
-    var brands = ([
-        'HARO', 'AMBERWOOD', 'BARLINEK', 'BAUM', 'COSWICK',
-        'GREEN LINE', 'HARO', 'AMBERWOOD', 'BARLINEK', 'BAUM',
-        'COSWICK', 'GREEN LINE', 'HARO', 'AMBERWOOD', 'BARLINEK'
-    ]).map(function(item) {
-        return {
-            block: 'checkbox',
-            mods: {theme: 'parket'},
-            name: 'brands',
-            value: item,
-            text: item
-        };
-    });
-
     return [
         {
             elem: 'item',
+            id: 'filter-price',
             content: [
                 {
                     elem: 'caption',
@@ -54,6 +30,7 @@ block('filter').content()(function() {
         },
         {
             elem: 'item',
+            id: 'filter-colors',
             content: [
                 {
                     elem: 'caption',
@@ -66,6 +43,7 @@ block('filter').content()(function() {
         },
         {
             elem: 'item',
+            id: 'filter-class',
             content: [
                 {
                     elem: 'caption',
@@ -78,6 +56,7 @@ block('filter').content()(function() {
         },
         {
             elem: 'item',
+            id: 'filter-thickness',
             content: [
                 {
                     elem: 'caption',
@@ -100,23 +79,68 @@ block('filter').content()(function() {
         },
         {
             elem: 'item',
+            id: 'filter-countries',
             content: [
                 {
                     elem: 'caption',
                     content: 'Страна'
                 },
-                countries
+                ([
+                    'Россия', 'Финляндия', 'Польша', 'Австрия', 'Швеция'
+                ]).map(function(item) {
+                    return {
+                        elem: 'line',
+                        content: {
+                            block: 'checkbox',
+                            mods: {
+                                theme: 'parket'
+                            },
+                            name: 'countries',
+                            value: item,
+                            text: item
+                        }
+                    }
+                })
             ]
         },
         {
             elem: 'item',
+            id: 'filter-brands',
             content: [
                 {
                     elem: 'caption',
                     content: 'Бренды'
                 },
-                brands
+                ([
+                    'HARO', 'AMBERWOOD', 'BARLINEK', 'BAUM', 'COSWICK',
+                    'GREEN LINE', 'HARO', 'AMBERWOOD', 'BARLINEK', 'BAUM',
+                    'COSWICK', 'GREEN LINE', 'HARO', 'AMBERWOOD', 'BARLINEK'
+                ]).map(function(item) {
+                    return {
+                        elem: 'line',
+                        content: {
+                            block: 'checkbox',
+                            mods: {
+                                theme: 'parket',
+                                caps: true
+                            },
+                            name: 'brands',
+                            value: item,
+                            text: item
+                        }
+                    }
+                })
             ]
+        },
+        {
+            elem: 'item',
+            content: {
+                block: 'filter-clear',
+                js: {
+                    target: 'filter'
+                },
+                content: 'Сбросить фильтр'
+            }
         }
     ];
 })

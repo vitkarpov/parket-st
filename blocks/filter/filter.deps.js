@@ -4,6 +4,7 @@
         'range-slider',
         'filter-colors',
         'filter-class',
+        'filter-clear',
         {
             block: 'checkbox',
             mods: {theme: 'parket'}
