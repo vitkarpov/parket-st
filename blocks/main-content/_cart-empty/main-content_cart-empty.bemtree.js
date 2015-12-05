@@ -1,4 +1,4 @@
-block('main-content').mod('cart', true).content()(function() {
+block('main-content').mod('cart-empty', true).content()(function() {
     return {
         block: 'page',
         elem: 'wrapper',
@@ -12,7 +12,7 @@ block('main-content').mod('cart', true).content()(function() {
                 content: 'Корзина'
             },
             {
-                block: 'cart'
+                block: 'cart-empty'
             }
         ]
     };
