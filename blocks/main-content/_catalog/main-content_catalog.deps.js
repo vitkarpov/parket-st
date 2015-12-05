@@ -2,6 +2,7 @@
     shouldDeps: [
         'crumbs',
         'filter',
-        'catalog'
+        'catalog',
+        'pager'
     ]
 })

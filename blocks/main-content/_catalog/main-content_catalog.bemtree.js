@@ -27,6 +27,10 @@ block('main-content').mod('catalog', true).content()(function() {
                             },
                             {
                                 block: 'catalog'
+                            },
+                            {
+                                block: 'pager',
+                                current: '1'
                             }
                         ]
                     }

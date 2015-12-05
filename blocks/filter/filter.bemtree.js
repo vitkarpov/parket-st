@@ -95,8 +95,8 @@ block('filter').content()(function() {
                             mods: {
                                 theme: 'parket'
                             },
-                            name: 'countries',
-                            value: item,
+                            name: 'countries[]',
+                            val: item,
                             text: item
                         }
                     }
@@ -124,8 +124,8 @@ block('filter').content()(function() {
                                 theme: 'parket',
                                 caps: true
                             },
-                            name: 'brands',
-                            value: item,
+                            name: 'brands[]',
+                            val: item,
                             text: item
                         }
                     }

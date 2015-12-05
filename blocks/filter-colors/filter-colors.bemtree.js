@@ -14,9 +14,9 @@ block('filter-colors').content()(function() {
                 mods: {
                     type: 'color'
                 },
-                name: 'filter-colors',
+                name: 'filter-colors[]',
                 color: color,
-                value: color
+                val: color
             }
         };
     })

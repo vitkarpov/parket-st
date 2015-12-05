@@ -10,8 +10,8 @@ block('filter-class').content()(function() {
                 mods: {
                     type: 'round'
                 },
-                name: 'class',
-                value: item,
+                name: 'classes[]',
+                val: item,
                 text: item
             }
         };
