@@ -1,0 +1,41 @@
+.checkbox
+
+  &_theme_parket
+    position: relative
+    cursor: pointer
+    padding-left: 25px
+    line-height: 16px
+
+    &:not(.checkbox_checked)
+      opacity: 0.5
+
+    &:hover
+      opacity: 1
+
+  &_theme_parket &__box
+    position: absolute
+    left: 0
+    top: 0
+    width: 14px
+    height: @width
+    border: 1px solid #d2d2d2
+
+  &_theme_parket &__box:before
+    content: ''
+    display: none
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 10px
+    height: 8px
+    margin-left: -0.5*@width
+    margin-top: -0.5*@height
+    background: url('tick.svg') no-repeat
+
+  &_theme_parket&_checked &__box:before
+    display: block
+
+  &_theme_parket &__control
+    position: absolute
+    left: -9999px
+    visibility: hidden
