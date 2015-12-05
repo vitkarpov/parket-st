@@ -1,8 +1,8 @@
-block('colors')(
+block('filter-colors')(
     js()(true)
 )
 
-block('colors').elem('item')(
+block('filter-colors').elem('item')(
     tag()('label'),
 
     content()(function() {

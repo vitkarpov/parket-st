@@ -1,4 +1,4 @@
-block('colors').content()(function() {
+block('filter-colors').content()(function() {
     return ([
         'f7f7f2', 'bb9c7d', '6c4928', '4b2b15',
         'bf8f5f', '885238', '2c181a', 'e3e1d4',
@@ -9,7 +9,7 @@ block('colors').content()(function() {
     .map(function(color) {
         return {
             elem: 'item',
-            name: 'colors',
+            name: 'filter-colors',
             value: color
         };
     })

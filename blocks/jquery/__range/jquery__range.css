@@ -34,10 +34,6 @@
   white-space: nowrap;
   line-height: 1;
 }
-.slider-container .back-bar .pointer-label:after {
-    content: ' ₽';
-    font-family: Arial, Rub, sans-serif;
-}
 .slider-container .back-bar .pointer-label-left {
     right: 50%;
     margin-right: 3px;

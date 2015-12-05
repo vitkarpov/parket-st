@@ -13,7 +13,17 @@ block('filter').content()(function() {
                     ]
                 },
                 {
-                    block: 'price-slider'
+                    block: 'range-slider',
+                    name: 'price',
+                    range: {
+                        from: 1000,
+                        to: 10000,
+                        step: 500
+                    },
+                    value: '1000,4500',
+                    mods: {
+                        unit: 'rub'
+                    }
                 }
             ]
         },
@@ -25,7 +35,41 @@ block('filter').content()(function() {
                     content: 'Оттенок'
                 },
                 {
-                    block: 'colors'
+                    block: 'filter-colors'
+                }
+            ]
+        },
+        {
+            elem: 'item',
+            content: [
+                {
+                    elem: 'caption',
+                    content: 'Класс нагрузки'
+                },
+                {
+                    block: 'filter-class'
+                }
+            ]
+        },
+        {
+            elem: 'item',
+            content: [
+                {
+                    elem: 'caption',
+                    content: 'Толщина'
+                },
+                {
+                    block: 'range-slider',
+                    name: 'thickness',
+                    range: {
+                        from: 2,
+                        to: 10,
+                        step: 0.5
+                    },
+                    value: '3,5.5',
+                    mods: {
+                        unit: 'mm'
+                    }
                 }
             ]
         }

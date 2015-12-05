@@ -1,7 +1,8 @@
 ({
     shouldDeps: [
         'm2',
-        'price-slider',
-        'colors'
+        'range-slider',
+        'filter-colors',
+        'filter-class'
     ]
 })
