@@ -11,7 +11,8 @@
                     "home",
                     "catalog-all",
                     "catalog",
-                    "about"
+                    "about",
+                    "order-done"
                 ])
                 .forEach(function(page) {
                     mods[page] = true;

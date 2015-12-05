@@ -17,10 +17,10 @@ block('cart-popup').content()(function() {
                 mix: {block: 'cart-popup', elem: 'submit'},
                 text: 'Оформить заказ',
                 mods: {
-                    theme: 'islands',
+                    theme: 'parket',
                     type: 'submit',
                     size: 'm',
-                    view: 'plain'
+                    view: 'action'
                 }
             }
         },
