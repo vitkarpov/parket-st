@@ -1,5 +1,5 @@
 ({
     shouldDeps: [
-
+        'cart-item'
     ]
 })

@@ -12,6 +12,9 @@ block('main-content').mod('cart', true).content()(function() {
                 content: 'Корзина'
             },
             {
+                block: 'cart-empty'
+            },
+            {
                 block: 'cart'
             }
         ]

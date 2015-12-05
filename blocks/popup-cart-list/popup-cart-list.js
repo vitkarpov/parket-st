@@ -1,6 +1,6 @@
-modules.define('cart-list', ['i-bem__dom'], function(provide, BEMDOM) {
+modules.define('popup-cart-list', ['i-bem__dom'], function(provide, BEMDOM) {
 
-provide(BEMDOM.decl('cart-list', {
+provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': function() {
             this.checkEmpty();

@@ -1,7 +1,3 @@
 block('cart').content()(function() {
-    return [
-        {
-            block: 'cart-empty'
-        }
-    ];
+    return '2'
 })

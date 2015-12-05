@@ -1,55 +1,27 @@
-block('cart-list').content()(function() {
-    return ([
-        {
-            caption: 'Массивная доска Green Line Дуб Милан',
-            price: '80 661',
-            src: 'dummy/cart-preview-1.jpg',
-            list: [
-                '15',
-                '34,02',
-                '2 760'
-            ]
-        },
-        {
-            caption: 'Массивная доска Coswick Дуб Молочный шоколад с мраморной крошкой',
-            price: '54 432',
-            src: 'dummy/cart-preview-2.jpg',
-            list: [
-                '8',
-                '18,14',
-                '3 000'
-            ]
-        },
-        {
-            caption: 'Массивная доска Green Line Дуб Венеция',
-            price: '68 856',
-            src: 'dummy/cart-preview-3.jpg',
-            list: [
-                '11',
-                '24,95',
-                '2 760'
-            ]
-        }
-    ])
-    .map(function(item) {
+block('cart-item')(
+    js()(true),
+
+    content()(function() {
+        var ctx = this.ctx;
+
         return {
-            elem: 'item',
+            elem: 'content',
             content: [
                 {
                     elem: 'preview',
                     content: {
                         tag: 'img',
-                        attrs: {src: item.src}
+                        attrs: {src: ctx.src}
                     }
                 },
                 {
                     elem: 'caption',
-                    content: item.caption
+                    content: ctx.caption
                 },
                 {
                     elem: 'price',
                     content: [
-                        item.price,
+                        ctx.price,
                         ' ',
                         { block: 'rub' }
                     ]
@@ -59,7 +31,7 @@ block('cart-list').content()(function() {
                     mix: {
                         block: 'cart-list', elem: 'props'
                     },
-                    content: item.list.map(function(item, i) {
+                    content: ctx.list.map(function(item, i) {
                         var unit;
 
                         if (i === 0) {
@@ -83,4 +55,4 @@ block('cart-list').content()(function() {
             ]
         }
     })
-})
+)

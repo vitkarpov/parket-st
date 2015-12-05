@@ -7,7 +7,7 @@ block('cart-popup').content()(function() {
         {
             elem: 'list',
             content: {
-                block: 'cart-list'
+                block: 'popup-cart-list'
             }
         },
         {
