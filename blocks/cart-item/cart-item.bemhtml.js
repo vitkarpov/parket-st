@@ -1,6 +1,4 @@
 block('cart-item')(
-    js()(true),
-
     content()(function() {
         var ctx = this.ctx;
 
@@ -28,9 +26,6 @@ block('cart-item')(
                 },
                 {
                     block: 'props',
-                    mix: {
-                        block: 'cart-list', elem: 'props'
-                    },
                     content: ctx.list.map(function(item, i) {
                         var unit;
 

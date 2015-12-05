@@ -2,6 +2,9 @@
   position: relative
   padding: 0 0 0 60px
 
+  &_size_big
+    padding-left: 100px
+
   &:after
     content: ''
     display: block
@@ -15,6 +18,13 @@
     img
       max-width: 60px
       height: auto
+
+  &_size_big &__preview
+    width: 120px
+    margin-left: -120px
+
+    img
+      max-width: 100px
 
   &__content
     padding: 0 20px

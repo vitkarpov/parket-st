@@ -5,10 +5,7 @@ block('cart-popup').content()(function() {
             content: 'Ваша корзина'
         },
         {
-            elem: 'list',
-            content: {
-                block: 'popup-cart-list'
-            }
+            block: 'popup-cart-list'
         },
         {
             elem: 'footer',
