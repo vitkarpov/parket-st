@@ -3,7 +3,7 @@
         'promo-slider',
         {
             block: 'aside',
-            mods: {type: 'main'}
+            mods: {main: true}
         },
         'catalog-list',
         'company-info'

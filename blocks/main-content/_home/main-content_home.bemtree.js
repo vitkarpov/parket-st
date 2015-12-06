@@ -13,7 +13,7 @@ block('main-content').mod('home', true).content()(function() {
                     elem: 'aside',
                     content: {
                         block: 'aside',
-                        mods: {type: 'main'}
+                        mods: {main: true}
                     }
                 },
                 {

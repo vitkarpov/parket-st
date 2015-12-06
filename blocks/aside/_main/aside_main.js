@@ -1,6 +1,6 @@
 modules.define('aside', ['i-bem__dom'], function(provide, BEMDOM) {
 
-provide(BEMDOM.decl({ block: this.name, modName: 'type', modVal: 'main' }, {
+provide(BEMDOM.decl({ block: this.name, modName: 'main', modVal: true }, {
     onSetMod: {
         'js': function() {
             this.switcher = this.findBlockInside('radio-group');
@@ -15,12 +15,13 @@ provide(BEMDOM.decl({ block: this.name, modName: 'type', modVal: 'main' }, {
     },
 
     _findItem: function(id) {
-        return this.elem('item').filter('[data-id = "' + id + '"]');
+        return this.elem('group').filter('[data-id = "' + id + '"]');
     },
 
     _show: function(id) {
-        this.setMod(this.elem('item'), 'current', false);
+        this.setMod(this.elem('group'), 'current', false);
         this.setMod(this._findItem(id), 'current', true);
+        this.findBlockInside('spin').setMod('visible', false);
     }
 }))
 

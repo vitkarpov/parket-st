@@ -1,4 +1,4 @@
-block('aside').mod('type', 'main').content()(function() {
+block('aside').mod('main', true).content()(function() {
     var brands = [
         'Amigo',
         'Antique',
@@ -54,24 +54,29 @@ block('aside').mod('type', 'main').content()(function() {
             ]
         },
         {
-            elem: 'item',
-            attrs: {
-                'data-id': 'categories'
-            },
-            content: {
-                elem: 'menu',
-                content: cats.map(getItem)
-            }
-        },
-        {
-            elem: 'item',
-            attrs: {
-                'data-id': 'brands'
-            },
-            content: {
-                elem: 'menu',
-                content: brands.map(getItem)
-            }
+            elem: 'groups',
+            content: [
+                {
+                    elem: 'group',
+                    attrs: {
+                        'data-id': 'categories'
+                    },
+                    content: {
+                        elem: 'menu',
+                        content: cats.map(getItem)
+                    }
+                },
+                {
+                    elem: 'group',
+                    attrs: {
+                        'data-id': 'brands'
+                    },
+                    content: {
+                        elem: 'menu',
+                        content: brands.map(getItem)
+                    }
+                }
+            ]
         },
         {
             elem: 'teaser',

@@ -5,6 +5,10 @@
             mods : {type : 'button'}
         },
         'aside-menu-item',
-        'aside-teaser'
+        'aside-teaser',
+        {
+            block: 'spin',
+            mods : {theme : 'islands', size : 'l', visible : true}
+        }
     ]
 })
