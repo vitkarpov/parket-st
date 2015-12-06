@@ -1,5 +1,11 @@
 ({
     shouldDeps: [
-        'search-results'
+        'search-results',
+        {
+            block: 'input',
+            mods: {
+                'search-results': true
+            }
+        }
     ]
 })

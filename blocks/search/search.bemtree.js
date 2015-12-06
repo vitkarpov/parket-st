@@ -6,8 +6,9 @@ block('search').content()(function() {
             content: {
                 block: 'input',
                 mods: {
-                    type: 'search-results'
+                    'search-results': true
                 },
+                js: false,
                 name: 'query',
                 val: 'Ламинат Quic Step 32 класс 12 мм'
             }
