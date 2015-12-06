@@ -2,7 +2,7 @@
     shouldDeps: [
         {
             block: 'aside',
-            mods: {type: 'delivery'}
+            mods: {delivery: true}
         },
         'delivery'
     ]

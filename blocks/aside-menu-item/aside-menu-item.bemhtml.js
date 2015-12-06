@@ -2,12 +2,10 @@ block('aside-menu-item')(
     js()(true),
 
     content()(function() {
-        return [
-            {
-                elem: 'link',
-                content: applyNext()
-            },
-            {
+        var popup;
+
+        if (this.ctx.popup) {
+            popup = {
                 block: 'popup',
                 mods: {
                     target: 'anchor',
@@ -19,7 +17,15 @@ block('aside-menu-item')(
                     elem: 'popup',
                     content: this.ctx.popup
                 }
-            }
+            };
+        }
+
+        return [
+            {
+                elem: 'link',
+                content: applyNext()
+            },
+            popup
         ]
     }),
 

@@ -22,7 +22,7 @@ block('main-content').mod('delivery', true).content()(function() {
                         elem: 'aside',
                         content: {
                             block: 'aside',
-                            mods: {type: 'delivery'}
+                            mods: {delivery: true}
                         }
                     },
                     {
