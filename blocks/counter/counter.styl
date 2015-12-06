@@ -1,0 +1,55 @@
+.counter
+  display: inline-block
+  position: relative
+
+  &__input
+    width: 56px
+    height: 36px
+    background-color: white
+    border: 1px solid #d5d5d5
+    outline: none
+    font-size: 17px
+    line-height: 20px
+    text-align: center
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+  &__control
+    background: none
+    border: 0
+    position: absolute
+    top: 0
+    width: 30px
+    height: 100%
+    background-position: center center
+    background-repeat: no-repeat
+    font-size: 0
+    cursor: pointer
+
+    &_minus
+      right: 100%
+      background-image: url('minus.svg');
+
+    &_plus
+      left: 100%
+      background-image: url('plus.svg');
+
+  &__sum
+    position: absolute
+    top: 100%
+    width: 100%
+    overflow: hidden
+    text-overflow: ellipsis
+    height: 20px
+    font-size: 13px
+    color: #777
+    display: none
+    text-align: center
+
+  &_js_inited &__sum
+    display: block
+
