@@ -3,23 +3,30 @@ modules.define('price', ['i-bem__dom'], function(provide, BEMDOM) {
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': function() {
-            this.render();
+            this.setState(this.getInitalState());
         }
     },
 
-    setCurrentVal: function(val) {
-        this._val = val;
+    getInitalState: function() {
+        return {
+            price: this.elem('input').val()
+        };
     },
 
-    getCurrentVal: function() {
-        return this._val || (this._val = this.elem('input').val());
+    setState: function(state) {
+        this._state = state;
+        this.render();
+    },
+
+    getState: function() {
+        return this._state;
     },
 
     render: function() {
-        var val = this.getCurrentVal();
+        var price = this.getState().price;
 
-        this.elem('count').text(val);
-        this.elem('input').val(val);
+        this.elem('count').text(price);
+        this.elem('input').val(price);
     }
 }));
 

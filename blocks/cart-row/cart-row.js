@@ -11,11 +11,12 @@ provide(BEMDOM.decl(this.name, {
         var blockCounter = e.target;
         var blockPrice = this.findBlockInside('price');
 
-        var count = blockCounter.getCurrentVal();
-        var price = blockPrice.params.unit * count;
+        var count = blockCounter.getState().count;
+        var price = blockPrice.params.price * count;
 
-        blockPrice.setCurrentVal(price);
-        blockPrice.render();
+        blockPrice.setState({
+            price: price
+        });
     }
 }));
 

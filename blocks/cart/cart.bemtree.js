@@ -2,42 +2,49 @@ block('cart').content()(function() {
     return ([
         {
             caption: 'Массивная доска Green Line Дуб Милан',
-            price: '2 245',
+            price: 2245,
             src: 'http://lorempixel.com/100/100/?' + Math.random(),
             count: 15,
-            list: [
-                '15',
-                '34,02',
-                '2 760'
+            square: 0.5,
+            props: [
+                'Ширина: 19,05&nbsp;мм, ',
+                'Длина: 107,95&nbsp;мм, ',
+                'Толщина: 18&nbsp;мм'
             ]
         },
         {
             caption: 'Массивная доска Coswick Дуб Молочный шоколад с мраморной крошкой',
-            price: '3 000',
+            price: 3000,
             src: 'http://lorempixel.com/100/100/?' + Math.random(),
             count: 8,
-            list: [
-                '10',
-                '34,02',
-                '2 760'
+            square: 0.8,
+            props: [
+                'Ширина: 19,05&nbsp;мм, ',
+                'Длина: 107,95&nbsp;мм, ',
+                'Толщина: 18&nbsp;мм'
             ]
         },
         {
             caption: 'Массивная доска Green Line Дуб Венеция',
-            price: '2 760',
+            price: 2270,
             src: 'http://lorempixel.com/100/100/?' + Math.random(),
             count: 11,
-            list: [
-                '10',
-                '34,02',
-                '2 760'
+            square: 0.75,
+            props: [
+                'Ширина: 19,05&nbsp;мм, ',
+                'Длина: 107,95&nbsp;мм, ',
+                'Толщина: 18&nbsp;мм'
             ]
         }
     ])
     .map(function(item) {
-        var price = item.price.replace(' ', '').valueOf();
-        var count = item.count;
-        var square = item.list[1].replace(',', '.').valueOf();
+        var textPrice = (function() {
+            var price = String(item.price);
+            var first = price[0];
+            var last = price.slice(1, price.length);
+
+            return first + ' ' + last;
+        }());
 
         return {
             block: 'cart-row',
@@ -47,29 +54,36 @@ block('cart').content()(function() {
                     mods: {
                         size: 'big'
                     },
+                    mix: {
+                        block: 'cart-row',
+                        elem: 'item'
+                    },
                     caption: item.caption,
-                    price: item.price,
+                    price: textPrice,
                     src: item.src,
-                    list: item.list
+                    content: {
+                        elem: 'props',
+                        content: item.props
+                    }
                 },
                 {
                     block: 'counter',
                     js: {
-                        unit: square
+                        factor: item.square
                     },
                     unit: {
                         block: 'm2'
                     },
                     name: 'counts[]',
-                    value: count
+                    value: item.count
                 },
                 {
                     block: 'price',
                     js: {
-                        unit: price
+                        price: item.price
                     },
                     name: 'prices[]',
-                    value: price * count
+                    value: item.price * item.count
                 }
             ]
         }

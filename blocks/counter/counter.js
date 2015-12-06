@@ -3,49 +3,61 @@ modules.define('counter', ['i-bem__dom'], function(provide, BEMDOM) {
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': function() {
-            this.render();
-            this.elem('input').change(this._onChange.bind(this));
+            this.setState(this.getInitialState());
 
+            this.elem('input').change(this._onChange.bind(this));
             this.bindTo('control', 'click', this._onClickControl, this);
         }
     },
 
     _onClickControl: function(e) {
         var control = $(e.target).bem('counter__control');
-        var cur = this.elem('input').val();
+        var count = this.elem('input').val();
 
         if (control.hasMod('plus')) {
-            this.setCurrentVal(++cur);
+            count++
         } else if (control.hasMod('minus')) {
-            this.setCurrentVal(--cur);
+            count--;
         }
-        this.render();
+        this.setState({
+            count: count
+        });
     },
 
     _onChange: function() {
-        this.setCurrentVal(this.elem('input').val());
+        this.setState({
+            count: this.elem('input').val()
+        });
+    },
+
+    getInitialState: function() {
+        return {
+            count: this.elem('input').val()
+        }
+    },
+
+    setState: function(state) {
+        this._state = state;
         this.render();
     },
 
-    setCurrentVal: function(value) {
-        this._cur = value;
-    },
-
-    getCurrentVal: function() {
-        return this._cur || (this._cur = this.elem('input').val());
+    getState: function() {
+        return this._state;
     },
 
     render: function() {
-        var count = this.getCurrentVal();
-        var k = this.params.unit;
+        var count = this.getState().count;
+        var factor = this.params.factor;
 
         if (count <= 0) {
+            this.setState({ count: 1 });
             return;
         }
 
         this.elem('input').val(count);
-        this.elem('count').text(Math.round(count * k * 100) / 100);
-        this.emit('change', count);
+        this.elem('count').text(Math.round(count * factor * 100) / 100);
+
+        this.emit('change');
     }
 }));
 

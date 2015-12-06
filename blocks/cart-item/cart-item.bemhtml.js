@@ -24,29 +24,7 @@ block('cart-item')(
                         { block: 'rub' }
                     ]
                 },
-                {
-                    block: 'props',
-                    content: ctx.list.map(function(item, i) {
-                        var unit;
-
-                        if (i === 0) {
-                            unit = 'упаковок';
-                        } else if (i === 1) {
-                            unit = {block: 'm2'};
-                        } else if (i === 2) {
-                            unit = [
-                                {block: 'rub'},
-                                '/',
-                                {block: 'm2'}
-                            ];
-                        }
-
-                        return {
-                            elem: 'item',
-                            content: [item, ' ', unit]
-                        };
-                    })
-                }
+                applyNext()
             ]
         }
     })

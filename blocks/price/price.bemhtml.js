@@ -15,7 +15,7 @@ block('price').content()(function() {
         {
             elem: 'sum',
             content: [
-                this.ctx.js.unit,
+                this.ctx.js.price,
                 {block: 'rub'},
                 ' за упаковку'
             ]
