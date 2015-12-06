@@ -21,13 +21,18 @@
     line-height: 16px
 
   &__info
-    overflow: hidden
     margin-bottom: 4px
+
+    &:after
+      content: ''
+      display: block
+      clear: both
 
   &__info-i
     position: relative
     float: right
-    width: 180px
+    width: 140px
+    white-space: nowrap
 
     &:after
       content: ''

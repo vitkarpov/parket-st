@@ -12,9 +12,11 @@ block('cart').content()(function() {
                 {
                     block: 'button',
                     mods: {
+                        theme: 'parket',
                         type: 'submit',
-                        view: 'normal'
-                    }
+                        view: 'plain'
+                    },
+                    text: 'Оформить заказ'
                 }
             ]
         }
