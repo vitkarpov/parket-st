@@ -15,7 +15,11 @@ block('contacts').content()(function() {
                         },
                         {
                             tag: 'p',
-                            content: 'Москва, Нахимовский проспект,&nbsp;24, выставка «Экспострой», 1&nbsp;павильон, 34&nbsp;место'
+                            content: [
+                                'Москва, Нахимовский проспект,&nbsp;24, выставка «Экспострой»,',
+                                {tag: 'br'},
+                                '1&nbsp;павильон, 34&nbsp;место'
+                            ]
                         }
                     ]
                 },
@@ -52,15 +56,20 @@ block('contacts').content()(function() {
                             content: {
                                 block: 'link',
                                 url: '#',
-                                mods: {
-                                    theme: 'parket'
-                                },
                                 content: 'parketst@yandex.ru'
                             }
                         }
                     ]
                 }
             ]
+        },
+        {
+            block: 'button',
+            mods: {
+                theme: 'parket',
+                view: 'action'
+            },
+            text: 'Реквизиты компании'
         }
     ];
 })

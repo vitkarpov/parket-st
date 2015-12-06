@@ -16,7 +16,6 @@ block('cart-popup').content()(function() {
                 mods: {
                     theme: 'parket',
                     type: 'submit',
-                    size: 'm',
                     view: 'action'
                 }
             }

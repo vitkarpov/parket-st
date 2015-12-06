@@ -1,10 +1,12 @@
 ({
     shouldDeps: [
         'map',
+        'link',
         {
-            block: 'link',
+            block: 'button',
             mods: {
-                theme: 'parket'
+                theme: 'parket',
+                view: 'action'
             }
         }
     ]
