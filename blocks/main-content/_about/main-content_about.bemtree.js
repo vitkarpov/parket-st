@@ -2,7 +2,7 @@ block('main-content').mod('about', true).content()(function() {
     return [
         {
             block: 'page',
-            elem: 'wrapper',
+            elem: 'container',
             content: [
                 {
                     block: 'crumbs',
@@ -35,7 +35,7 @@ block('main-content').mod('about', true).content()(function() {
         },
         {
             block: 'page',
-            elem: 'wrapper',
+            elem: 'container',
             content: {
                 block: 'about',
                 mods: {

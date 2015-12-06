@@ -1,7 +1,10 @@
 block('main-content').mod('catalog', true).content()(function() {
     return {
         block: 'page',
-        elem: 'wrapper',
+        elem: 'container',
+        mods: {
+            fluid: true
+        },
         content: [
             {
                 block: 'crumbs',

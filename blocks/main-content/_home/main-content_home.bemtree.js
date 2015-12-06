@@ -2,7 +2,7 @@ block('main-content').mod('home', true).content()(function() {
     return [
         {
             block: 'page',
-            elem: 'wrapper',
+            elem: 'container',
             mix: {
                 block: this.block,
                 elem: 'wrapper',

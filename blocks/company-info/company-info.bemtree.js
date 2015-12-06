@@ -5,7 +5,7 @@ block('company-info').content()(function() {
             content: [
                 {
                     block: 'page',
-                    elem: 'wrapper',
+                    elem: 'container',
                     content: [
                         {
                             block: this.block,

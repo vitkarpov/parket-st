@@ -40,7 +40,7 @@ block('advantages').content()(function() {
 
     return {
         block: 'page',
-        elem: 'wrapper',
+        elem: 'container',
         content: [
             {
                 block: this.block,

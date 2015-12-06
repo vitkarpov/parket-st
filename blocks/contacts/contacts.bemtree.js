@@ -9,7 +9,7 @@ block('contacts').content()(function() {
         },
         {
             block: 'page',
-            elem: 'wrapper',
+            elem: 'container',
             content: [
                 {
                     block: this.block,

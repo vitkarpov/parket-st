@@ -1,7 +1,7 @@
 block('main-content').mod('delivery', true).content()(function() {
     return {
         block: 'page',
-        elem: 'wrapper',
+        elem: 'container',
         content: [
             {
                 block: 'crumbs',

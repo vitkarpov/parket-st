@@ -1,7 +1,7 @@
 block('main-content').mod('catalog-all', true).content()(function() {
     return {
         block: 'page',
-        elem: 'wrapper',
+        elem: 'container',
         content: [
             {
                 block: 'crumbs',

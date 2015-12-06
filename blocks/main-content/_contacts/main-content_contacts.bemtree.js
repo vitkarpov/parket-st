@@ -2,7 +2,7 @@ block('main-content').mod('contacts', true).content()(function() {
     return [
         {
             block: 'page',
-            elem: 'wrapper',
+            elem: 'container',
             content: [
                 {
                     block: 'crumbs',
