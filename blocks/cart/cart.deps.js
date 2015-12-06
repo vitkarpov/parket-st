@@ -1,7 +1,17 @@
 ({
     shouldDeps: [
+        'cart-table',
+        'cart-summary',
         'cart-row',
         'counter',
-        'price'
+        'price',
+        {
+            block: 'button',
+            mods: {
+                theme: 'parket',
+                type: 'submit',
+                view: 'plain'
+            }
+        }
     ]
 })
