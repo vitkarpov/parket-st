@@ -13,8 +13,7 @@ block('nav-footer').content()(function() {
             content: {
                 elem: 'caption',
                 content: {
-                    block: 'link',
-                    url: '#',
+                    elem: 'link',
                     content: item
                 }
             }

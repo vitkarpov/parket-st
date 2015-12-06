@@ -1,3 +1,7 @@
 block('aside').mod('type', 'main')(
-    js()(true)
+    js()(true),
+
+    elem('menu')(
+        tag()('nav')
+    )
 )

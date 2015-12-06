@@ -18,8 +18,7 @@ block('aside-teaser').content()(function() {
                 return {
                     elem: 'item',
                     content: {
-                        block: 'link',
-                        url: '#',
+                        elem: 'link',
                         content: item
                     }
                 }

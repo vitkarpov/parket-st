@@ -1,5 +1,5 @@
 ({
     shouldDeps: [
-        'aside-menu-item'
+        'contacts'
     ]
 })

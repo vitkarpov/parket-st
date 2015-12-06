@@ -4,8 +4,7 @@ block('crumbs')(
             return {
                 elem: 'item',
                 content: {
-                    block: 'link',
-                    url: '#',
+                    elem: 'link',
                     content: item
                 }
             };
@@ -25,5 +24,13 @@ block('crumbs')(
 
     elem('item')(
         tag()('span')
+    ),
+
+    elem('link')(
+        tag()('a'),
+
+        attrs()({
+            href: "#"
+        })
     )
 )

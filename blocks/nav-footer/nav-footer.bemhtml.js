@@ -6,5 +6,13 @@ block('nav-footer')(
             elem: 'content',
             content: applyNext()
         }
-    })
+    }),
+
+    elem('link')(
+        tag()('a'),
+
+        attrs()({
+            href: '#'
+        })
+    )
 )

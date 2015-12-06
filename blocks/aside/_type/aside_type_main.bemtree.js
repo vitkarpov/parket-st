@@ -31,9 +31,14 @@ block('aside').mod('type', 'main').content()(function() {
 
     var getItem = function(text) {
         return {
-            elem: 'item',
+            block: 'aside-menu-item',
             content: text,
-            popupItems: brands
+            popup: brands.map(function(item) {
+                return {
+                    elem: 'link',
+                    content: item
+                }
+            })
         };
     }
 
@@ -54,8 +59,7 @@ block('aside').mod('type', 'main').content()(function() {
                 'data-id': 'categories'
             },
             content: {
-                block: 'aside-menu',
-                js: true,
+                elem: 'menu',
                 content: cats.map(getItem)
             }
         },
@@ -65,8 +69,7 @@ block('aside').mod('type', 'main').content()(function() {
                 'data-id': 'brands'
             },
             content: {
-                block: 'aside-menu',
-                js: true,
+                elem: 'menu',
                 content: brands.map(getItem)
             }
         },

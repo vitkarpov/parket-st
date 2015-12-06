@@ -11,9 +11,7 @@ block('nav-main').content()(function() {
         return {
             elem: 'item',
             content: {
-                block: 'link',
-                mix: {block: 'nav-main', elem: 'link'},
-                url: '#',
+                elem: 'link',
                 content: item
             }
         };

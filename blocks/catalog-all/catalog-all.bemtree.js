@@ -117,8 +117,7 @@ block('catalog-all').content()(function() {
                 {
                     elem: 'caption',
                     content: {
-                        block: 'link',
-                        url: '#',
+                        elem: 'link',
                         content: item.caption
                     }
                 },
@@ -126,8 +125,7 @@ block('catalog-all').content()(function() {
                     return {
                         elem: 'brand',
                         content: {
-                            block: 'link',
-                            url: '#',
+                            elem: 'link',
                             content: item
                         }
                     };

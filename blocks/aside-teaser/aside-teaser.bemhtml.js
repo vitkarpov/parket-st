@@ -8,5 +8,13 @@ block('aside-teaser')(
                 elem: 'item'
             }
         })
-    })
+    }),
+
+    elem('link')(
+        tag()('a'),
+
+        attrs()({
+            href: '#'
+        })
+    )
 )

@@ -27,12 +27,7 @@ block('catalog-item')(
             elem: 'content',
             content: [
                 {
-                    block: 'link',
-                    url: '#',
-                    mix: {
-                        block: this.block,
-                        elem: 'link'
-                    },
+                    elem: 'link',
                     content: [
                         {
                             block: this.block,
@@ -134,5 +129,13 @@ block('catalog-item')(
         }
 
         return res;
-    })
+    }),
+
+    elem('link')(
+        tag()('a'),
+
+        attrs()({
+            href: '#'
+        })
+    )
 )
