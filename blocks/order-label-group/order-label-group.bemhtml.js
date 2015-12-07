@@ -1,9 +1,13 @@
 block('order-label-group')(
+    js()(true),
+
     content()(function() {
         return [
             {
                 elem: 'label',
-                attrs: this.ctx.attrs,
+                attrs: {
+                    for: this.ctx.for
+                },
                 content: this.ctx.label
             },
             {

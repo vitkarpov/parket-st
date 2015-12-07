@@ -19,9 +19,7 @@ block('order-contacts').content()(function() {
 
         return {
             block: 'order-label-group',
-            attrs: {
-                "for": id
-            },
+            for: id,
             label: label,
             type: type,
             content: [
