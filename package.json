@@ -6,7 +6,8 @@
     "bower": "^1.6.5",
     "masonry-layout": "^3.3.2",
     "jrange": "vitkarpov/jRange#44b0d339ed9eeaf414ad820036a2a837cdbcb4d5",
-    "fotorama": "^4.6.4"
+    "fotorama": "^4.6.4",
+    "jquery.maskedinput": "^1.4.1"
   },
   "devDependencies": {
     "borschik-tech-cleancss": "^2.1.0",
