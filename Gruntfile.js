@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var options = fs.readFileSync('credentials.json');
+var options = JSON.parse(fs.readFileSync('credentials.json', 'utf-8'));
 
 module.exports = function (grunt) {
     grunt.initConfig({
