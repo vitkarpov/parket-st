@@ -74,11 +74,25 @@ block('contacts').content()(function() {
                 },
                 {
                     block: 'button',
+                    mix: {
+                        block: this.block,
+                        elem: 'details'
+                    },
                     mods: {
                         theme: 'parket',
                         view: 'action'
                     },
                     text: 'Реквизиты компании'
+                },
+                {
+                    block: 'modal',
+                    mods: {
+                        autoclosable: true,
+                        theme: 'islands'
+                    },
+                    content: {
+                        block: 'popup-details-info'
+                    }
                 }
             ]
         }

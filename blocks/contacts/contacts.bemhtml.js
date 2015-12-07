@@ -1,0 +1,3 @@
+block('contacts')(
+    js()(true)
+)
