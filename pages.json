@@ -8,5 +8,6 @@
     "cart",
     "contacts",
     "delivery",
-    "search"
+    "search",
+    "order"
 ]

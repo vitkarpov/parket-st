@@ -7,7 +7,8 @@ provide(BEMDOM.decl('range-slider', {
                 width: '100%',
                 showScale: false,
                 scale: [],
-                isRange: true
+                isRange: true,
+                theme: 'parket'
             });
 
             this.findElem('controller').jRange(params);

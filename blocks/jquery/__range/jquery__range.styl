@@ -1,0 +1,41 @@
+@import "../node_modules/jquery-range/jquery.range.css"
+
+.slider-container.parket
+  padding-bottom: 30px
+
+  .back-bar
+    height: 4px;
+    background-color: #e4e4e4;
+
+    .selected-bar
+      background-color: #423525;
+
+    .pointer
+      width: 12px;
+      height: 12px;
+      background-color: #8a553b;
+      border-radius: 12px;
+      margin-top: -4px;
+
+    .pointer-label
+      top: 100%;
+      margin-top: 16px;
+      font-size: 12px;
+
+    .pointer-label-left
+        right: 50%;
+        margin-right: 3px;
+
+    .pointer-label-left:before
+        content: 'от ';
+
+    .pointer-label-right
+        left: 50%;
+        margin-left: 3px;
+
+    .pointer-label-right:before
+        content: 'до ';
+
+  .clickable-dummy
+    height: 12px;
+    margin-top: -3px;

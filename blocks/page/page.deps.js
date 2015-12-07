@@ -17,7 +17,8 @@
                     "cart-empty",
                     "contacts",
                     "delivery",
-                    "search"
+                    "search",
+                    "order"
                 ])
                 .forEach(function(page) {
                     mods[page] = true;

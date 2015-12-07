@@ -3,7 +3,10 @@
     "node": ">=0.12"
   },
   "dependencies": {
-    "bower": "^1.6.5"
+    "bower": "^1.6.5",
+    "masonry-layout": "^3.3.2",
+    "jrange": "vitkarpov/jRange#44b0d339ed9eeaf414ad820036a2a837cdbcb4d5",
+    "fotorama": "^4.6.4"
   },
   "devDependencies": {
     "borschik-tech-cleancss": "^2.1.0",
@@ -14,7 +17,8 @@
     "enb-js": "^1.1.0",
     "enb-stylus": "^2.2.0",
     "grunt-ftp-push": "^0.4.3",
-    "grunt-prettify": "^0.4.0"
+    "grunt-prettify": "^0.4.0",
+    "napa": "^2.0.2"
   },
   "scripts": {
     "start": "node .enb/prepare.js && enb server",
