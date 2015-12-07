@@ -1,4 +1,6 @@
 block('order-contacts').content()(function() {
+    generateId = this.generateId;
+
     return ([
         ['Ваше имя', 'text'],
         ['Телефон', 'phone'],
@@ -7,6 +9,9 @@ block('order-contacts').content()(function() {
     ])
     .map(function(item, n) {
         var val = '';
+        var label = item[0];
+        var type = item[1];
+        var id = generateId();
 
         if (n === 0) {
             val = 'Константин Константинопольский'
@@ -17,17 +22,24 @@ block('order-contacts').content()(function() {
             content: [
                 {
                     elem: 'label',
-                    content: item[0]
+                    attrs: {
+                        "for": id
+                    },
+                    content: label
                 },
                 {
                     elem: 'input',
+                    mods: {
+                        phone: type === 'phone'
+                    },
                     content: {
                         block: 'input',
                         mods: {
                             theme: 'parket',
-                            type: item[1]
+                            type: type
                         },
-                        type: item[1],
+                        id: id,
+                        type: type,
                         val: val
                     }
                 }
