@@ -1,4 +1,4 @@
-block('search-results-item').mod('product', true)(
+block('search-results-item').mod('category', true)(
     content()(function() {
         return [
             {
@@ -18,18 +18,8 @@ block('search-results-item').mod('product', true)(
                 }
             },
             {
-                elem: 'props',
-                content: this.ctx.props
-            },
-            {
-                elem: 'price',
-                content: [
-                    this.ctx.price,
-                    '&nbsp;',
-                    {
-                        block: 'rub'
-                    }
-                ]
+                elem: 'range',
+                content: this.ctx.range
             }
         ];
     })

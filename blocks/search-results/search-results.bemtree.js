@@ -34,7 +34,10 @@ block('search-results').content()(function() {
         mods[item.type] = true;
 
         return extend(item, {
-            tag: 'li',
+            tag: 'a',
+            attrs: {
+                href: '#'
+            },
             block: 'search-results-item',
             mix: {
                 block: 'search-results',
