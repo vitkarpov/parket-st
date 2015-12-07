@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
+        'order-label-group',
         {
             block: 'input',
             mods: {

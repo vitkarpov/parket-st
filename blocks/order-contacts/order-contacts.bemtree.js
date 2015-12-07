@@ -18,30 +18,22 @@ block('order-contacts').content()(function() {
         }
 
         return {
-            elem: 'item',
+            block: 'order-label-group',
+            attrs: {
+                "for": id
+            },
+            label: label,
+            type: type,
             content: [
                 {
-                    elem: 'label',
-                    attrs: {
-                        "for": id
-                    },
-                    content: label
-                },
-                {
-                    elem: 'input',
+                    block: 'input',
                     mods: {
-                        phone: type === 'phone'
+                        theme: 'parket',
+                        type: type
                     },
-                    content: {
-                        block: 'input',
-                        mods: {
-                            theme: 'parket',
-                            type: type
-                        },
-                        id: id,
-                        type: type,
-                        val: val
-                    }
+                    id: id,
+                    type: type,
+                    val: val
                 }
             ]
         };
