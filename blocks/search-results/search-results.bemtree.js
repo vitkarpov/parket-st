@@ -12,7 +12,8 @@ block('search-results').content()(function() {
             caption: 'Массивная доска Coswick Дуб Молочный шоколад с мраморной крошкой',
             props: 'Ширина:&nbsp;19,05&nbsp;мм, Длина:&nbsp;107,95&nbsp;мм, Толщина:&nbsp;18&nbsp;мм',
             preview: 'http://lorempixel.com/80/80/?' + Math.random(),
-            type: 'product'
+            type: 'product',
+            price: '3 000'
         },
         {
             caption: 'Что такое ламинат?',
@@ -23,7 +24,8 @@ block('search-results').content()(function() {
             caption: 'Массивная доска Green Line Дуб Палермо',
             props: 'Ширина:&nbsp;19,05&nbsp;мм, Длина:&nbsp;107,95&nbsp;мм, Толщина:&nbsp;18&nbsp;мм',
             preview: 'http://lorempixel.com/80/80/?' + Math.random(),
-            type: 'product'
+            type: 'product',
+            price: '2 890'
         }
     ])
     .map(function(item) {

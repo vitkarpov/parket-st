@@ -21,6 +21,16 @@ block('search-results-item').mod('product', true)(
             {
                 elem: 'props',
                 content: this.ctx.props
+            },
+            {
+                elem: 'price',
+                content: [
+                    this.ctx.price,
+                    '&nbsp;',
+                    {
+                        block: 'rub'
+                    }
+                ]
             }
         ];
     })
