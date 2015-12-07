@@ -1,4 +1,6 @@
-var path = require('path')
+var fs = require('fs');
+var path = require('path');
+var options = fs.readFileSync('credentials.json');
 
 module.exports = function (grunt) {
     grunt.initConfig({
@@ -16,13 +18,7 @@ module.exports = function (grunt) {
         },
         ftp_push: {
             deploy: {
-                options: {
-                    host: "www.wemakesites.ru",
-                    port: 21,
-                    username: "parket",
-                    password: "parket-root",
-                    dest: "/"
-                },
+                options: options,
                 files: [
                     {
                         expand: true,
