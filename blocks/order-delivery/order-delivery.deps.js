@@ -7,6 +7,13 @@
                 mode: 'radio',
                 theme: 'parket'
             }
+        },
+        {
+            block: 'radio-group',
+            mods: {
+                theme: 'parket',
+                delivery: true
+            }
         }
     ]
 })

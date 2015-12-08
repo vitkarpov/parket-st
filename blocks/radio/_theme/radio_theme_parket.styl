@@ -1,0 +1,43 @@
+.radio
+
+  &_theme_parket
+    position: relative
+    padding-left: 25px
+    min-height: 14px
+    font-size: 14px
+    line-height: 17px
+    cursor: pointer
+
+  &_theme_parket &__box
+    position: absolute
+    top: 1px
+    left: 0
+    width: 14px
+    height: 14px
+    border: 1px solid black
+    border-radius: 100%
+
+  &_theme_parket &__box:after
+    content: ''
+    opacity: 0
+    transition: opacity 0.2s ease
+    border-radius: 100%
+
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    margin: auto
+
+    width: 8px
+    height: 8px
+    background: black
+
+  &_theme_parket&_checked &__box:after
+    opacity: 1
+
+  &_theme_parket &__control
+    position: absolute
+    left: -9999px
+    visibility: hidden
