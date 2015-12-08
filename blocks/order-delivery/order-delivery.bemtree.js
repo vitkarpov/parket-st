@@ -38,6 +38,7 @@ block('order-delivery').content()(function() {
                 delivery: true
             },
             name: 'type',
+            val: 1,
             options: [
                 {
                     val: 1,

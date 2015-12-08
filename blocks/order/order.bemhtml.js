@@ -1,3 +1,7 @@
 block('order')(
-    tag()('form')
+    tag()('form'),
+
+    js()({
+        'delivery-price': 1800
+    })
 )

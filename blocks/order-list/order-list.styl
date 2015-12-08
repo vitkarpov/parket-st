@@ -1,0 +1,19 @@
+.order-list
+  margin: 20px 0
+  counter-reset: order-list
+
+  &__item
+    position: relative
+    margin: 12px 0 12px 18px
+
+    &:before
+      content: counter(order-list) "."
+      counter-increment: order-list
+      color: #9a9a9a
+      position: absolute
+      right: 100%
+      margin-right: 6px
+
+  &__price
+    font-size: 15px
+    line-height: 21px

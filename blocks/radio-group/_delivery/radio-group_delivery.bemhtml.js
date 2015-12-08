@@ -1,6 +1,8 @@
 block('radio-group').mod('delivery', true)(
     tag()('div'),
 
+    js()(true),
+
     content()(function() {
         var ctx = this.ctx;
         var radios = [];
@@ -20,6 +22,9 @@ block('radio-group').mod('delivery', true)(
         }(applyNext(), radios));
 
         return radios.map(function(radio, n) {
+            if (n === 1) {
+                radio.js = {delivery: true};
+            }
             return {
                 elem: 'item',
                 content: [
