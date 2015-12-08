@@ -11,8 +11,10 @@ block('nav-main')(
     elem('link')(
         tag()('a'),
 
-        attrs()({
-            href: "#"
+        attrs()(function() {
+            return {
+                href: this.ctx.url
+            }
         })
     )
 )

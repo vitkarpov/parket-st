@@ -22,7 +22,7 @@ block('order-done').content()(function() {
             content: {
                 block: 'button',
                 text: 'Вернуться в магазин',
-                url: '#',
+                url: 'catalog.html',
                 mods: {
                     type: 'link',
                     theme: 'parket',

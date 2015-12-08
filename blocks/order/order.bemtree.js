@@ -70,7 +70,8 @@ block('order').content()(function() {
                                 block: 'button',
                                 mods: {
                                     theme: 'parket',
-                                    view: 'plain'
+                                    view: 'plain',
+                                    type: 'submit'
                                 },
                                 text: 'Оформить заказ'
                             }

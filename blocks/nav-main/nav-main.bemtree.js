@@ -1,18 +1,19 @@
 block('nav-main').content()(function() {
     var menu = ([
-        'Каталог товаров',
-        'Скидки и акции',
-        'Доставка',
-        'Вопросы и ответы',
-        'О компании',
-        'Контакты'
+        ['Каталог товаров', 'catalog-all.html'],
+        ['Скидки и акции', '#'],
+        ['Доставка', 'delivery.html'],
+        ['Вопросы и ответы', '#'],
+        ['О компании', 'about.html'],
+        ['Контакты', 'contacts.html']
     ])
     .map(function(item) {
         return {
             elem: 'item',
             content: {
                 elem: 'link',
-                content: item
+                url: item[1],
+                content: item[0]
             }
         };
     });

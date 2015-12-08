@@ -5,7 +5,7 @@ block('order')(
         'delivery-price': 1800
     }),
 
-    attrs({
+    attrs()({
         action: "order-done.html"
     })
 )
