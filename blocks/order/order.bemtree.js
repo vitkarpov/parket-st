@@ -36,12 +36,19 @@ block('order').content()(function() {
                     elem: 'section',
                     content: [
                         {
-                            elem: 'caption',
-                            content: '2. Способ доставки'
+                            elem: 'edit',
+                            content: {
+                                block: 'link',
+                                mods: {
+                                    icon: 'edit'
+                                },
+                                url: '#',
+                                content: 'Изменить'
+                            }
                         },
                         {
-                            elem: 'edit',
-                            content: 'Изменить'
+                            elem: 'caption',
+                            content: '3. Состав заказа'
                         }
                     ]
                 },
