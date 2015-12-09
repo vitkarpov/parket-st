@@ -10,7 +10,8 @@ block('order-delivery').content()(function() {
                 block: 'select',
                 mods: {
                     theme: 'parket',
-                    mode: 'radio'
+                    mode: 'radio',
+                    width: 'available'
                 },
                 name: 'city',
                 val: 1,

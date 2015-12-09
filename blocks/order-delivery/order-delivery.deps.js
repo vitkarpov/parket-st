@@ -5,7 +5,8 @@
             block: 'select',
             mods: {
                 mode: 'radio',
-                theme: 'parket'
+                theme: 'parket',
+                width: 'available'
             }
         },
         {

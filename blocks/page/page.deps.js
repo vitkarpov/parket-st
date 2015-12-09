@@ -18,7 +18,8 @@
                     "contacts",
                     "delivery",
                     "search",
-                    "order"
+                    "order",
+                    "discounts"
                 ])
                 .forEach(function(page) {
                     mods[page] = true;
