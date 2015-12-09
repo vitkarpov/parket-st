@@ -5,14 +5,11 @@
     position: relative
     display: inline-block
     vertical-align: top
-    margin-right: 10px
     margin-top: -2px
 
-    .icon
-      margin-right: 6px
-
-    &:before
+    &[data-count]:after
       content: attr(data-count)
+      display: inline-block
       min-width: 12px
       padding: 0 4px
       height: 20px
@@ -22,7 +19,6 @@
       line-height: 20px
       text-align: center
       border-radius: 50%
-
-      position: absolute
-      right: 0
-      top: 8px
+      margin-left: -16px
+      margin-right: 6px
+      vertical-align: bottom
