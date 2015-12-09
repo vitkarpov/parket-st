@@ -1,6 +1,6 @@
 modules.define('filter', ['i-bem__dom', 'filter-clear'], function(provide, BEMDOM, FilterClear) {
 
-provide(BEMDOM.decl('filter', {
+provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': function() {
             FilterClear.on(this.domElem, 'clear', this._onClear, this);

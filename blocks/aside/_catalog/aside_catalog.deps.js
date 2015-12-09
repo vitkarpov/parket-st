@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
+        'filter',
         'm2',
         'range-slider',
         'filter-colors',

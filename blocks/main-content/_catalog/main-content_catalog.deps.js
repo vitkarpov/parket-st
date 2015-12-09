@@ -1,7 +1,10 @@
 ({
     shouldDeps: [
         'crumbs',
-        'filter',
+        {
+            block: 'aside',
+            mods: {catalog: true}
+        },
         'catalog',
         'pager'
     ]

@@ -33,7 +33,7 @@ block('main-content').mod('discounts', true).content()(function() {
                                 mods: {
                                     colorful: true
                                 },
-                                content: 'Cидки и акции'
+                                content: 'Cкидки и акции'
                             },
                             {
                                 block: 'catalog',

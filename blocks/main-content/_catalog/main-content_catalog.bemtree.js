@@ -17,7 +17,8 @@ block('main-content').mod('catalog', true).content()(function() {
                     {
                         elem: 'aside',
                         content: {
-                            block: 'filter'
+                            block: 'aside',
+                            mods: {catalog: true}
                         }
                     },
                     {
