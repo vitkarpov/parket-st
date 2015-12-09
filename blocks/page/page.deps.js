@@ -19,7 +19,8 @@
                     "delivery",
                     "search",
                     "order",
-                    "discounts"
+                    "discounts",
+                    "card"
                 ])
                 .forEach(function(page) {
                     mods[page] = true;
