@@ -1,0 +1,36 @@
+.card-info
+
+  &__caption
+    font-size: 32px
+    font-weight: bold
+    line-height: 38px
+
+  &__prices
+    margin: 30px 0
+
+  &__current-price
+  &__old-price
+    display: inline-block
+    vertical-align: middle
+
+  &__current-price
+    font-size: 43px
+    line-height: 48px
+
+  &__old-price
+    font-size: 22px
+    line-height: 26px
+    position: relative
+    overflow: hidden
+    margin-left: 20px
+
+    &:after
+      content: ''
+      position: absolute
+      left: -5px
+      right: -5px
+      top: 50%
+      margin-top: -2px
+      height: 2px
+      background: #f22d36
+      transform: rotate(-18deg)
