@@ -27,29 +27,29 @@ block('card-info').content()(function() {
             ]
         },
         {
-            block: 'card-calc'
+            block: 'card-calc',
+            square: 2.304,
+            count: 16
         },
         {
-            elem: 'add-cover',
-            content: [
-                {
-                    block: 'checkbox',
-                    mods: {
-                        theme: 'parket',
-                        checked: true
-                    },
-                    name: 'add-cover',
-                    val: 1,
-                    text: 'Добавить 5% под урезку'
+            block: 'checkbox',
+            mods: {
+                theme: 'parket',
+                checked: true
+            },
+            name: 'add-cover',
+            val: 1,
+            text: 'Добавить 5% под урезку'
+        },
+        {
+            elem: 'calc-link',
+            content: {
+                block: 'link',
+                mods: {
+                    type: 'pseudo'
                 },
-                {
-                    block: 'link',
-                    mods: {
-                        type: 'pseudo'
-                    },
-                    content: 'Как правильно расчитать количество покрытия'
-                }
-            ]
+                content: 'Как правильно расчитать количество покрытия'
+            }
         },
         {
             elem: 'sum',
@@ -65,6 +65,10 @@ block('card-info').content()(function() {
                         },
                         text: 'В корзину'
                     }
+                },
+                {
+                    block: 'card-sum',
+                    val: 171186
                 }
             ]
         }

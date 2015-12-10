@@ -1,6 +1,7 @@
 ({
     shouldDeps: [
         'card-calc',
+        'card-sum',
         {
             block: 'button',
             mods: {

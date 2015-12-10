@@ -3,7 +3,12 @@
         'cart-table',
         'cart-summary',
         'cart-row',
-        'counter',
+        {
+            block: 'counter',
+            mods: {
+                sum: true
+            }
+        },
         'price',
         {
             block: 'button',

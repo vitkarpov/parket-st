@@ -22,17 +22,6 @@ block('counter')(
                     name: this.ctx.name,
                     value: this.ctx.value
                 }
-            },
-            {
-                elem: 'sum',
-                content: [
-                    {
-                        tag: 'span',
-                        elem: 'count'
-                    },
-                    '&nbsp;',
-                    this.ctx.unit
-                ]
             }
         ]
     }),

@@ -1,6 +1,6 @@
 modules.define('cart-popup', ['i-bem__dom'], function(provide, BEMDOM) {
 
-provide(BEMDOM.decl('cart-popup', {
+provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': function() {
             this.findBlockInside('popup-cart-list').on(

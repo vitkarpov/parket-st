@@ -68,6 +68,9 @@ block('cart-table').content()(function() {
                 },
                 {
                     block: 'counter',
+                    mods: {
+                        sum: true
+                    },
                     js: {
                         factor: item.square
                     },

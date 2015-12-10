@@ -36,9 +36,13 @@ provide(BEMDOM.decl(this.name, {
         }
     },
 
-    setState: function(state) {
+    setState: function(state, silent) {
         this._state = state;
         this.render();
+
+        if (!silent) {
+            this.emit('change');
+        }
     },
 
     getState: function() {
@@ -56,8 +60,6 @@ provide(BEMDOM.decl(this.name, {
 
         this.elem('input').val(count);
         this.elem('count').text(Math.round(count * factor * 100) / 100);
-
-        this.emit('change');
     }
 }));
 
