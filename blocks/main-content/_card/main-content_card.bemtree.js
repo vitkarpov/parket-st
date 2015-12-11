@@ -20,9 +20,11 @@ block('main-content').mod('card', true).content()(function() {
                     },
                     {
                         elem: 'content',
-                        content: {
-                            block: 'card-info'
-                        }
+                        content: [
+                            {block: 'card-info'},
+                            {block: 'card-info-delivery'},
+                            {block: 'card-info-suggest'}
+                        ]
                     }
                 ]
             },

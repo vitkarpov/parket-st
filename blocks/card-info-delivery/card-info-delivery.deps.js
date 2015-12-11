@@ -1,0 +1,6 @@
+({
+    shouldDeps: [
+        'rub',
+        'link'
+    ]
+})
