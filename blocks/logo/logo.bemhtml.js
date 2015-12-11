@@ -7,7 +7,7 @@ block('logo')(
         tag()('a'),
 
         attrs()({
-            href: 'welcome.html'
+            href: 'home.html'
         })
     )
 )

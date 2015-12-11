@@ -4,7 +4,10 @@
             block: 'radio-group',
             mods : {type : 'button'}
         },
-        'aside-menu-item',
+        {
+            block: 'aside-menu-item',
+            mods: {width: 'available'}
+        },
         'aside-teaser',
         {
             block: 'spin',

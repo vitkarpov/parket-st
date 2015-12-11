@@ -15,6 +15,7 @@ block('aside-menu-item')(
                 content: {
                     block: this.block,
                     elem: 'popup',
+                    mods: this.ctx.mods,
                     content: this.ctx.popup
                 }
             };

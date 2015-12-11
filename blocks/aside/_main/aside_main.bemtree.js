@@ -32,6 +32,9 @@ block('aside').mod('main', true).content()(function() {
     var getItem = function(text) {
         return {
             block: 'aside-menu-item',
+            mods: {
+                width: 'available'
+            },
             content: text,
             popup: brands.map(function(item) {
                 return {
