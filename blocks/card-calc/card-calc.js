@@ -32,6 +32,24 @@ provide(BEMDOM.decl(this.name, {
             .setState({
                 count: Math.ceil(res)
             }, true);
+
+        var count = this.findBlockInside({
+            block: 'counter',
+            modName: 'type',
+            modVal: 'count'
+        })
+            .getState().count;
+
+        this.setPrice(count);
+        this.emit('change');
+    },
+
+    setPrice: function(count) {
+        this._price = this.params.price * count;
+    },
+
+    getPrice: function() {
+        return this._price;
     }
 }));
 

@@ -2,14 +2,12 @@ block('card-sum')(
     js()(true),
 
     content()(function() {
-        var val = ('' + (this.ctx.val / 1000)).replace('.', ' ');
-
         return [
             'Итого — ',
             {
                 tag: 'span',
                 elem: 'val',
-                content: val
+                content: this.ctx.val
             },
             '&nbsp;',
             {

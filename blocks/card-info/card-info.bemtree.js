@@ -29,13 +29,14 @@ block('card-info').content()(function() {
         {
             block: 'card-calc',
             square: 2.304,
-            count: 16
+            count: 16,
+            price: 4660
         },
         {
             block: 'checkbox',
             mods: {
                 theme: 'parket',
-                checked: true
+                checked: false
             },
             name: 'add-cover',
             val: 1,
@@ -68,7 +69,7 @@ block('card-info').content()(function() {
                 },
                 {
                     block: 'card-sum',
-                    val: 171186
+                    val: 79220
                 }
             ]
         }

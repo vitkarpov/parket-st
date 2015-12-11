@@ -1,6 +1,9 @@
 block('card-calc')(
     js()(function() {
-        return {factor: this.ctx.square}
+        return {
+            factor: this.ctx.square,
+            price: this.ctx.price
+        }
     }),
 
     content()(function() {
