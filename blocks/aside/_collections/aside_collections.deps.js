@@ -1,0 +1,5 @@
+({
+    shouldDeps: [
+        'aside-menu-item'
+    ]
+})

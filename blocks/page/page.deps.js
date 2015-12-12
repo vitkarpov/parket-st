@@ -22,7 +22,8 @@
                     "discounts",
                     "card",
                     "faq",
-                    "certs"
+                    "certs",
+                    "collections"
                 ])
                 .forEach(function(page) {
                     mods[page] = true;
