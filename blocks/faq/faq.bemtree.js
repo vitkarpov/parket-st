@@ -78,6 +78,16 @@ block('faq').content()(function() {
                     text: 'Задать вопрос'
                 }
             ]
+        },
+        {
+            block: 'modal',
+            mods: {
+                autoclosable: true,
+                theme: 'islands'
+            },
+            content: {
+                block: 'faq-form'
+            }
         }
     ];
 })

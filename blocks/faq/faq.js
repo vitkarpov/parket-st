@@ -8,7 +8,14 @@ provide(BEMDOM.decl(this.name, {
                 columnWidth: 480
             });
             this.setMod('loaded', true);
+
+            this.popup = this.findBlockInside('modal');
+            this.bindTo('ask', 'click', this._onClickAsk, this);
         }
+    },
+
+    _onClickAsk: function() {
+        this.popup.setMod('visible', true);
     }
 }));
 
