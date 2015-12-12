@@ -1,11 +1,41 @@
 .suggest
   margin: 60px 0
+  position: relative
+  min-height: 100px
+  overflow: hidden
+
+  &_js_inited
+    overflow: visible
+
+  &_js_inited &__togglers
+  &_js_inited &__content
+    visibility: visible
+
+  &_js_inited &__spin
+    display: none
+
+  &__spin
+    position: absolute
+    width: 32px
+    height: 32px
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    margin: auto
 
   &__togglers
+    visibility: hidden
     font-size: 22px
     line-height: 26px
 
+  &__toggler_current .link
+    border: 0
+    color: black
+    cursor: default
+
   &__content
+    visibility: hidden
     margin: 20px 0
 
   &__items

@@ -6,20 +6,25 @@ block('suggest').content()(function() {
                 'Похожие товары по ',
                 {
                     elem: 'toggler',
-                    id: 0,
-                    current: true,
+                    mods: {
+                        id: 0
+                    },
                     content: 'оттенку'
                 },
                 ', ',
                 {
                     elem: 'toggler',
-                    id: 1,
+                    mods: {
+                        id: 1
+                    },
                     content: 'материалу'
                 },
                 ', ',
                 {
                     elem: 'toggler',
-                    id: 2,
+                    mods: {
+                        id: 2
+                    },
                     content: 'цене'
                 }
             ]
@@ -27,6 +32,13 @@ block('suggest').content()(function() {
         {
             elem: 'content',
             current: 0
+        },
+        {
+            elem: 'spin',
+            content: {
+                block: 'spin',
+                mods: {size: 'l', theme: 'islands', visible: true}
+            }
         }
     ];
 })

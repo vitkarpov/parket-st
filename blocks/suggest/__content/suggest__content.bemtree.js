@@ -101,7 +101,7 @@ block('suggest').elem('content').content()(function() {
         return {
             elem: 'items',
             mods: {
-                n: n
+                id: n
             },
             content: items.map(function(item) {
                 return {

@@ -7,7 +7,6 @@ provide(BEMDOM.decl(this.name, {
                 itemSelector: '.faq__item',
                 columnWidth: 480
             });
-            this.setMod('loaded', true);
 
             this.popup = this.findBlockInside('modal');
             this.bindTo('ask', 'click', this._onClickAsk, this);

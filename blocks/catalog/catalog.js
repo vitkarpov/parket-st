@@ -7,7 +7,6 @@ provide(BEMDOM.decl('catalog', {
                 itemSelector: '.catalog__item',
                 columnWidth: 180
             });
-            this.setMod('loaded', true);
         }
     }
 }));
