@@ -3,6 +3,7 @@ modules.define('card-info', ['i-bem__dom'], function(provide, BEMDOM) {
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': function() {
+            this.findBlockInside('checkbox-group').on('change', this._onChangeCheckbox, this);
             this.findBlockInside('card-calc').on('change', this._onChangePrice, this);
 
             this.domElem.on('submit', this._onSubmit.bind(this));
@@ -18,11 +19,29 @@ provide(BEMDOM.decl(this.name, {
         }
     },
 
-    _onChangePrice: function(e) {
-        var calc = e.target;
+    _onChangeCheckbox: function(e) {
+        var checkbox = e.target.getCheckboxes()[0];
+        var isChecked = !!checkbox.getMod('checked');
+
+        var sum = this.getState().sum;
+        var cacheSum = this.getState().cacheSum;
+
+        var delta = 0.05 * cacheSum;
+        var sign = (isChecked) ? 1 : -1;
 
         this.setState({
-            sum: calc.getPrice()
+            sum: sum + sign * delta,
+            cacheSum: cacheSum
+        });
+    },
+
+    _onChangePrice: function(e) {
+        var calc = e.target;
+        var sum = calc.getPrice();
+
+        this.setState({
+            sum: sum,
+            cacheSum: sum
         });
     },
 
@@ -57,8 +76,11 @@ provide(BEMDOM.decl(this.name, {
     },
 
     getInitialState: function() {
+        var sum = this.findBlockInside('card-sum').getState().sum;
+
         return {
-            sum: this.findBlockInside('card-sum').getState().sum
+            cacheSum: sum,
+            sum: sum
         }
     },
 

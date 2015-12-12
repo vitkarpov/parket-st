@@ -1,9 +1,9 @@
 block('nav-main').content()(function() {
     var menu = ([
         ['Каталог товаров', 'catalog-all.html'],
-        ['Скидки и акции', '#'],
+        ['Скидки и акции', 'discounts.html'],
         ['Доставка', 'delivery.html'],
-        ['Вопросы и ответы', '#'],
+        ['Вопросы и ответы', 'faq.html'],
         ['О компании', 'about.html'],
         ['Контакты', 'contacts.html']
     ])

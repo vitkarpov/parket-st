@@ -29,7 +29,20 @@ block('card-aside').content()(function() {
                         }
                     }
                 },
-                'Германия'
+                {
+                    elem: 'country',
+                    content: [
+                        {
+                            tag: 'img',
+                            attrs: {
+                                src: 'dummy/flag-de.jpg',
+                                width: 22,
+                                height: 14
+                            }
+                        },
+                        'Германия'
+                    ]
+                }
             ]
         },
         {

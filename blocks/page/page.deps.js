@@ -23,7 +23,9 @@
                     "card",
                     "faq",
                     "certs",
-                    "catalog-collections"
+                    "catalog-collections",
+                    "collections",
+                    "brand"
                 ])
                 .forEach(function(page) {
                     mods[page] = true;
