@@ -2,7 +2,7 @@
     shouldDeps: [
         {
             block: 'aside',
-            mods: {collections: true}
+            mods: {'catalog-collections': true}
         },
         'catalog',
         'sort-select',

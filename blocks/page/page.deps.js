@@ -23,7 +23,7 @@
                     "card",
                     "faq",
                     "certs",
-                    "collections"
+                    "catalog-collections"
                 ])
                 .forEach(function(page) {
                     mods[page] = true;

@@ -1,4 +1,4 @@
-block('aside').mod('collections', true).content()(function() {
+block('aside').mod('catalog-collections', true).content()(function() {
     return ([
         'Все коллекции',
         'Классическая коллекция из дуба',

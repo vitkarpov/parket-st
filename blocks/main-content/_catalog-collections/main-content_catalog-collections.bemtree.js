@@ -1,4 +1,4 @@
-block('main-content').mod('collections', true).content()(function() {
+block('main-content').mod('catalog-collections', true).content()(function() {
     return {
         block: 'page',
         elem: 'container',
@@ -15,7 +15,7 @@ block('main-content').mod('collections', true).content()(function() {
                         elem: 'aside',
                         content: {
                             block: 'aside',
-                            mods: {collections: true}
+                            mods: {'catalog-collections': true}
                         }
                     },
                     {
