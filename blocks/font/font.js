@@ -12,7 +12,7 @@ provide(BEMDOM.decl('font', {
             }
 
             // :)
-            console.log('Need a scalable front-end? Drop me a line! viktor.s.karpov@gmail.com :)')
+            console.log('Need a scalable front-end? https://github.com/vitkarpov')
         }
     },
 
