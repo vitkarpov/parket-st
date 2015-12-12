@@ -10,6 +10,9 @@ provide(BEMDOM.decl('font', {
             } else {
                 $.get(this.params.url, this.onLoaded.bind(this));
             }
+
+            // :)
+            console.log('Wanna a perfect front-end? Drop me a line! viktor.s.karpov@gmail.com :)')
         }
     },
 
