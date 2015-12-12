@@ -3,7 +3,7 @@ modules.define('card-info', ['i-bem__dom'], function(provide, BEMDOM) {
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': function() {
-            this.findBlockInside('checkbox').on('change', this._onChangeCheckbox, this);
+            this.findBlockInside('checkbox-group').on('change', this._onChangeCheckbox, this);
             this.findBlockInside('card-calc').on('change', this._onChangePrice, this);
 
             this.setState(this.getInitialState());
@@ -19,14 +19,21 @@ provide(BEMDOM.decl(this.name, {
     },
 
     _onChangeCheckbox: function(e) {
-        var checkbox = e.target;
-        var sign = (checkbox.hasMod('checked')) ? 1 : -1;
+        var checkbox = e.target.getCheckboxes()[0];
 
         var cur = this.getState().sum;
+        var sum;
+
+        if (checkbox.hasMod('checked')) {
+            sum = Math.ceil(1.05 * cur);
+        } else {
+            sum = this.getState().old;
+        }
 
         this.setState({
-            sum: cur + sign * Math.round(cur / 20)
-        })
+            old: cur,
+            sum: sum
+        });
     },
 
     getInitialState: function() {

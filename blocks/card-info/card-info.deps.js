@@ -15,6 +15,10 @@
             mods: {
                 type: 'pseudo'
             }
+        },
+        {
+            block: 'checkbox-group',
+            mods: { theme : 'parket' }
         }
     ]
 })

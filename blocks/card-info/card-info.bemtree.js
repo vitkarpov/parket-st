@@ -33,14 +33,12 @@ block('card-info').content()(function() {
             price: 4660
         },
         {
-            block: 'checkbox',
-            mods: {
-                theme: 'parket',
-                checked: false
-            },
-            name: 'add-cover',
-            val: 1,
-            text: 'Добавить 5% под урезку'
+            block : 'checkbox-group',
+            mods : { theme : 'parket' },
+            name : 'add-cover',
+            options : [
+                { val : 1, text : 'Добавить 5% под урезку' },
+            ]
         },
         {
             elem: 'calc-link',
