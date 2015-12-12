@@ -38,3 +38,9 @@ block('aside-menu-item')(
         })
     )
 )
+
+block('aside-menu-item').mod('active', true).elem('link')(
+    tag()('span'),
+
+    attrs()({})
+)

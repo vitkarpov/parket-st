@@ -21,7 +21,8 @@
                     "order",
                     "discounts",
                     "card",
-                    "faq"
+                    "faq",
+                    "certs"
                 ])
                 .forEach(function(page) {
                     mods[page] = true;
