@@ -2,7 +2,7 @@ block('popup-coverage-info').content()(function() {
     return [
         {
             elem: 'caption',
-            content: 'Как расчитать количество покрытия'
+            content: 'Как рассчитать количество покрытия'
         },
         {
             elem: 'content',
