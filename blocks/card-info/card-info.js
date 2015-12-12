@@ -8,6 +8,12 @@ provide(BEMDOM.decl(this.name, {
             this.domElem.on('submit', this._onSubmit.bind(this));
             this.bindTo('cancel', 'click', this._onClickCancel, this);
 
+            this.popup = this.elem('calc-link').bem('card-info__calc-link').findBlockInside('modal');
+
+            this.bindTo('calc-link', 'click', function() {
+                this.popup.setMod('visible', true);
+            });
+
             this.setState(this.getInitialState());
         }
     },

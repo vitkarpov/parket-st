@@ -42,13 +42,22 @@ block('card-info').content()(function() {
         },
         {
             elem: 'calc-link',
-            content: {
-                block: 'link',
-                mods: {
-                    type: 'pseudo'
+            content: [
+                {
+                    block: 'link',
+                    mods: {
+                        type: 'pseudo'
+                    },
+                    content: 'Как правильно расчитать количество покрытия'
                 },
-                content: 'Как правильно расчитать количество покрытия'
-            }
+                {
+                    block: 'modal',
+                    mods: {theme: 'islands', autoclosable: true},
+                    content: {
+                        block: 'popup-coverage-info'
+                    }
+                }
+            ]
         },
         {
             elem: 'sum',

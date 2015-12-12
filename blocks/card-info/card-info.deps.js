@@ -2,6 +2,7 @@
     shouldDeps: [
         'card-calc',
         'card-sum',
+        'popup-coverage-info',
         {
             block: 'button',
             mods: {
@@ -19,6 +20,10 @@
         {
             block: 'checkbox-group',
             mods: { theme : 'parket' }
+        },
+        {
+            block: 'modal',
+            mods: {theme: 'islands', autoclosable: true}
         }
     ]
 })
