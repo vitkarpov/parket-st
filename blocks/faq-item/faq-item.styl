@@ -1,0 +1,44 @@
+@import '../link/link.styl'
+
+.faq-item
+  padding: 30px 50px
+  border: 1px solid #ece9e5
+
+  &__question
+    font-size: 16px
+    line-height: 23px
+    margin-left: -34px
+    padding-left: 34px
+    margin-bottom: 12px
+
+  &__question:before
+  &__question:after
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    width: 23px
+    height: 23px
+    background: url('quote.svg') center center no-repeat
+    margin-top: -2px
+
+  &__question:before
+    float: left
+    margin-left: -34px
+    margin-right: 11px
+
+  &__question:after
+    margin-left: 11px
+    transform: rotate(180deg)
+
+  &__author
+    color: #777
+    font-size: 13px
+    line-height: 15px
+    margin: 8px 0
+
+  &__answer
+    line-height: 20px
+    margin-top: 8px
+
+    a
+      link()

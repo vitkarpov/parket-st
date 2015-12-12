@@ -1,0 +1,45 @@
+.faq
+  position: relative
+  height: 100px
+  overflow: hidden
+  margin: 30px 0
+
+  &_loaded
+    height: auto
+
+  &_loaded &__items
+  &_loaded &__footer
+    visibility: visible
+
+  &_loaded &__spin
+    display: none
+
+  &__spin
+    position: absolute
+    width: 32px
+    height: 32px
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    margin: auto
+
+  &__items
+    margin: -10px 0 0 -10px
+    visibility: hidden
+
+  &__item
+    display: inline-block
+    vertical-align: top
+    box-sizing: border-box
+    width: 480px
+    padding: 10px
+
+  &__footer
+    visibility: hidden
+    margin-top: 30px
+    font-size: 18px
+    line-height: 21px
+
+    .button
+      margin-left: 12px

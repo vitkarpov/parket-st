@@ -20,7 +20,8 @@
                     "search",
                     "order",
                     "discounts",
-                    "card"
+                    "card",
+                    "faq"
                 ])
                 .forEach(function(page) {
                     mods[page] = true;
