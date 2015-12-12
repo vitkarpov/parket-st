@@ -4,6 +4,6 @@ block('card-info')(
     js()(true),
 
     attrs()({
-        action: 'cart.html'
+        action: ''
     })
 )

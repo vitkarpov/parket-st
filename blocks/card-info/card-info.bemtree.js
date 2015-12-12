@@ -54,20 +54,62 @@ block('card-info').content()(function() {
             elem: 'sum',
             content: [
                 {
-                    elem: 'submit',
-                    content: {
-                        block: 'button',
-                        mods: {
-                            theme: 'parket',
-                            type: 'submit',
-                            view: 'plain'
-                        },
-                        text: 'В корзину'
-                    }
+                    block: 'button',
+                    mix: {
+                        block: 'card-info',
+                        elem: 'submit'
+                    },
+                    mods: {
+                        theme: 'parket',
+                        type: 'submit',
+                        view: 'plain'
+                    },
+                    text: 'В корзину'
                 },
                 {
-                    block: 'card-sum',
-                    val: 79220
+                    elem: 'sum-content',
+                    content: {
+                        block: 'card-sum',
+                        val: 79220
+                    }
+                }
+            ]
+        },
+        {
+            elem: 'sum',
+            mods: {
+                added: true
+            },
+            content: [
+                {
+                    block: 'button',
+                    url: 'order.html',
+                    mods: {
+                        theme: 'parket',
+                        type: 'link',
+                        view: 'plain'
+                    },
+                    mix: {
+                        block: 'card-info',
+                        elem: 'submit'
+                    },
+                    text: 'Оформить'
+                },
+                {
+                    elem: 'sum-content',
+                    content: 'Товар в корзине'
+                },
+                {
+                    block: 'link',
+                    url: '?remove-from-cart=100500',
+                    mix: {
+                        block: 'card-info',
+                        elem: 'cancel'
+                    },
+                    mods: {
+                        type: 'pseudo'
+                    },
+                    content: 'Отменить'
                 }
             ]
         }

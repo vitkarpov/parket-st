@@ -48,14 +48,33 @@
     margin: 50px 0 25px 0
     padding: 20px
     background: #f7f5f2
-    font-size: 27px
     height: 38px
+
+    &_added
+      display: none
+      background-color: #fff5ce
+
+  &_failed &__sum
+    outline: 1px solid red
+
+  &_added &__sum
+    display: none
+
+  &_added &__sum_added
+    display: block
+
+  &__sum-content
+    display: inline-block
+    vertical-align: middle
+    font-size: 27px
     line-height: 38px
 
-  &__submit
+  &__cancel
     float: right
+    margin: 10px 16px
 
-    .button
-      vertical-align: top
-      padding: 10px 24px
-      height: 38px
+  &__submit.button
+    float: right
+    vertical-align: top
+    padding: 10px 24px
+    height: 38px

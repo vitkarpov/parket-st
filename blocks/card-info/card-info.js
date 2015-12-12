@@ -6,6 +6,9 @@ provide(BEMDOM.decl(this.name, {
             this.findBlockInside('checkbox-group').on('change', this._onChangeCheckbox, this);
             this.findBlockInside('card-calc').on('change', this._onChangePrice, this);
 
+            this.domElem.on('submit', this._onSubmit.bind(this));
+            this.bindTo('cancel', 'click', this._onClickCancel, this);
+
             this.setState(this.getInitialState());
         }
     },
@@ -34,6 +37,36 @@ provide(BEMDOM.decl(this.name, {
             old: cur,
             sum: sum
         });
+    },
+
+    _onSubmit: function(e) {
+        var data = this.domElem.serialize();
+        this.elem('submit').bem('button').setMod('disabled', true);
+
+        $.post(this.domElem.attr('action'), data)
+            .then(this._onAdded.bind(this), this._onFailed.bind(this));
+
+        e.preventDefault();
+    },
+
+    _onClickCancel: function(e) {
+        $.get(this.elem('cancel').attr('href'))
+            .then(this._onCanceled.bind(this));
+
+        e.preventDefault();
+    },
+
+    _onAdded: function() {
+        this.elem('submit').bem('button').setMod('disabled', false);
+        this.setMod('added', true);
+    },
+
+    _onCanceled: function() {
+        this.setMod('added', false);
+    },
+
+    _onFailed: function() {
+        this.setMod('failed', true)
     },
 
     getInitialState: function() {
