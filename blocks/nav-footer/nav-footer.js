@@ -1,6 +1,6 @@
 modules.define('nav-footer', ['i-bem__dom'], function(provide, BEMDOM) {
 
-provide(BEMDOM.decl('nav-footer', {
+provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': function() {
             this.bindTo('arrow', 'click', this._onClickArrow);

@@ -1,8 +1,5 @@
 ({
-    shouldDeps: [
-        'card-calc',
-        'card-sum',
-        'popup-coverage-info',
+    mustDeps: [
         {
             block: 'button',
             mods: {
@@ -10,7 +7,12 @@
                 type: 'submit',
                 view: 'plain'
             }
-        },
+        }
+    ],
+    shouldDeps: [
+        'card-calc',
+        'card-sum',
+        'popup-coverage-info',
         {
             block: 'link',
             mods: {

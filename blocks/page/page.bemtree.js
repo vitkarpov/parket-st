@@ -11,6 +11,7 @@ block('page').content()(function() {
     return [
         {block: 'header'},
         {block: 'nav-main'},
+        {block: 'form-search'},
         {
             block: 'main-content',
             mods: mods

@@ -2,6 +2,7 @@
     shouldDeps: [
         'header',
         'nav-main',
+        'form-search',
         {
             block: 'main-content',
             mods: (function() {

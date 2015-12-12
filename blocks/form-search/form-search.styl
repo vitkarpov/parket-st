@@ -1,0 +1,32 @@
+.form-search
+  position: absolute
+  z-index: 99
+  height: 0
+  overflow: hidden
+  transition: height 0.3s ease
+  width: 100%
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.07);
+
+  &_visible
+    height: 68px
+
+  &__input
+    border: 0
+
+  &__clear
+    position: absolute
+    right: 15px
+    opacity: 0
+    transition: opacity 0.2s ease
+    top: 50%
+    margin-top: -20px
+    width: 40px
+    height: 40px
+    background: url('clear.svg') center center no-repeat
+    cursor: pointer
+    padding: 0
+    border: 0
+    outline: 0
+
+  &_filled &__clear
+    opacity: 1
