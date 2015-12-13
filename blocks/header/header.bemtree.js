@@ -9,6 +9,10 @@ block('header').content()(function() {
         },
         {
             elem: 'item',
+            tag: 'a',
+            attrs: {
+                href: 'tel:+74957796531'
+            },
             content: {
                 elem: 'phone',
                 content: [
@@ -23,6 +27,10 @@ block('header').content()(function() {
         },
         {
             elem: 'item',
+            tag: 'a',
+            attrs: {
+                href: 'contacts.html'
+            },
             content: [
                 {
                     block: 'icon',
