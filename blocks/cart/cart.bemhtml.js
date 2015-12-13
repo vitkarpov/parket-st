@@ -5,6 +5,8 @@ block('cart')(
         action: 'order-done.html'
     }),
 
+    js()(true),
+
     content()(function() {
         var extend = this.extend;
 

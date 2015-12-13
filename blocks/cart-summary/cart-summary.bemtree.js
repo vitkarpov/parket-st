@@ -18,32 +18,19 @@ block('cart-summary').content()(function() {
             content: [
                 {
                     elem: 'info',
-                    content: [
-                        {
-                            elem: 'info-caption',
-                            content: 'Метраж покупки'
-                        },
-                        '77,11 ',
-                        {
-                            block: 'm2'
-                        }
-                    ]
+                    mods: {
+                        type: 'square'
+                    },
+                    caption: 'Метраж покупки',
+                    val: 22.15
                 },
                 {
                     elem: 'info',
                     mods: {
-                        price: true
+                        type: 'price'
                     },
-                    content: [
-                        {
-                            elem: 'info-caption',
-                            content: 'Стоимость покупки'
-                        },
-                        '203 949 ',
-                        {
-                            block: 'rub'
-                        }
-                    ]
+                    caption: 'Стоимость покупки',
+                    val: 82645
                 }
             ]
         }
