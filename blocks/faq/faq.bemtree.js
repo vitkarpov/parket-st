@@ -9,7 +9,7 @@ block('faq').content()(function() {
                 'В нашем магазине они представлены двумя марками — ',
                 {tag: 'a', attrs: {href: '#'}, content: 'NanoThermal'},
                 ' и ',
-                {tag: 'a', content: 'Devi'}
+                {tag: 'a', attrs: {href: '#'}, content: 'Devi'}
             ]
         },
         {

@@ -79,7 +79,7 @@ block('catalog-item')(
     elem('extra')(
         tag()('form'),
 
-        attrs()({ action: '#' }),
+        attrs()({ action: 'cart.html' }),
 
         content()(function() {
             return {

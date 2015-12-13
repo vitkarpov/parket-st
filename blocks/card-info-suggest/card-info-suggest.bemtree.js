@@ -6,7 +6,7 @@ block('card-info-suggest').content()(function() {
                 'Из коллекции «',
                 {
                     block: 'link',
-                    url: '#',
+                    url: 'collections.html',
                     content: 'Дубы'
                 },
                 '»'

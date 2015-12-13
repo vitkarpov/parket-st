@@ -13,10 +13,15 @@
     outline: none
 
     cursor: pointer
+    transition: border-color 0.2s ease
+
+    &:hover
+      color: #8a553b
 
     &_checked
-      border-color: #c5a780
-      color: #ba9360
+      border-color: #8a553b
+      color: #8a553b
+      cursor: default
 
   .radio + .radio
     margin-left: -2px
