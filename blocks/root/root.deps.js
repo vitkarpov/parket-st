@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
-        'page'
+        'page',
+        'opengraph'
     ]
 })
