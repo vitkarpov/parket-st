@@ -4,7 +4,8 @@ block('footer').content()(function() {
             elem: 'creator',
             tag: 'a',
             attrs: {
-                href: 'http://www.studio-v.ru/'
+                href: 'http://www.studio-v.ru/',
+                target: '_blank'
             },
             content: 'Создание сайта — Студия «Восхождение»'
         },
