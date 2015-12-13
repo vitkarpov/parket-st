@@ -19,7 +19,12 @@ block('search-results-item').mod('category', true)(
             },
             {
                 elem: 'range',
-                content: this.ctx.range
+                content: [
+                    'от&nbsp;',
+                    this.ctx.range,
+                    '&nbsp;',
+                    {block: 'rub'}
+                ]
             }
         ];
     })

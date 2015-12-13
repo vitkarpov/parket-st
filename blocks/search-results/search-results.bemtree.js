@@ -4,7 +4,7 @@ block('search-results').content()(function() {
     return ([
         {
             caption: 'Ламиант Quick Step',
-            range: 'от 535 ₽',
+            range: '535',
             preview: 'http://lorempixel.com/220/100/?' + Math.random(),
             type: 'category'
         },
