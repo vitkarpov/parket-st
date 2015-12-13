@@ -8,7 +8,8 @@ provide(BEMDOM.decl('promo-slider', {
                 .fotorama({
                     width: '100%',
                     ratio: 4/3,
-                    click: false
+                    click: false,
+                    margin: 0
                 });
         }
     },
