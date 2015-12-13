@@ -24,6 +24,7 @@ block('aside-menu-item')(
         return [
             {
                 elem: 'link',
+                url: this.ctx.url,
                 content: applyNext()
             },
             popup
@@ -33,8 +34,10 @@ block('aside-menu-item')(
     elem('link')(
         tag()('a'),
 
-        attrs()({
-            href: '#'
+        attrs()(function() {
+            return {
+                href: this.ctx.url
+            };
         })
     )
 )

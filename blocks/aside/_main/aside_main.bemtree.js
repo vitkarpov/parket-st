@@ -36,9 +36,11 @@ block('aside').mod('main', true).content()(function() {
                 width: 'available'
             },
             content: text,
+            url: 'collections.html',
             popup: brands.map(function(item) {
                 return {
                     elem: 'link',
+                    url: 'brand.html',
                     content: item
                 }
             })

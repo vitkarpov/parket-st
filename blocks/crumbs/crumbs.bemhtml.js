@@ -11,12 +11,11 @@ block('crumbs')(
         });
         return [
             {
-                block: 'icon',
-                mix: {
-                    block: this.block,
-                    elem: 'root'
-                },
-                mods: {type: 'crumbs'}
+                elem: 'root',
+                content: {
+                    block: 'icon',
+                    mods: {type: 'crumbs'}
+                }
             },
             items
         ];
@@ -31,6 +30,14 @@ block('crumbs')(
 
         attrs()({
             href: "#"
+        })
+    ),
+
+    elem('root')(
+        tag()('a'),
+
+        attrs()({
+            href: 'home.html'
         })
     )
 )

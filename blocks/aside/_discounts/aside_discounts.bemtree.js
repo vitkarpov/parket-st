@@ -23,6 +23,7 @@ block('aside').mod('discounts', true).content()(function() {
                         mods: {
                             active: n === 0
                         },
+                        url: 'catalog.html',
                         js: false,
                         content: item
                     }

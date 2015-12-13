@@ -3,7 +3,7 @@ block('catalog-item')(
         var cnt = this.ctx.content;
 
         return {
-            title: cnt.title || cnt.caption
+            title: cnt.title || cnt.caption,
         };
     }),
 
@@ -135,7 +135,7 @@ block('catalog-item')(
         tag()('a'),
 
         attrs()({
-            href: '#'
+            href: 'card.html'
         })
     )
 )
