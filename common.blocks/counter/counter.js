@@ -5,6 +5,8 @@ provide(BEMDOM.decl(this.name, {
         'js': function() {
             this.setState(this.getInitialState());
 
+            debugger;
+
             this.elem('input').change(this._onChange.bind(this));
             this.bindTo('control', 'click', this._onClickControl, this);
         }
@@ -61,9 +63,8 @@ provide(BEMDOM.decl(this.name, {
 
         if (!silent) {
             this.render();
+            this.emit('change');
         }
-
-        this.emit('change');
     },
 
     getState: function() {
