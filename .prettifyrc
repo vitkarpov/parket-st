@@ -8,6 +8,7 @@
   "max_preserve_newlines": 1,
   "unformatted": [
     "code",
-    "pre"
+    "pre",
+    "span"
   ]
 }
