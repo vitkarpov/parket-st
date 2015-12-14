@@ -1,5 +1,9 @@
 # Верстка интернет-магазина «Паркет СТ» на полном БЭМ-стеке
 
+## [Демо](http://wemakesites.ru/projects/parket/pages/home.html)
+
+[Список всех страниц](http://wemakesites.ru/projects/parket/)
+
 ## Рабочая копия
 
 ```
