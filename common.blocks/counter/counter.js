@@ -59,8 +59,8 @@ provide(BEMDOM.decl(this.name, {
             return;
         }
 
+        this.render();
         if (!silent) {
-            this.render();
             this.emit('change');
         }
     },
