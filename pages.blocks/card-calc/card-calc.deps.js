@@ -3,7 +3,8 @@
         {
             block: 'counter',
             mods: {
-                vertical: true
+                vertical: true,
+                gray: true
             }
         }
     ]

@@ -41,6 +41,7 @@ block('card-calc')(
                 block: 'counter',
                 mods: {
                     vertical: true,
+                    gray: true,
                     type: this.ctx.name
                 },
                 js: true,
