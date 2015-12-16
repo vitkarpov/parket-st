@@ -23,7 +23,7 @@ block('cart-summary')(
                     elem: 'val',
                     tag: 'span',
                     mods: ctx.mods,
-                    content: ctx.val
+                    content: ctx.val || ctx.displayVal
                 },
                 '&nbsp',
                 unit,

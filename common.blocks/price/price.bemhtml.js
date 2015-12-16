@@ -6,7 +6,7 @@ block('price').content()(function() {
                 {
                     elem: 'count',
                     tag: 'span',
-                    content: this.ctx.value
+                    content: this.ctx.displayValue
                 },
                 '&nbsp;',
                 {block: 'rub'}

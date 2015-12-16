@@ -38,13 +38,9 @@ block('cart-table').content()(function() {
         }
     ])
     .map(function(item) {
-        var textPrice = (function() {
-            var price = String(item.price);
-            var first = price[0];
-            var last = price.slice(1, price.length);
-
-            return first + ' ' + last;
-        }());
+        var formatPrice = function(p) {
+            return Math.ceil(p / 1000) + ' ' + ((p % 1000 > 0) ? p % 1000 : '000');
+        };
 
         return {
             block: 'cart-row',
@@ -59,7 +55,7 @@ block('cart-table').content()(function() {
                         elem: 'item'
                     },
                     caption: item.caption,
-                    price: textPrice,
+                    price: formatPrice(item.price),
                     src: item.src,
                     content: {
                         elem: 'props',
@@ -86,7 +82,8 @@ block('cart-table').content()(function() {
                         price: item.price
                     },
                     name: 'prices[]',
-                    value: item.price * item.count
+                    value: item.price * item.count,
+                    displayValue: formatPrice(item.price * item.count)
                 }
             ]
         }

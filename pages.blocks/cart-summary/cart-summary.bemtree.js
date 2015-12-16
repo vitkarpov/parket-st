@@ -30,7 +30,8 @@ block('cart-summary').content()(function() {
                         type: 'price'
                     },
                     caption: 'Стоимость покупки',
-                    val: 82645
+                    val: 82645,
+                    displayVal: '82 645'
                 }
             ]
         }

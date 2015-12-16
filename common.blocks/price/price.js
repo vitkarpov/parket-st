@@ -1,4 +1,4 @@
-modules.define('price', ['i-bem__dom'], function(provide, BEMDOM) {
+modules.define('price', ['i-bem__dom', 'i-formatter-price'], function(provide, BEMDOM, formatterPrice) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
@@ -25,7 +25,7 @@ provide(BEMDOM.decl(this.name, {
     render: function() {
         var price = this.getState().price;
 
-        this.elem('count').text(price);
+        this.elem('count').text(formatterPrice(price));
         this.elem('input').val(price);
     }
 }));

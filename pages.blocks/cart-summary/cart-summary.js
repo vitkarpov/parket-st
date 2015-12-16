@@ -1,4 +1,4 @@
-modules.define('cart-summary', ['i-bem__dom'], function(provide, BEMDOM) {
+modules.define('cart-summary', ['i-bem__dom', 'i-formatter-price'], function(provide, BEMDOM, formatterPrice) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
@@ -27,15 +27,15 @@ provide(BEMDOM.decl(this.name, {
     },
 
     render: function() {
-        this._update('price');
-        this._update('square');
-    },
-
-    _update: function(id) {
         var state = this.getState();
 
-        this.elem('val', 'type', id).text(state[id]);
-        this.elem('control', 'type', id).val(state[id]);
+        this._update('price', formatterPrice(state.price));
+        this._update('square', state.square);
+    },
+
+    _update: function(id, val) {
+        this.elem('val', 'type', id).text(val);
+        this.elem('control', 'type', id).val(val);
     }
 }));
 
