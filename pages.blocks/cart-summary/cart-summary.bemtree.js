@@ -31,7 +31,7 @@ block('cart-summary').content()(function() {
                     },
                     caption: 'Стоимость покупки',
                     val: 82645,
-                    displayVal: '82 645'
+                    displayVal: '82&nbsp;645'
                 }
             ]
         }

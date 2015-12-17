@@ -8,6 +8,6 @@ modules.define('i-formatter-price', function(provide) {
         if (remain === 0) {
             remain = '000';
         }
-        return Math.ceil(p / 1000) + ' ' + remain;
+        return Math.floor(p / 1000) + ' ' + remain;
     });
 });
