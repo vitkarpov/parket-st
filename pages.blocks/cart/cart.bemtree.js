@@ -4,19 +4,24 @@ block('cart').content()(function() {
             block: 'cart-table'
         },
         {
-            block: 'cart-summary'
-        },
-        {
-            elem: 'footer',
+            elem: 'form',
             content: [
                 {
-                    block: 'button',
-                    mods: {
-                        theme: 'parket',
-                        type: 'submit',
-                        view: 'plain'
-                    },
-                    text: 'Оформить заказ'
+                    block: 'cart-summary'
+                },
+                {
+                    elem: 'footer',
+                    content: [
+                        {
+                            block: 'button',
+                            mods: {
+                                theme: 'parket',
+                                type: 'submit',
+                                view: 'plain'
+                            },
+                            text: 'Оформить заказ'
+                        }
+                    ]
                 }
             ]
         }
