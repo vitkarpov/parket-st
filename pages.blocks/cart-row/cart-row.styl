@@ -1,4 +1,23 @@
 .cart-row
 
+  td
+    position: relative
+
   &__item
     margin-right: 20%
+
+  &__remove
+    position: absolute
+    width: 30px
+    height: 30px
+    right: 4px
+    top: 6px
+    opacity: 0
+    transition: opacity 0.2s ease
+    cursor: pointer
+
+  &:hover &__remove
+    opacity: 0.5
+
+  &:hover &__remove:hover
+    opacity: 1

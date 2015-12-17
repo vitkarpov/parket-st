@@ -1,29 +1,41 @@
 block('cart').content()(function() {
     return [
         {
-            block: 'cart-table'
-        },
-        {
-            elem: 'form',
+            elem: 'content',
             content: [
                 {
-                    block: 'cart-summary'
+                    block: 'cart-table'
                 },
                 {
-                    elem: 'footer',
+                    elem: 'form',
                     content: [
                         {
-                            block: 'button',
-                            mods: {
-                                theme: 'parket',
-                                type: 'submit',
-                                view: 'plain'
-                            },
-                            text: 'Оформить заказ'
+                            block: 'cart-summary'
+                        },
+                        {
+                            elem: 'footer',
+                            content: [
+                                {
+                                    block: 'button',
+                                    mods: {
+                                        theme: 'parket',
+                                        type: 'submit',
+                                        view: 'plain'
+                                    },
+                                    text: 'Оформить заказ'
+                                }
+                            ]
                         }
                     ]
                 }
             ]
+        },
+        {
+            block: 'cart-empty',
+            mix: {
+                block: 'cart',
+                elem: 'empty'
+            }
         }
     ]
 })

@@ -24,6 +24,11 @@ provide(BEMDOM.decl(this.name, {
                     {price: 0, square: 0}
                 );
 
+        if (vals.price === 0) {
+            this.setMod('empty', true);
+            return;
+        }
+
         this.findBlockInside('cart-summary').setState(vals);
     }
 }));

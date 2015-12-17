@@ -2,9 +2,13 @@ modules.define('cart-row', ['i-bem__dom'], function(provide, BEMDOM) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
-        'js': function() {
-            this.findBlockInside('counter').on('change', this.update, this);
-            this.setState(this.getInitialState());
+        'js': {
+            'inited': function() {
+                this.findBlockInside('counter').on('change', this.update, this);
+                this.setState(this.getInitialState());
+
+                this.bindTo('remove', 'click', this.remove, this);
+            }
         }
     },
 
@@ -33,15 +37,23 @@ provide(BEMDOM.decl(this.name, {
             square: blockCounter.getState().square,
             price: price,
         });
-        this.emit('change');
     },
 
     setState: function(state) {
         this._state = state;
+        this.emit('change');
     },
 
     getState: function() {
         return this._state;
+    },
+
+    remove: function() {
+        this.setState({
+            square: 0,
+            price: 0
+        });
+        BEMDOM.destruct(this.domElem);
     }
 }));
 
