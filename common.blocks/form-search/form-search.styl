@@ -1,14 +1,14 @@
 .form-search
   position: absolute
   z-index: 99
-  height: 0
+  max-height: 0
   overflow: hidden
-  transition: height 0.3s ease
+  transition: max-height 0.6s ease
   width: 100%
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.07);
 
   &_visible
-    height: 68px
+    max-height: 100px
 
   &__input
     border: 0
