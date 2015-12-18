@@ -4,8 +4,7 @@ block('filter')(
     js()(true),
 
     attrs()({
-        action: '#',
-        'data-id': 'filter'
+        action: '#'
     })
 )
 

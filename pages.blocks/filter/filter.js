@@ -15,7 +15,19 @@ provide(BEMDOM.decl(this.name, {
     },
 
     clear: function(id) {
-        this.findBlocksInside('checkbox').forEach(function(block) {
+        var scope;
+
+        if (id === 'filter') {
+            scope = this;
+        } else {
+            scope = this.elem('item', id).bem('filter__item');
+        }
+
+        if (!scope) {
+            return;
+        }
+
+        scope.findBlocksInside('checkbox').forEach(function(block) {
             block.setMod('checked', false);
         });
     }

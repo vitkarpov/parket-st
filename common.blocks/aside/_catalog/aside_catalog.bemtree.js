@@ -4,7 +4,6 @@ block('aside').mod('catalog', true).content()(function() {
         content: [
             {
                 elem: 'item',
-                id: 'filter-price',
                 content: [
                     {
                         elem: 'caption',
@@ -32,7 +31,6 @@ block('aside').mod('catalog', true).content()(function() {
             },
             {
                 elem: 'item',
-                id: 'filter-colors',
                 content: [
                     {
                         elem: 'caption',
@@ -45,7 +43,6 @@ block('aside').mod('catalog', true).content()(function() {
             },
             {
                 elem: 'item',
-                id: 'filter-class',
                 content: [
                     {
                         elem: 'caption',
@@ -58,7 +55,6 @@ block('aside').mod('catalog', true).content()(function() {
             },
             {
                 elem: 'item',
-                id: 'filter-thickness',
                 content: [
                     {
                         elem: 'caption',
@@ -81,8 +77,17 @@ block('aside').mod('catalog', true).content()(function() {
             },
             {
                 elem: 'item',
-                id: 'filter-countries',
+                mods: {'countries': true},
                 content: [
+                    {
+                        elem: 'clear',
+                        content: {
+                            block: 'filter-clear',
+                            js: {
+                                target: 'countries'
+                            }
+                        }
+                    },
                     {
                         elem: 'caption',
                         content: 'Страна'
@@ -107,8 +112,17 @@ block('aside').mod('catalog', true).content()(function() {
             },
             {
                 elem: 'item',
-                id: 'filter-brands',
+                mods: {'brands': true},
                 content: [
+                    {
+                        elem: 'clear',
+                        content: {
+                            block: 'filter-clear',
+                            js: {
+                                target: 'brands'
+                            }
+                        }
+                    },
                     {
                         elem: 'caption',
                         content: 'Бренды'

@@ -1,6 +1,7 @@
 .filter
 
   &__item
+    position: relative
     padding: 20px 0
     border-top: 1px solid #f0f0f0
 
@@ -19,3 +20,13 @@
     font-size: 16px
     font-weight: bold
     line-height: 23px
+
+  &__clear
+    position: absolute
+    right: 0
+    top: 21px
+    opacity: 0
+    transition: opacity 0.2s ease
+
+  &__item:hover &__clear
+    opacity: 1
