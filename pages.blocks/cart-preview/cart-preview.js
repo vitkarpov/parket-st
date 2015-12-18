@@ -12,6 +12,13 @@ provide(BEMDOM.decl('cart-preview', {
 
     _onClick: function(e) {
         this.popup.setMod('visible', true);
+    },
+
+    setVal: function(data) {
+        this.setMod('has-items', data.count > 0);
+
+        this.elem('icon').attr('data-count', data.count);
+        this.elem('price-i').text(data.price);
     }
 }));
 

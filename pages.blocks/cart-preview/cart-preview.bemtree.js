@@ -2,15 +2,16 @@ block('cart-preview').content()(function() {
     return [
         {
             elem: 'icon',
-            attrs: {
-                'data-count': '12'
-            },
             content: {
                 block: 'icon',
                 mods: {type: 'cart'}
             }
         },
-        '97 480 ',
+        {
+            elem: 'price',
+            content: ''
+        },
+        '&nbsp;',
         {
             block: 'rub'
         },

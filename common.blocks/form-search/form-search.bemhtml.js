@@ -3,6 +3,10 @@ block('form-search')(
 
     tag()('form'),
 
+    attrs()({
+        action: 'search.html'
+    }),
+
     elem('clear')(
         tag()('button'),
 

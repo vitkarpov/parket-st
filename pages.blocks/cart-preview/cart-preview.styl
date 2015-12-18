@@ -1,5 +1,7 @@
 .cart-preview
-  cursor: pointer
+
+  &_has-items
+    cursor: pointer
 
   &__icon
     position: relative
@@ -7,18 +9,52 @@
     vertical-align: top
     margin-top: -2px
 
-    &[data-count]:after
-      content: attr(data-count)
-      display: inline-block
-      min-width: 12px
-      padding: 0 4px
-      height: 20px
-      background-color: #8a553b
-      color: white
-      font-size: 12px
-      line-height: 20px
-      text-align: center
-      border-radius: 50%
-      margin-left: -16px
-      margin-right: 6px
-      vertical-align: bottom
+  &__icon:after
+    content: attr(data-count)
+    display: inline-block
+    vertical-align: bottom
+    box-sizing: border-box
+
+    overflow: hidden
+    width: 0
+    height: 0
+    background-color: #8a553b
+
+    color: white
+    font-size: 12px
+    line-height: 20px
+    text-align: center
+
+    border-radius: 50%
+    margin-left: -16px
+    margin-right: 6px
+
+    transition: width 0.2s ease
+    transition: height 0.2s ease
+
+  &_has-items &__icon[data-count]:after
+    width: 20px
+    height: 20px
+
+  &__price
+    display: inline-block
+    opacity: 0
+    transition: opacity 0.2s ease
+    transition-delay: 0.1s
+
+  &_has-items &__price
+    opacity: 1
+
+  &__price-i
+    display: inline-block
+    transition: max-width 0.2s ease
+    max-width: 0
+
+  &_has-items &__price-i
+    max-width: 100px
+
+  .rub
+    display: none
+
+  &_has-items .rub
+    display: inline-block

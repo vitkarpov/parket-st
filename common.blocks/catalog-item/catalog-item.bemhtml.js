@@ -7,6 +7,8 @@ block('catalog-item')(
         };
     }),
 
+    js()(true),
+
     content()(function() {
         var cnt = applyNext();
         var props = [];
@@ -56,6 +58,14 @@ block('catalog-item')(
                         {
                             elem: 'prices',
                             content: cnt.prices
+                        },
+                        {
+                            tag: 'input',
+                            attrs: { type: 'hidden', name: 'id', value: 100500 },
+                        },
+                        {
+                            tag: 'input',
+                            attrs: { type: 'hidden', name: 'action', value: 'add' },
                         },
                         {
                             block: 'button',
