@@ -64,7 +64,7 @@ block('contacts').content()(function() {
                                     tag: 'p',
                                     content: {
                                         block: 'link',
-                                        url: '#',
+                                        url: 'mailto:parketst@yandex',
                                         content: 'parketst@yandex.ru'
                                     }
                                 }
