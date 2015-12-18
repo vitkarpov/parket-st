@@ -1,5 +1,5 @@
 block('aside').mod('catalog-collections', true).content()(function() {
-    return ([
+    var items = ([
         'Все коллекции',
         'Классическая коллекция из дуба',
         'Радиальная коллекция',
@@ -15,8 +15,24 @@ block('aside').mod('catalog-collections', true).content()(function() {
             mods: {
                 active: n === 1
             },
+            url: 'catalog-collections.html',
             js: false,
             content: item
         }
     });
+
+    return [
+        {
+            elem: 'brand',
+            content: {
+                tag: 'img',
+                attrs: {
+                    width: 124,
+                    height: 63,
+                    src: 'dummy/brand.jpg'
+                }
+            }
+        },
+        items
+    ]
 });
