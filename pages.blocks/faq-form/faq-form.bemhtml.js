@@ -1,6 +1,13 @@
 block('faq-form')(
     tag()('form'),
 
+    attrs()({
+        action: 'faq.html',
+        method: 'POST'
+    }),
+
+    js()(true),
+
     elem('item').content()(function() {
         var ctx = this.ctx;
 

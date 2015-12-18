@@ -14,7 +14,7 @@ block('faq-form').content()(function() {
         },
         {
             label: 'Ваш вопрос',
-            name: 'qustion',
+            name: 'question',
             type: 'textarea'
         }
     ])
@@ -28,6 +28,14 @@ block('faq-form').content()(function() {
                 elem: 'item'
             });
         }),
+        {
+            elem: 'success',
+            content: 'Ваш вопрос отправлен!'
+        },
+        {
+            elem: 'fail',
+            content: 'Вопрос отправить не удалось, попробуйте позднее.'
+        },
         {
             elem: 'footer',
             content: [

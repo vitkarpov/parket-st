@@ -21,3 +21,18 @@
 
   &__submit
     float: right
+
+  &__success
+  &__fail
+    display: none
+    margin: 30px 0
+
+  &__success
+    color: green
+
+  &__fail
+    color: red
+
+  &_done &__success
+  &_failed &__fail
+    display: block
