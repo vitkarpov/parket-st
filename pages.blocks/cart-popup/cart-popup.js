@@ -13,6 +13,7 @@ provide(BEMDOM.decl(this.name, {
 
     _onCartEmpty: function() {
         this.setMod('empty', true);
+        this.findBlockOutside('popup').redraw();
     }
 }));
 
