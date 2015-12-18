@@ -53,7 +53,9 @@ block('catalog-list').content()(function() {
         }
     ])
     .map(function(item) {
-        var mods = {};
+        var mods = {
+            'home': true
+        };
 
         if (item.prices.old) {
             mods['old-price'] = true;

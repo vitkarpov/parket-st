@@ -35,6 +35,19 @@ block('catalog-item')(
                             block: this.block,
                             elem: 'preview'
                         },
+                        (function() {
+                            if (!cnt.label) {
+                                return;
+                            }
+                            return {
+                                elem: 'label',
+                                content: ({
+                                    'day': 'Товар дня',
+                                    'price': 'Лучшая цена',
+                                    'discount': 'Скидка'
+                                })[cnt.label]
+                            }
+                        }()),
                         {
                             block: this.block,
                             elem: 'caption',

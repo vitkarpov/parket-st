@@ -1,5 +1,8 @@
 ({
     shouldDeps: [
-        'catalog-item'
+        {
+            block: 'catalog-item',
+            mods: { home: true }
+        }
     ]
 })

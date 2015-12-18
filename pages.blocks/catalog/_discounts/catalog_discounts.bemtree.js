@@ -13,7 +13,7 @@ block('catalog').mod('discounts', true).content()(function() {
             }
         },
         {
-            caption: 'Массивная доска Green Line Дуб Милан',
+            caption: 'Массивная доска Green Line Дуб Мурано',
             props: [
                 'Длина: 920 мм',
                 'Ширина: 125 мм',
@@ -25,7 +25,7 @@ block('catalog').mod('discounts', true).content()(function() {
             }
         },
         {
-            caption: 'Одна строка',
+            caption: 'Массивная доска Green Line Дуб Милан',
             props: [
                 'Длина: 920 мм',
                 'Ширина: 125 мм',
@@ -61,7 +61,7 @@ block('catalog').mod('discounts', true).content()(function() {
             }
         },
         {
-            caption: 'Массивная доска с очень длинным наз...',
+            caption: 'Массивная доска с очень длинным названием, кот...',
             title: 'Массивная доска с очень длинным названием, которое не влезет и сломает всю верстку',
             props: [
                 'Длина: 920 мм',
@@ -104,7 +104,6 @@ block('catalog').mod('discounts', true).content()(function() {
                 'Ширина: 125 мм',
                 'Толщина: 12 мм'
             ],
-            label: 'day',
             prices: {
                 current: '2 024',
                 old: '3 220'

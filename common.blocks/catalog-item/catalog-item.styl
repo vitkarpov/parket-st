@@ -36,7 +36,7 @@
   &__caption
     margin: 8px 0
     line-height: 1.4
-    height: 2.8em
+    max-height: 2.8em
     overflow: hidden
     text-overflow: ellipsis
 
@@ -112,3 +112,17 @@
 
   &__link
     display: block
+
+  &__label
+    display: inline-block
+    padding: 6px 10px
+    margin-top: 16px
+    background-color: #8a553b
+    transition: background-color 0.2s ease
+    color: white
+    font-size: 12px
+    text-transform: uppercase
+    letter-spacing: 1px
+
+  &:hover &__label
+    background-color: #220606
