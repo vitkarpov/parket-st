@@ -6,7 +6,7 @@ block('sort-select').content()(function() {
             mode: 'radio-check'
         },
         name: 'sort',
-        text: 'Сортировка',
+        text: 'Сортировать',
         options: [
             {
                 val: 1,

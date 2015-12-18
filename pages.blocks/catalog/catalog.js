@@ -5,8 +5,10 @@ provide(BEMDOM.decl('catalog', {
         'js': function() {
             this.domElem.masonry({
                 itemSelector: '.catalog__item',
-                columnWidth: 180
+                columnWidth: '.catalog__sizer',
+                percentPosition: true
             });
+            this.setMod('ready')
         }
     }
 }));

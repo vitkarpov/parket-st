@@ -1,27 +1,32 @@
 .catalog
   position: relative
-  margin: 0 -10px
+  margin: 10px -10px 0 -10px
+  height: 100px
 
-  &:before
-    content: ''
+  &__spin
     position: absolute
+    width: 32px
+    height: 32px
+    margin: auto
     left: 0
     top: 0
     right: 0
     bottom: 0
-    background: white
-    opacity: 0.5
-    z-index: 100
 
-  &_js_inited:before
+  &_ready &__spin
     display: none
 
+  &__sizer
+    width: 20%
+
   &__item
+    visibility: hidden
     display: inline-block
     vertical-align: top
-    width: 180px
-    height: 255px
+    width: 20%
 
     &_big
-      width: 360px
-      height: 510px
+      width: 40%
+
+  &_ready &__item
+    visibility: visible
