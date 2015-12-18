@@ -1,4 +1,4 @@
-modules.define('order-sum', ['i-bem__dom'], function(provide, BEMDOM) {
+modules.define('order-sum', ['i-bem__dom', 'i-formatter-price'], function(provide, BEMDOM, formatPrice) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
@@ -25,7 +25,7 @@ provide(BEMDOM.decl(this.name, {
     render: function() {
         var state = this.getState();
 
-        this.elem('sum').text(state.sum);
+        this.elem('sum').text(formatPrice(state.sum));
         this.elem('control').val(state.sum);
     }
 }));
