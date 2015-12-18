@@ -25,9 +25,23 @@ block('main-content').mod('catalog', true).content()(function() {
                         elem: 'content',
                         content: [
                             {
+                                elem: 'select',
+                                content: {
+                                    block: 'sort-select'
+                                }
+                            },
+                            {
                                 block: 'page',
                                 elem: 'caption',
-                                content: 'Массивная доска'
+                                content: [
+                                    'Массивная доска',
+                                    {
+                                        block: this.block,
+                                        elem: 'found',
+                                        tag: 'span',
+                                        content: 'Найдено 100500 товаров'
+                                    }
+                                ]
                             },
                             {
                                 block: 'catalog'

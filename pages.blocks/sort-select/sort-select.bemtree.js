@@ -3,10 +3,10 @@ block('sort-select').content()(function() {
         block: 'select',
         mods: {
             theme: 'parket',
-            mode: 'radio'
+            mode: 'radio-check'
         },
         name: 'sort',
-        val: 1,
+        text: 'Сортировка',
         options: [
             {
                 val: 1,
