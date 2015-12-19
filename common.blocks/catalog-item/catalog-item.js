@@ -2,8 +2,13 @@ modules.define('catalog-item', ['i-bem__dom'], function(provide, BEMDOM) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
-        'js': function() {
-            this.elem('extra').on('submit', this._onSubmit.bind(this));
+        'js': {
+            'inited': function() {
+                this.elem('extra').on('submit', this._onSubmit.bind(this));
+            },
+            '': function() {
+                this.elem('extra').off('submit');
+            }
         }
     },
 

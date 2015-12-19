@@ -7,6 +7,8 @@ provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': function() {
             this.bindTo('toggler', 'click', this._onToggle, this);
+            this.bindTo('refresh', 'click', this._onRefresh, this);
+
             this.show(this.params.start);
         }
     },
@@ -20,16 +22,29 @@ provide(BEMDOM.decl(this.name, {
         this.show(toggler.getMod('id'));
     },
 
+    _onRefresh: function() {
+        $.get(this.params.url)
+            .then(this._onSuccess.bind(this));
+    },
+
+    _onSuccess: function(html) {
+        BEMDOM.destruct(this.elem('items'));
+        BEMDOM.append(this.elem('content'), html);
+
+        this.show(this.params.start);
+        this.findBlockInside('catalog-item');
+    },
+
     show: function(id) {
-        this.elem('toggler').each(function() {
+        this.findElem('toggler').each(function() {
             $(this).bem(togglerName).delMod('current');
         });
-        this.elem('toggler', 'id', id).bem(togglerName).setMod('current');
+        this.findElem('toggler', 'id', id).bem(togglerName).setMod('current');
 
-        this.elem('items').each(function() {
+        this.findElem('items').each(function() {
             $(this).bem(itemsName).delMod('current');
         });
-        this.elem('items', 'id', id).bem(itemsName).setMod('current');
+        this.findElem('items', 'id', id).bem(itemsName).setMod('current');
     }
 }));
 
