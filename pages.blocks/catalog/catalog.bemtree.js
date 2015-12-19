@@ -23,13 +23,12 @@ block('catalog').content()(function() {
             }
         },
         {
-            caption: 'Одна строка',
+            caption: 'Массивная доска Green Line Дуб Милан',
             props: [
                 'Длина: 920 мм',
                 'Ширина: 125 мм',
                 'Толщина: 12 мм'
             ],
-            label: 'discount',
             prices: {
                 current: '2 024'
             }
@@ -112,6 +111,7 @@ block('catalog').content()(function() {
                 'Ширина: 125 мм',
                 'Толщина: 12 мм'
             ],
+            label: 'discount',
             prices: {
                 current: '2 371'
             }

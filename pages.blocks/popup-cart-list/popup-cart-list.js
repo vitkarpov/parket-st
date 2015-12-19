@@ -10,7 +10,7 @@ provide(BEMDOM.decl(this.name, {
     _onRemoveClick: function(e) {
         var id = $(e.currentTarget).data('id');
 
-        this.findItemById(id).remove();
+        BEMDOM.destruct(this.findItemById(id));
         this.checkEmpty();
     },
 
