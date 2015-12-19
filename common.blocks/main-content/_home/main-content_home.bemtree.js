@@ -24,7 +24,14 @@ block('main-content').mod('home', true).content()(function() {
                             block: 'promo-slider'
                         },
                         {
-                            block: 'catalog-list'
+                            block: 'suggs-toggler',
+                            captions: ['Лучшие', 'Новые', 'Популярные'],
+                            current: 1,
+                            content: [
+                                {block: 'catalog-list'},
+                                {block: 'catalog-list'},
+                                {block: 'catalog-list'}
+                            ]
                         }
                     ]
                 }

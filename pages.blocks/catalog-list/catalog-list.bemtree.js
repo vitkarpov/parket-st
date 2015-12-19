@@ -1,5 +1,5 @@
 block('catalog-list').content()(function() {
-    return ([
+    var items = ([
         {
             caption: "Модульный паркет Panaget Французский дуб Сатин/Satine Новая коллекция",
             props: [
@@ -51,8 +51,9 @@ block('catalog-list').content()(function() {
                 current: '2024'
             }
         }
-    ])
-    .map(function(item) {
+    ]);
+
+    return shuffle(items).map(function(item) {
         var mods = {
             'home': true
         };
@@ -70,5 +71,19 @@ block('catalog-list').content()(function() {
             mods: mods,
             content: item
         };
-    })
+    });
+
+    function shuffle(arr) {
+        var i = arr.length;
+        var j;
+        var t;
+
+        while(i) {
+            j = Math.floor((i--) * Math.random());
+            t = arr[i];
+            arr[i] = arr[j];
+            arr[j] = t;
+        }
+        return arr;
+    };
 })
