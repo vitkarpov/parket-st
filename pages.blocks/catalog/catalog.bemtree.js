@@ -111,7 +111,6 @@ block('catalog').content()(function() {
                 'Ширина: 125 мм',
                 'Толщина: 12 мм'
             ],
-            label: 'discount',
             prices: {
                 current: '2 371'
             }

@@ -1,4 +1,4 @@
-modules.define('card-sum', ['i-bem__dom'], function(provide, BEMDOM) {
+modules.define('card-sum', ['i-bem__dom', 'i-formatter-price'], function(provide, BEMDOM, formatPrice) {
 
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
@@ -28,7 +28,7 @@ provide(BEMDOM.decl(this.name, {
     render: function() {
         var sum = this.getState().sum;
 
-        this.elem('val').text(sum);
+        this.elem('val').text(formatPrice(sum));
         this.elem('control').val(sum);
     }
 }));

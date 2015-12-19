@@ -8,17 +8,20 @@
     width: 56px
     height: 38px
     background-color: white
-    border: 1px solid #d5d5d5
+    border: 1px solid lightgray
+    transition: border-color 0.2s ease
     outline: none
     font-size: 17px
     line-height: 20px
     text-align: center
 
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
+    &::-webkit-outer-spin-button
+    &::-webkit-inner-spin-button
+      -webkit-appearance: none
+      margin: 0
+
+    &:focus
+      border-color: black
 
   &__control
     background: none
