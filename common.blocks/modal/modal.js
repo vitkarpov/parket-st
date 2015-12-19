@@ -5,7 +5,6 @@ provide(Modal.decl({
         'js': {
             'inited': function() {
                 this.__base();
-                console.log('foo');
                 this.bindTo('close', 'click', this._onClickClose);
             }
         }
