@@ -14,11 +14,30 @@ provide(BEMDOM.decl('cart-preview', {
         this.popup.setMod('visible', true);
     },
 
-    setVal: function(data) {
-        this.setMod('has-items', data.count > 0);
+    setState: function(state) {
+        this._state = state;
+        this.render();
+    },
 
-        this.elem('icon').attr('data-count', data.count);
-        this.elem('price-i').text(data.price);
+    getState: function() {
+        return this._state;
+    },
+
+    render: function() {
+        var state = this.getState();
+
+        this.setMod('has-items', state.count > 0);
+
+        this.elem('icon').attr('data-count', state.count);
+        this.elem('price-i').text(state.price);
+
+        var popupCartList = this.popup.findBlockInside('popup-cart-list');
+
+        BEMDOM.append(
+            popupCartList.domElem,
+            state.html
+        );
+        popupCartList.emit('change');
     }
 }));
 

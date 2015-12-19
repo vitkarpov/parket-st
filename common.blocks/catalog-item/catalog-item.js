@@ -19,7 +19,11 @@ provide(BEMDOM.decl(this.name, {
     _onSuccess: function(e) {
         var data = JSON.parse(e);
 
-        this.findBlockOutside('page').findBlockInside('cart-preview').setVal(data);
+        this.findBlockOutside('page').findBlockInside('cart-preview').setState({
+            count: data.count,
+            price: data.price,
+            html: data.html
+        });
     },
 
     _onFail: function(e) {
