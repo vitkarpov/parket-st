@@ -12,7 +12,7 @@ provide(BEMDOM.decl(this.name, {
     },
 
     _onCartItemsChanged: function(e) {
-        var hasItems = e.target.findElem('item').length > 0;
+        var hasItems = this.findBlockOutside('page').findBlockInside('cart-preview').getState().count > 0;
 
         this.setMod('empty', !hasItems);
         this.findBlockOutside('popup').redraw();
