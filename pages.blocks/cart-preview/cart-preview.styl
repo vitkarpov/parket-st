@@ -17,8 +17,8 @@
     box-sizing: border-box
 
     overflow: hidden
-    width: 20px
-    height: 20px
+    width: 0
+    height: 0
     background-color: #8a553b
 
     color: white
@@ -34,7 +34,9 @@
     transition: transform 0.5s ease-in-out
 
   &_has-items &__icon[data-count]:after
-    transform: scale(1);
+    width: 20px
+    height: 20px
+    transform: scale(1)
 
   &__price
     display: inline-block
@@ -54,6 +56,7 @@
     max-width: 100px
 
   .rub
+    margin-left: 4px
     display: none
 
   &_has-items .rub

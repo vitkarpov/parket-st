@@ -11,7 +11,6 @@ block('cart-preview').content()(function() {
             elem: 'price',
             content: ''
         },
-        '&nbsp;',
         {
             block: 'rub'
         },

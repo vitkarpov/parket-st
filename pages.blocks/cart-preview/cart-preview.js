@@ -27,7 +27,7 @@ provide(BEMDOM.decl('cart-preview', {
 
         this.setState({
             count: count,
-            price: price
+            price: (price > 0) ? price : ''
         });
     },
 
