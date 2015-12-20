@@ -24,7 +24,8 @@ block('cart-preview').content()(function() {
             },
             directions: ['bottom-right'],
             content: {
-                block: 'cart-popup'
+                block: 'cart-popup',
+                mods: {empty: true}
             }
         }
     ];

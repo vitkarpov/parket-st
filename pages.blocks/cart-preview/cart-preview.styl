@@ -17,8 +17,8 @@
     box-sizing: border-box
 
     overflow: hidden
-    width: 0
-    height: 0
+    width: 20px
+    height: 20px
     background-color: #8a553b
 
     color: white
@@ -30,25 +30,24 @@
     margin-left: -16px
     margin-right: 6px
 
-    transition: width 0.2s ease
-    transition: height 0.2s ease
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out
 
   &_has-items &__icon[data-count]:after
-    width: 20px
-    height: 20px
+    transform: scale(1);
 
   &__price
     display: inline-block
     opacity: 0
     transition: opacity 0.3s ease
-    transition-delay: 0.2s
+    transition-delay: 0.3s
 
   &_has-items &__price
     opacity: 1
 
   &__price-i
     display: inline-block
-    transition: max-width 0.3s ease
+    transition: max-width 0.5s ease
     max-width: 0
 
   &_has-items &__price-i
