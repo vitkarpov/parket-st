@@ -1,8 +1,5 @@
 modules.define('catalog-item', ['i-bem__dom'], function(provide, BEMDOM) {
 
-var count = 0;
-var price = 3000;
-
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': {
@@ -29,16 +26,16 @@ provide(BEMDOM.decl(this.name, {
 
         var data = {};
         var id = 'uniq' + Math.random();
+        var price = 3000;
 
-        data.count = ++count;
-        data.price = count * price;
-        data.html = '<div class="popup-cart-list__item" data-id="'+ id +'"> <div class="cart-item"> <div class="cart-item__content"> <div class="cart-item__preview"><img src="dummy/cart-preview-2.jpg"/></div><div class="cart-item__caption">Массивная доска Coswick Дуб Молочный шоколад с мраморной крошкой</div><div class="cart-item__price">54 432 <span class="rub">&#8381;</span></div><div class="cart-item__props">8 упаковок</div><div class="cart-item__props">18,14 <span class="m2">м<sup>2</sup></span></div><div class="cart-item__props">3 000 <span class="rub">&#8381;</span>/<span class="m2">м<sup>2</sup></span></div></div></div><div class="popup-cart-list__remove" title="Удалить из Корзины" data-id="'+ id +'"><span class="icon icon_type_close"></span></div></div>'
+        data.html = '<div class="popup-cart-list__item" data-price="' + price + '" data-id="'+ id +'"> <div class="cart-item"> <div class="cart-item__content"> <div class="cart-item__preview"><img src="dummy/cart-preview-2.jpg"/></div><div class="cart-item__caption">Массивная доска Coswick Дуб Молочный шоколад с мраморной крошкой</div><div class="cart-item__price">54 432 <span class="rub">&#8381;</span></div><div class="cart-item__props">8 упаковок</div><div class="cart-item__props">18,14 <span class="m2">м<sup>2</sup></span></div><div class="cart-item__props">3 000 <span class="rub">&#8381;</span>/<span class="m2">м<sup>2</sup></span></div></div></div><div class="popup-cart-list__remove" title="Удалить из Корзины" data-id="'+ id +'"><span class="icon icon_type_close"></span></div></div>'
 
-        this.findBlockOutside('page').findBlockInside('cart-preview').setState({
-            count: data.count,
-            price: data.price,
-            html: data.html
-        });
+        var popupCartList = this.findBlockOutside('page').findBlockInside('popup-cart-list');
+        BEMDOM.append(
+            popupCartList.domElem,
+            data.html
+        );
+        popupCartList.emit('change');
     },
 
     _onFail: function(e) {
