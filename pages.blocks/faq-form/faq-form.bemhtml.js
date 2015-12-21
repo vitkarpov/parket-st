@@ -26,7 +26,8 @@ block('faq-form')(
                     id: this.generateId(),
                     name: ctx.name,
                     type: ctx.type,
-                    val: ctx.val
+                    val: ctx.val,
+                    required: true
                 }
             ]
         }
