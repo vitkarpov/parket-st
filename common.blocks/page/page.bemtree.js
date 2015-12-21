@@ -21,7 +21,7 @@ block('page').content()(function() {
         {
             block : 'font',
             js: {
-                url: 'https://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic-ext'
+                url: 'https://fonts.googleapis.com/css?family=Ubuntu:400,500&subset=cyrillic-ext'
             }
         }
     ]
