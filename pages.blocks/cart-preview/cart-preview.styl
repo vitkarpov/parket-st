@@ -14,9 +14,11 @@
     margin-top: -2px
 
   &__icon:after
+  &__icon:before
     content: attr(data-count)
-    display: inline-block
-    vertical-align: bottom
+    position: absolute
+    right: -4px
+    top: 8px
     box-sizing: border-box
 
     overflow: hidden
@@ -30,29 +32,34 @@
     text-align: center
 
     border-radius: 50%
-    margin-left: -16px
-    margin-right: 6px
 
-    transform: scale(0);
-    transition: transform 0.5s ease-in-out
+    transform: scale(0)
+
+  &__icon:after
+    transition: transform 0.6s cubic-bezier(.87,-.41,.19,2.44)
+
+  &__icon:before
+    transition: transform 0.3s cubic-bezier(.87,-.41,.19,2.44)
 
   &_has-items &__icon[data-count]:after
+  &_touched &__icon[data-count]:before
     width: 20px
     height: 20px
     transform: scale(1)
 
-  &__price
+  &__price-w
     display: inline-block
     opacity: 0
-    transition: opacity 0.3s ease
+    transition: opacity 0.5s ease-in
     transition-delay: 0.3s
 
-  &_has-items &__price
+  &_has-items &__price-w
     opacity: 1
+    margin-left: 12px
 
   &__price-i
     display: inline-block
-    transition: max-width 0.5s ease
+    transition: max-width 0.3s ease-out
     max-width: 0
 
   &_has-items &__price-i

@@ -8,11 +8,20 @@ block('cart-preview').content()(function() {
             }
         },
         {
-            elem: 'price',
-            content: ''
-        },
-        {
-            block: 'rub'
+            elem: 'price-w',
+            content: {
+                elem: 'price-i',
+                content: [
+                    {
+                        elem: 'price',
+                        tag: 'span',
+                        content: ''
+                    },
+                    {
+                        block: 'rub'
+                    }
+                ]
+            }
         },
         {
             block: 'popup',

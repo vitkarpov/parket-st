@@ -5,17 +5,5 @@ block('cart-preview')(
 
     attrs()({
         href: 'cart-empty.html'
-    }),
-
-    elem('price')(
-        tag()('span'),
-
-        content()(function() {
-            return {
-                elem: 'price-i',
-                tag: 'span',
-                content: applyNext()
-            };
-        })
-    )
+    })
 )

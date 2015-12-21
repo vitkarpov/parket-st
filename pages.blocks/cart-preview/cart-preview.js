@@ -31,10 +31,16 @@ provide(BEMDOM.decl('cart-preview', {
     render: function() {
         var state = this.getState();
 
+        if (this.hasMod('has-items') && state.count > 0) {
+            this.setMod('touched', true);
+            setTimeout(function() {
+                this.setMod('touched', false);
+            }.bind(this), 300);
+        }
         this.setMod('has-items', state.count > 0);
 
         this.elem('icon').attr('data-count', state.count);
-        this.elem('price-i').text(state.price);
+        this.elem('price').text(state.price);
     }
 }));
 

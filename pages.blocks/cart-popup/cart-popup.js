@@ -15,7 +15,10 @@ provide(BEMDOM.decl(this.name, {
         var hasItems = this.findBlockOutside('page').findBlockInside('cart-preview').getState().count > 0;
 
         this.setMod('empty', !hasItems);
-        this.findBlockOutside('popup').redraw();
+
+        if (!hasItems) {
+            this.findBlockOutside('popup').setMod('visible', false);
+        }
     }
 }));
 

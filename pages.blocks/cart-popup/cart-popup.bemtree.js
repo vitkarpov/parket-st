@@ -19,10 +19,6 @@ block('cart-popup').content()(function() {
                     view: 'action'
                 }
             }
-        },
-        {
-            elem: 'empty',
-            content: 'Корзина пуста'
         }
     ];
 })
