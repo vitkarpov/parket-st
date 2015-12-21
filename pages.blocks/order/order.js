@@ -15,7 +15,10 @@ provide(BEMDOM.decl(this.name, {
         var sign = (bRadioChecked.params.delivery) ? 1 : -1;
         var sum = bSum.getState().sum + sign * this.params["delivery-price"];
 
-        bSum.setState({ sum: sum });
+        bSum.setState({
+            sum: sum,
+            delivery: sign > 0
+        });
     }
 }));
 

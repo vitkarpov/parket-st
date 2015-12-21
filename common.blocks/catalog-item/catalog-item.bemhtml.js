@@ -14,12 +14,20 @@ block('catalog-item')(
         var props = [];
 
         if (cnt.props) {
+            var l = cnt.props.length;
+
             props.push({
-                block: 'props',
-                content: cnt.props.map(function(item) {
+                elem: 'props',
+                tag: 'ul',
+                content: cnt.props.map(function(item, n) {
+                    var isLast = n === l - 1;
+
                     return {
-                        elem: 'item',
-                        content: item
+                        tag: 'li',
+                        content: [
+                            item,
+                            (!isLast) ? ',' : ''
+                        ]
                     };
                 })
             });

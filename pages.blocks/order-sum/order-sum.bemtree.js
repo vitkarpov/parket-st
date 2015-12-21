@@ -22,6 +22,9 @@ block('order-sum').content()(function() {
         },
         {
             elem: 'item',
+            mods: {
+                delivery: true
+            },
             content: [
                 {
                     elem: 'term',

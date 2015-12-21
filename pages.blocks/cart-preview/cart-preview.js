@@ -11,7 +11,12 @@ provide(BEMDOM.decl('cart-preview', {
     },
 
     _onClick: function(e) {
-        this.popup.setMod('visible', true);
+        var state = this.getState();
+
+        if (state.count > 0) {
+            e.preventDefault();
+            this.popup.setMod('visible', true);
+        }
     },
 
     setState: function(state) {

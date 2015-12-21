@@ -1,5 +1,7 @@
 block('order-sum')(
-    js()(true),
+    js()({
+        delivery: false
+    }),
 
     elem('control')(
         tag()('input'),

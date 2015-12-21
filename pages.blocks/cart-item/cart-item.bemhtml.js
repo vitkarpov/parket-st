@@ -1,4 +1,10 @@
 block('cart-item')(
+    tag()('a'),
+
+    attrs()({
+        href: 'card.html'
+    }),
+
     content()(function() {
         var ctx = this.ctx;
 
@@ -21,7 +27,9 @@ block('cart-item')(
                     content: [
                         ctx.price,
                         ' ',
-                        { block: 'rub' }
+                        { block: 'rub' },
+                        '/',
+                        { block: 'm2' }
                     ]
                 },
                 applyNext()

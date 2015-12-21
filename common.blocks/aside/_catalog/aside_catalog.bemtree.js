@@ -20,7 +20,8 @@ block('aside').mod('catalog', true).content()(function() {
                         range: {
                             from: 1000,
                             to: 10000,
-                            step: 500
+                            step: 500,
+                            price: true
                         },
                         value: '1000,4500',
                         mods: {

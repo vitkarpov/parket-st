@@ -9,7 +9,8 @@ provide(BEMDOM.decl(this.name, {
 
     getInitialState: function() {
         return {
-            sum: +this.elem('control').val()
+            sum: +this.elem('control').val(),
+            delivery: this.params.delivery
         }
     },
 
@@ -27,6 +28,7 @@ provide(BEMDOM.decl(this.name, {
 
         this.elem('sum').text(formatPrice(state.sum));
         this.elem('control').val(state.sum);
+        this.setMod(this.elem('item', 'delivery'), 'visible', state.delivery);
     }
 }));
 

@@ -5,7 +5,7 @@ provide(BEMDOM.decl(this.name, {
         'js': function() {
             this.elem('items').masonry({
                 itemSelector: '.faq__item',
-                columnWidth: 480
+                columnWidth: 470
             });
 
             this.popup = this.findBlockInside('modal');
