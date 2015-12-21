@@ -12,7 +12,7 @@
     margin-bottom: 12px
 
   &__question:before
-  &__question:after
+  &__last:after
     content: ''
     display: inline-block
     vertical-align: middle
@@ -26,9 +26,12 @@
     margin-left: -34px
     margin-right: 11px
 
-  &__question:after
+  &__last:after
     margin-left: 11px
     transform: rotate(180deg)
+
+  &__last
+    white-space: nowrap
 
   &__author
     color: #777
