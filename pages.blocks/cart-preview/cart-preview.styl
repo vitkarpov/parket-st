@@ -61,9 +61,14 @@
     display: inline-block
     transition: max-width 0.3s ease-out
     max-width: 0
+    opacity: 1
 
   &_has-items &__price-i
     max-width: 100px
+
+  &_touched &__price-i
+    opacity: 0
+    transition: opacity 0.3s ease
 
   .rub
     margin-left: 4px
