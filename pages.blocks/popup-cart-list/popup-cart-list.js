@@ -7,12 +7,7 @@ provide(BEMDOM.decl(this.name, {
         var href = $link.attr('href');
 
         $.get(href).then(function(e) {
-            //var data = JSON.parse(e);
-            var data = {};
-
-            data.count = --window.count;
-            data.price = window.price - 3000;
-            window.price = data.price;
+            var data = JSON.parse(e);
 
             this.findBlockOutside('page').findBlockInside('cart-preview').setState({
                 count: data.count,

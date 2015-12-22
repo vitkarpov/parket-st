@@ -6,7 +6,9 @@ provide(BEMDOM.decl('cart-preview', {
             this.popup = this.findBlockInside('popup');
             this.popup.setAnchor(this);
 
-            this.bindTo('click', this._onClick);
+            this.bindTo('content', 'click', this._onClick);
+
+            this.setState(this.getInitialState(), true);
         }
     },
 
@@ -19,9 +21,19 @@ provide(BEMDOM.decl('cart-preview', {
         }
     },
 
-    setState: function(state) {
+    getInitialState: function() {
+        return {
+            count: this.params.count,
+            price: this.params.price
+        }
+    },
+
+    setState: function(state, silent) {
         this._state = state;
-        this.render();
+
+        if (!silent) {
+            this.render();
+        }
     },
 
     getState: function() {

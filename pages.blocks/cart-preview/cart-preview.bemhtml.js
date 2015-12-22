@@ -1,9 +1,6 @@
 block('cart-preview')(
-    js()(true),
-
-    tag()('a'),
-
-    attrs()({
-        href: 'cart-empty.html'
+    js()({
+        count: 3,
+        price: 3240
     })
 )

@@ -1,9 +1,5 @@
 modules.define('catalog-item', ['i-bem__dom'], function(provide, BEMDOM) {
 
-// GOD, FORGIVE ME!
-window.count = 0;
-window.price = 0;
-
 provide(BEMDOM.decl(this.name, {
     onSetMod: {
         'js': {
@@ -26,15 +22,7 @@ provide(BEMDOM.decl(this.name, {
     },
 
     _onSuccess: function(e) {
-        // var data = JSON.parse(e);
-
-        var data = {};
-        var id = 'uniq' + Math.random();
-
-        data.count = ++window.count;
-        data.price = window.price + 3000;
-        window.price = data.price;
-        data.html = '<div class="popup-cart-list__item" data-id="'+ id +'"> <a href="card.html" class="cart-item"> <div class="cart-item__content"> <div class="cart-item__preview"><img src="dummy/cart-preview-2.jpg"/></div><div class="cart-item__caption">Массивная доска Coswick Дуб Молочный шоколад с мраморной крошкой</div><div class="cart-item__price">54 432 <span class="rub">&#8381;</span></div><div class="cart-item__props">8 упаковок</div><div class="cart-item__props">18,14 <span class="m2">м<sup>2</sup></span></div><div class="cart-item__props">3 000 <span class="rub">&#8381;</span>/<span class="m2">м<sup>2</sup></span></div></div></a><a href="cart.html?action=remove&id=100500" class="popup-cart-list__remove" title="Удалить из Корзины" data-id="'+ id +'"><span class="icon icon_type_close"></span></a></div>'
+        var data = JSON.parse(e);
 
         this.findBlockOutside('page').findBlockInside('cart-preview').setState({
             price: data.price,

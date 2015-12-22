@@ -1,27 +1,39 @@
 block('cart-preview').content()(function() {
     return [
         {
-            elem: 'icon',
-            content: {
-                block: 'icon',
-                mods: {type: 'cart'}
-            }
-        },
-        {
-            elem: 'price-w',
-            content: {
-                elem: 'price-i',
-                content: [
-                    {
-                        elem: 'price',
-                        tag: 'span',
-                        content: ''
+            elem: 'content',
+            tag: 'a',
+            attrs: {
+                href: 'cart-empty.html'
+            },
+            content: [
+                {
+                    elem: 'icon',
+                    attrs: {
+                        'data-count': '3'
                     },
-                    {
-                        block: 'rub'
+                    content: {
+                        block: 'icon',
+                        mods: {type: 'cart'}
                     }
-                ]
-            }
+                },
+                {
+                    elem: 'price-w',
+                    content: {
+                        elem: 'price-i',
+                        content: [
+                            {
+                                elem: 'price',
+                                tag: 'span',
+                                content: '3 240'
+                            },
+                            {
+                                block: 'rub'
+                            }
+                        ]
+                    }
+                }
+            ]
         },
         {
             block: 'popup',
@@ -32,8 +44,7 @@ block('cart-preview').content()(function() {
             },
             directions: ['bottom-right'],
             content: {
-                block: 'cart-popup',
-                mods: {empty: true}
+                block: 'cart-popup'
             }
         }
     ];

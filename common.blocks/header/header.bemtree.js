@@ -43,7 +43,10 @@ block('header').content()(function() {
         {
             elem: 'item',
             content: {
-                block: 'cart-preview'
+                block: 'cart-preview',
+                mods: {
+                    'has-items': true
+                }
             }
         }
     ];
