@@ -8,8 +8,8 @@ block('catalog-list').content()(function() {
                 'Бамбук'
             ],
             prices: {
-                old: '6850',
-                current: '6490'
+                old: '6 850',
+                current: '6 490'
             },
             label: 'day'
         },
@@ -21,15 +21,15 @@ block('catalog-list').content()(function() {
                 'Бамбук'
             ],
             prices: {
-                old: '6850',
-                current: '6490'
+                old: '6 850',
+                current: '6 490'
             },
             label: 'price'
         },
         {
             caption: "Массивная доска PARKETOFF Кофе/горизонт",
             prices: {
-                current: "1200"
+                current: "1 200"
             }
         },
         {
@@ -47,8 +47,8 @@ block('catalog-list').content()(function() {
         {
             caption: "Инженерная доска Kjopmann Дуб Антик Блэк",
             prices: {
-                old: '2200',
-                current: '2024'
+                old: '2 200',
+                current: '2 024'
             }
         }
     ]);
