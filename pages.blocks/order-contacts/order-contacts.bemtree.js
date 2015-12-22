@@ -31,7 +31,8 @@ block('order-contacts').content()(function() {
                     },
                     id: id,
                     type: type,
-                    val: val
+                    val: val,
+                    required: true
                 }
             ]
         };
