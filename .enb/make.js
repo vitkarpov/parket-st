@@ -102,8 +102,8 @@ module.exports = function(config) {
             }],
 
             // borschik
-            [techs.borschik, { source: PROJECT + '.js', target: PROJECT + '.min.js', minify: isProd }],
-            [techs.borschik, { source: PROJECT + '.css', target: PROJECT + '.min.css', tech: 'cleancss', minify: isProd }]
+            [techs.borschik, { source: PROJECT + '.js', target: PROJECT + '.min.js', minify: false }],
+            [techs.borschik, { source: PROJECT + '.css', target: PROJECT + '.min.css', tech: 'cleancss', minify: false }]
         ]);
 
         nodeConfig.addTargets([PROJECT + '.min.css', PROJECT + '.min.js']);
