@@ -17,12 +17,6 @@ block('page').content()(function() {
             mods: mods
         },
         navFooter,
-        {block: 'footer'},
-        {
-            block : 'font',
-            js: {
-                url: 'https://fonts.googleapis.com/css?family=Ubuntu:400,500&subset=cyrillic-ext'
-            }
-        }
+        {block: 'footer'}
     ]
 });

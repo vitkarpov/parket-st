@@ -5,6 +5,7 @@ block('root').replace()(function() {
         block: 'page',
         title: 'Паркет СТ',
         head: [
+            { elem: 'css', url: 'https://fonts.googleapis.com/css?family=Ubuntu:400,500&subset=cyrillic-ext' },
             { elem: 'css', url: 'parket.min.css' },
             {
                 block: 'opengraph',
