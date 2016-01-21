@@ -1,17 +1,44 @@
 .footer
-  width: 940px
-  padding: 37px 0 25px 0
+  padding: 37px 20px 25px 20px
   margin: 0 auto
+
+  @media desktop
+    width: 940px
+
+  @media phone
+    color: gray
+    font-size: 12px
+    padding-top: 0
+
+    a
+      color: gray
 
   &__copy
     display: inline-block
     vertical-align: top
 
+    @media phone
+      margin-top: 0
+
   &__address
     display: inline-block
-    margin-left: 129px
-    margin-top: -12px
+    margin: -12px 12px 0 129px
     line-height: 18px
+
+    @media phone
+      margin: 0
+      line-height: 12px
 
   &__creator
     float: right
+
+    @media phone
+      float: none
+
+  &__copy
+  &__address
+  &__creator
+    @media phone
+      display: block
+      margin: 5px 0
+

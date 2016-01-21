@@ -18,9 +18,11 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, .2)
 
     .catalog-item:hover &:before
+    .catalog-item_active &:before
       display: block
 
     .catalog-item:hover &
+    .catalog-item_active &
       z-index: 1
 
   &__preview
@@ -56,6 +58,7 @@
     margin-top: 0
 
   &:hover &__main-prices
+  &_active &__main-prices
     visibility: hidden
 
   &__current
@@ -96,6 +99,7 @@
       background: white
 
     .catalog-item:hover &
+    .catalog-item_active &
       display: block
 
   &__props
@@ -128,4 +132,5 @@
     letter-spacing: 1px
 
   &:hover &__label
+  &_active &__label
     background-color: #220606

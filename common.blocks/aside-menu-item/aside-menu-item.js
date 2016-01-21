@@ -9,14 +9,35 @@ provide(BEMDOM.decl({ block: this.name }, {
             var _onMouserEnter = this._onMouserEnter.bind(this);
             var _onMouserLeave = this._onMouserLeave.bind(this);
 
-            this.popup.bindTo('mouseenter', _onMouserEnter);
-            this.popup.bindTo('mouseleave', _onMouserLeave);
-            this.bindTo('mouseenter', _onMouserEnter);
-            this.bindTo('mouseleave', _onMouserLeave);
+            if (!Modernizr.touch) {
+                this.popup.bindTo('mouseenter', _onMouserEnter);
+                this.popup.bindTo('mouseleave', _onMouserLeave);
+                this.bindTo('mouseenter', _onMouserEnter);
+                this.bindTo('mouseleave', _onMouserLeave);
+            } else {
+                this.domElem.on('click', this._onClick.bind(this));
+                this.bindToDoc('click', this._onClickOnDoc.bind(this));
+            }
         }
     },
 
-    _onMouserEnter: function() {
+    _onClick: function(e) {
+        if (!this.popup.hasMod('visible')) {
+            e.preventDefault();
+        }
+        this.popup.setMod('visible', true);
+        this.setMod('active', true);
+    },
+
+    _onClickOnDoc: function(e) {
+        if ($(e.target).closest(this.domElem).length) {
+            return;
+        }
+        this.popup.setMod('visible', false);
+        this.setMod('active', false);
+    },
+
+    _onMouserEnter: function(e) {
         clearTimeout(this._closeTimer);
         this._openTimer = setTimeout(this._open.bind(this), 200);
     },

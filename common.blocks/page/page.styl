@@ -1,4 +1,5 @@
 @import "reset.styl"
+@import "mixins.styl"
 
 global-reset()
 
@@ -7,7 +8,6 @@ a
   text-decoration: none
 
 .page
-  min-width: 1000px
   font-family: 'Ubuntu', Arial, sans-serif
   color: black
   font-size: 14px
@@ -28,11 +28,12 @@ a
 
   &__container
     position: relative
-    width: 940px
     padding: 0 20px
     margin: 0 auto
+
+    @media desktop
+      width: 940px
 
     &_fluid
       width: auto
       max-width: 1200px
-      min-width: 960px

@@ -1,8 +1,5 @@
 ({
     mustDeps: [
         'page'
-    ],
-    shouldDeps: [
-        'find'
     ]
 })

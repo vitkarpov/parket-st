@@ -20,10 +20,12 @@ block('root').replace()(function() {
                     {name: "og:image:width", content: "220"},
                     {name: "og:image:height", content: "32"}
                 ]
-            }
+            },
+            { elem: 'meta', attrs: { name: "viewport", content: "width=device-width; initial-scale=1.0" } }
         ],
         scripts: [
             { elem: 'js', url: 'https://yastatic.net/jquery/2.1.4/jquery.min.js' },
+            { elem: 'js', url: 'http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js' },
             { elem: 'js', url: 'parket.min.js' }
         ]
     };

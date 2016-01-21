@@ -10,6 +10,9 @@ block('header').content()(function() {
         {
             elem: 'item',
             tag: 'a',
+            mods: {
+                desktop: true
+            },
             attrs: {
                 href: 'tel:+74957796531'
             },
@@ -28,6 +31,9 @@ block('header').content()(function() {
         {
             elem: 'item',
             tag: 'a',
+            mods: {
+                desktop: true
+            },
             attrs: {
                 href: 'contacts.html'
             },

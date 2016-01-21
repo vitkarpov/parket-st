@@ -17,13 +17,6 @@ block('company-info').content()(function() {
                             elem: 'content',
                             content: [
                                 {
-                                    block: 'address-pin',
-                                    mix: {
-                                        block: this.block,
-                                        elem: 'address'
-                                    }
-                                },
-                                {
                                     block: this.block,
                                     elem: 'image',
                                     content: {
@@ -49,6 +42,13 @@ block('company-info').content()(function() {
                                             content: 'У нас Вы можете получить грамотную консультацию, задать любой интересующий Вас вопрос, а при желании — Вы всегда можете приехать к нам и на месте посмотреть понравившийся товар.'
                                         }
                                     ]
+                                },
+                                {
+                                    block: 'address-pin',
+                                    mix: {
+                                        block: this.block,
+                                        elem: 'address'
+                                    }
                                 }
                             ]
                         }

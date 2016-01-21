@@ -2,6 +2,10 @@
   position: relative
   padding-top: 65px
 
+  @media phone
+    padding-left: @padding-top
+    padding-top: 0
+
   &:before
     content: ''
     position: absolute
@@ -17,6 +21,12 @@
     line-height: 23px
     margin: 10px 0
 
+    @media phone
+      margin-bottom: 5px
+
   &__text
     font-size: 13px
     line-height: 15px
+
+    @media phone
+      font-size: 12px

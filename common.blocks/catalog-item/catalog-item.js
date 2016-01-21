@@ -5,9 +5,16 @@ provide(BEMDOM.decl(this.name, {
         'js': {
             'inited': function() {
                 this.elem('extra').on('submit', this._onSubmit.bind(this));
+
+                if (Modernizr.touch) {
+                    this.domElem.on('click', this._onClick.bind(this));
+                    this.bindToDoc('click', this._onClickDoc);
+                }
             },
             '': function() {
                 this.elem('extra').off('submit');
+                this.domElem.off('click');
+                this.unbindToDoc('click', this._onClickDoc);
             }
         }
     },
@@ -19,6 +26,20 @@ provide(BEMDOM.decl(this.name, {
             .then(this._onSuccess.bind(this), this._onFail.bind(this));
 
         e.preventDefault();
+    },
+
+    _onClick: function(e) {
+        if (!this.hasMod('active')) {
+            e.preventDefault();
+        }
+        this.setMod('active', true);
+    },
+
+    _onClickDoc: function(e) {
+        if ($(e.target).closest(this.domElem).length) {
+            return;
+        }
+        this.setMod('active', false);
     },
 
     _onSuccess: function(e) {

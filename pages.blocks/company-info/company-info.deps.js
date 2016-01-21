@@ -1,7 +1,10 @@
 ({
+    mustDeps: [
+        'page',
+        'address-pin'
+    ],
     shouldDeps: [
         'image',
-        'address-pin',
         'advantages'
     ]
 })

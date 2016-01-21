@@ -4,6 +4,9 @@
   &__item
     margin-top: 40px
 
+    @media phone
+      margin-top: 20px
+
   &__caption
     font-weight: bold
     font-size: 22px
@@ -20,13 +23,17 @@
     line-height: 20px
 
     p
-      margin-top: 1em
+      margin: 1em 0
 
       &:first-child
         margin-top: 0
 
   &__content
+    position: relative
     margin: 0 160px 0 320px
+
+    @media phone
+      margin: 0
 
     &:after
       content: ''
@@ -37,8 +44,22 @@
     float: left
     width: 290px
     margin-left: -320px
+    margin-bottom: 1em
 
   &__address
-    float: right
+    position: absolute
+    top: 0
+    right: -160px
     width: 140px
-    margin-right: -160px
+
+    @media phone
+      margin: 30px 0
+
+  &__image
+  &__address
+    @media phone
+      margin-right: 0
+      margin-left: 0
+      position: relative
+      right: auto
+      float: none

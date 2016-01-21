@@ -1,4 +1,7 @@
 ({
+    mustDeps: [
+        'page'
+    ],
     shouldDeps: [
         'logo',
         'icon',
