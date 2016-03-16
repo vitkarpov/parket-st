@@ -1,7 +1,9 @@
 block('filter')(
     tag()('form'),
 
-    js()(true),
+    js()({
+        url: 'http://localhost:8000'
+    }),
 
     attrs()({
         action: '#'
